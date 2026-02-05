@@ -1,3 +1,10 @@
+import { Container } from "@/components/ui/container";
+import { Section } from "@/components/ui/section";
+
 export default async function Page() {
-  return <div>juridisk</div>;
+  return (
+    <Section>
+      <Container>Juridisk</Container>
+    </Section>
+  );
 }

@@ -9,10 +9,14 @@ export const HREF_AWNING_STORE = `${MAIN_DOMAIN}${URL_EXTENSION_STORE_BASE}${URL
 
 export const COMPANY_INFO = {
   name: "Solskjerming AS",
-  address: "Måkeveien 6, 1679 Kråkerøy",
+  address: "Måkeveien 6",
+  city: "Fredrikstad",
+  zip: "1679 Kråkerøy",
   phone: "+47 6910 9888",
   email: "post@solskjerming-as.no",
   orgNumber: "NO 911 884 348 MVA",
+  days: "Mandag - Fredag",
+  hours: "09:00 - 16:00",
 } as const;
 
 export const TEAM: TeamMember[] = [

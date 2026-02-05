@@ -8,10 +8,10 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Container } from "./ui/container";
 import { HREF_AWNING_STORE } from "@/content/company";
+import { Logo } from "./ui/logo";
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
@@ -53,13 +53,10 @@ export function Header() {
   const navLinkClassName =
     "bg-transparent! hover:bg-transparent! cursor-pointer hover:text-primary";
   return (
-    <header className="bg-sidebar border-b border-sidebar-border sticky top-0">
-      <Container className="h-[80px] flex items-center justify-between">
-        <Link
-          href="/"
-          aria-label="Til forsiden"
-        >
-          Terrassemarkise
+    <header className="bg-sidebar/90 backdrop-blur-xl text-sidebar-foreground border-b border-sidebar-border/30 sticky top-0 z-999">
+      <Container className="h-[90px] flex items-center justify-between">
+        <Link href="/" aria-label="Til forsiden">
+          <Logo />
         </Link>
 
         <NavigationMenu
@@ -69,7 +66,7 @@ export function Header() {
           <NavigationMenuList className="gap-2">
             <NavigationMenuItem>
               <NavigationMenuTrigger className={navLinkClassName}>
-                Produkter
+                <Link href="/produkter">Produkter</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
@@ -105,18 +102,12 @@ export function Header() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuLink
-                asChild
-                className={navLinkClassName}
-              >
+              <NavigationMenuLink asChild className={navLinkClassName}>
                 <Link href="/om-oss">Om oss</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink
-                asChild
-                className={navLinkClassName}
-              >
+              <NavigationMenuLink asChild className={navLinkClassName}>
                 <Link href="/kontakt">Kontakt</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -125,10 +116,16 @@ export function Header() {
               <NavigationMenuLink
                 asChild
                 className={
-                  "bg-primary hover:bg-primary/90 text-primary-foreground"
+                  "bg-primary hover:bg-primary/90 text-primary-foreground px-4"
                 }
               >
-                <Link href={HREF_AWNING_STORE}>Besøk nettbutikken</Link>
+                <Link
+                  href={HREF_AWNING_STORE}
+                  rel="noopener noreferrer"
+                  target="_black"
+                >
+                  Besøk nettbutikken
+                </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>

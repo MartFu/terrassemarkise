@@ -1,98 +1,75 @@
-import fs from "fs";
-import path from "path";
+// app/veiledning/[slug]/page.tsx
 import { notFound } from "next/navigation";
-import matter from "gray-matter";
+import { Metadata, ResolvingMetadata } from "next";
+import { getPageBySlug } from "@/lib/content-service";
+import { ContentPageTemplate } from "@/components/content-page-template";
+import { createMetadata } from "@/lib/create-metadata";
 
-type PageProps = {
+interface PageProps {
   params: Promise<{ slug: string }>;
-};
+}
 
-export const dynamic = "force-static";
-
+// Generate static params for veiledning pages
 export async function generateStaticParams() {
-  const articlesDirectory = path.join(process.cwd(), "content/articles");
+  const { getAllContent } = await import("@/lib/content-service");
 
-  if (!fs.existsSync(articlesDirectory)) {
+  try {
+    const veiledningItems = await getAllContent("veiledning");
+    return veiledningItems.map((item) => ({
+      slug: item.slug,
+    }));
+  } catch (error) {
+    console.error("Error generating static params for veiledning:", error);
     return [];
   }
-
-  const filenames = fs.readdirSync(articlesDirectory);
-
-  const paths = filenames
-    .filter((filename) => filename.endsWith(".md"))
-    .map((filename) => ({
-      slug: filename.replace(/\.md$/, ""),
-    }));
-
-  // Log paths to verify they are being found during build
-  console.log("Generating static paths:", paths);
-  return paths;
 }
 
-// Generate metadata for SEO
-export async function generateMetadata({ params }: PageProps) {
+// Generate metadata
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> },
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { slug } = await params;
 
-  if (!slug) {
-    return { title: "Artikkel ikke funnet" };
-  }
+  try {
+    const pageData = await getPageBySlug("veiledning", slug);
+    const metadata = createMetadata(pageData, slug, "veiledning");
 
-  const filePath = path.join(process.cwd(), "content/articles", `${slug}.md`);
-
-  if (!fs.existsSync(filePath)) {
+    // Merge with parent images
+    const previousImages = (await parent).openGraph?.images || [];
     return {
-      title: "Artikkel ikke funnet",
+      ...metadata,
+      openGraph: {
+        ...metadata.openGraph,
+        images: [...previousImages],
+      },
+    };
+  } catch (error) {
+    console.error("Error generating metadata:", error);
+    return {
+      title: "Feil | Veiledning",
+      description: "En feil oppsto ved lasting",
     };
   }
-
-  const fileContent = fs.readFileSync(filePath, "utf8");
-  const { data } = matter(fileContent);
-
-  return {
-    title: data.title || slug,
-    description: data.description || "",
-    keywords: data.keywords || [],
-    authors: data.author ? [{ name: data.author }] : [],
-    openGraph: {
-      title: data.title || slug,
-      description: data.description || "",
-      type: "article",
-      publishedTime: data.date || undefined,
-    },
-  };
 }
 
-export default async function Page({ params }: PageProps) {
+// Main page component
+export default async function VeiledningPage({ params }: PageProps) {
   const { slug } = await params;
 
-  if (!slug || slug === "undefined") {
+  // This is a Server Component, so we can use getPageBySlug
+  const pageData = await getPageBySlug("veiledning", slug);
+
+  if (!pageData) {
     notFound();
   }
-
-  const filePath = path.join(process.cwd(), "content/articles", `${slug}.md`);
-
-  // Check if file exists
-  if (!fs.existsSync(filePath)) {
-    notFound();
-  }
-
-  const fileContent = fs.readFileSync(filePath, "utf8");
-
-  // Parse frontmatter and content
-  const { data: frontmatter, content } = matter(fileContent);
 
   return (
-    <article className="prose lg:prose-xl mx-auto p-8">
-      {frontmatter.title && <h1>{frontmatter.title}</h1>}
-      {frontmatter.date && (
-        <time className="text-muted-foreground">{frontmatter.date}</time>
-      )}
-      {frontmatter.author && (
-        <p className="text-muted-foreground">Av {frontmatter.author}</p>
-      )}
-
-      {/* You'll need to convert markdown to HTML here */}
-      <div dangerouslySetInnerHTML={{ __html: content }} />
-    </article>
+    <ContentPageTemplate
+      frontmatter={pageData.frontmatter}
+      contentHtml={pageData.contentHtml}
+      contentType="veiledning"
+      slug={slug}
+    />
   );
 }
