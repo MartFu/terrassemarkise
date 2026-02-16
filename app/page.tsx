@@ -1,9 +1,30 @@
+import { ContactForm } from "@/components/contact-form";
 import { BenefitsSection } from "@/components/home/benefits-section";
 import { TrustSection } from "@/components/home/trust-section";
+import { CTASection } from "@/components/shared/cta";
+// import { HeroSection } from "@/components/shared/HeroSection";
+import HighImpactHero from "@/components/shared/HighImpactHero";
+import { FeaturesSection } from "@/components/test/features";
+import { HowItWorks } from "@/components/test/how-it-works";
+import { ProductShowcase } from "@/components/test/product-showcase";
+import { TestimonialsSection } from "@/components/test/testimonials";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import PaperCrease from "@/components/ui/paper-crease";
 import { Section } from "@/components/ui/section";
-import { ArrowRight, Check, Shield, Wrench, Sun } from "lucide-react";
+import { Heading, Text } from "@/components/ui/typography";
+import { indexPageContent } from "@/innhold/sider";
+import { cn } from "@/lib/utils";
+import {
+  ArrowRight,
+  Check,
+  Shield,
+  Wrench,
+  Sun,
+  ArrowUpRight,
+  ArrowDown,
+} from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 // Content configuration
@@ -44,7 +65,7 @@ export const LANDING_PAGE_CONTENT = {
           projection: "160-360cm",
           control: "Sveiv / Somfy RTS, IO, WT",
         },
-        href: "/produkter/jamaica",
+        href: "/assets/product-images/jamaica_index_image.png",
         featured: false,
       },
       {
@@ -64,7 +85,7 @@ export const LANDING_PAGE_CONTENT = {
           projection: "160-360cm",
           control: "Sveiv / Somfy RTS, IO, WT",
         },
-        href: "/produkter/corsica",
+        href: "/assets/product-images/corsica_index_image.png",
         featured: true,
       },
       {
@@ -84,7 +105,7 @@ export const LANDING_PAGE_CONTENT = {
           projection: "160-360cm",
           control: "Sveiv / Somfy RTS, IO, WT",
         },
-        href: "/produkter/palladio",
+        href: "/assets/product-images/palladio_index_image.png",
         featured: false,
       },
     ],
@@ -117,73 +138,169 @@ export const LANDING_PAGE_CONTENT = {
   },
 };
 
-export default function LandingPage() {
+export default function Page() {
+  const { hero, trustIndicators, features, testimonials, stats, ctaBanner } =
+    indexPageContent;
+
+  const products = [
+    {
+      id: "",
+      name: "Jamaica - Den Fleksible Samlingsplassen",
+      slug: "jamaica-terrassemarkise",
+      image: "/assets/product-images/jamaica_index_image.png",
+      description:
+        "Glem værmeldingen og inviter til grillfest uansett. Jamaica er den robuste arbeidshesten som forvandler uteplassen til et lunt fristed. Med nedsenkbar frontkappe skjermer den perfekt mot den lave norske kveldssola, slik at dere kan nyte kaffen uten å bli blendet.",
+      strengths: [
+        "Perfekt for lave solforhold med nedsenkbar frontkappe",
+        "Robust konstruksjon som tåler norske forhold",
+        "Vannavstøtende teflonduk som holder dere tørre ved en regnskur",
+        "Kan monteres både på vegg og i tak for maksimal fleksibilitet",
+      ],
+      technical: {
+        maxWidth: "700 cm (470 cm med frontkappe)",
+        maxProjection: "360 cm",
+        tilt_angle: "5° to 40°",
+        controls: "Manuell, Somfy RTS, IO eller WT",
+        fabric: "100% teflonbehandlet akryl",
+      },
+    },
+
+    {
+      id: "",
+      name: "Palladio - Elegant Trygghet i Kassett",
+      slug: "palladio-terrassemarkise",
+      image: "/assets/product-images/palladio_index_image.png",
+      description:
+        "For deg som vil ha det ryddig og elegant. Palladio lagrer duken trygt i en lukket kassett når den ikke er i bruk, noe som beskytter mot støv og norsk vintervær. Skap en sømløs overgang mellom stue og terrasse med en markise som ser like god ut som den fungerer.",
+      strengths: [
+        "Helkassett som beskytter duken mot alle typer nedbør",
+        "Elegant design som smelter inn i husets arkitektur",
+        "Stor fallvinkel (opptil 50°) for effektiv solskjerming og vannavrenning",
+        "Høy teknisk kvalitet med Somfy-styring",
+      ],
+      technical: {
+        maksBredde: "700 cm",
+        maxProjection: "360 cm",
+        tiltAngle: "5° til 50°",
+        controls: "Sveiv eller elektrisk (Somfy)",
+        beskyttelse: "Integrert kassettløsning",
+      },
+    },
+
+    {
+      id: "",
+      name: "Corsica - Designperlen for Utestuen",
+      slug: "corsica-terrassemarkise",
+      image: "/assets/product-images/corsica_index_image.png",
+      description:
+        "Corsica er mer enn bare solskjerming; det er kronen på verket for din uteplass. Denne robuste terrassemarkisen gir deg følelsen av en eksklusiv utestue. Med en vannavstøtende duk av høyeste kvalitet kan dere sitte ute og høre på regnet mens dere forblir tørre og varme.",
+      strengths: [
+        "Moderne design med duken trygt beskyttet i kassett",
+        "Svært vannavstøtende teflonduk for norske sommerkvelder",
+        "Enkel justering av fallvinkel for optimal komfort",
+        "Leveres i flere lekre konstruksjons- og dukfarger",
+      ],
+      technical: {
+        maksBredde: "700 cm",
+        maksUtfall: "360 cm",
+        tiltAngle: "5° til 50°",
+        controls: "Full støtte for smarthus/Somfy",
+        fabric: "100% Teflon-treated acrylic",
+      },
+    },
+  ];
+
   return (
     <>
-      {/* Hero Section */}
-      <Section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-        {/* Subtle background accent */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-muted/30 to-transparent -z-10" />
+      <section className="relative min-h-[calc(100svh-var(--header-height))] w-full overflow-hidden bg-background">
+        {/* Bakgrunnsbilde - Fokuserer på "utesalong i regn" */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/assets/product-images/corsica_illustration.jpg"
+            alt="Moderne terrassemarkise som beskytter mot regn - Uteplass i norsk vær"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+          {/* Gradient overlay - Shadcn farger */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/30" />
+        </div>
 
-        <Container>
-          <div className="max-w-4xl">
-            <div className="inline-block mb-6">
-              <span className="inline-flex items-center px-3 py-1 text-xs font-medium border rounded-full">
-                {LANDING_PAGE_CONTENT.hero.badge}
+        {/* Innhold - Posisjonert for lesbarhet */}
+        <div className="container relative z-10 mx-auto flex min-h-[90dvh] flex-col items-start justify-center px-4 md:px-6">
+          <div className="max-w-3xl space-y-6">
+            {/* H1 - SEO optimalisert med nøkkelord */}
+            <h1 className="text-balance font-bold tracking-tight text-foreground">
+              <span className="block text-4xl leading-[1.1] sm:text-5xl md:text-6xl lg:text-7xl">
+                Uteplassen du
               </span>
-            </div>
-
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 leading-[0.95]">
-              {LANDING_PAGE_CONTENT.hero.title.split("\n").map((line, i) => (
-                <span key={i} className="block">
-                  {line}
-                </span>
-              ))}
+              <span className="block text-4xl leading-[1.1] sm:text-5xl md:text-6xl lg:text-7xl">
+                alltid kan bruke
+              </span>
+              <span className="mt-2 block bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-4xl leading-[1.1] text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
+                — uansett vær.
+              </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl">
-              {LANDING_PAGE_CONTENT.hero.subtitle}
+            {/* Beskrivelse - Inneholder "terrassemarkise" naturlig */}
+            <p className="text-balance max-w-2xl text-base text-muted-foreground sm:text-lg md:text-xl">
+              Fra blendende kveldssol til lette regnskurer.{" "}
+              <span className="font-medium text-foreground">
+                Vi leverer skreddersydde terrassemarkiser
+              </span>{" "}
+              som forvandler uteplassen til et lunt og lystig samlingspunkt for
+              familie og venner.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-base" asChild>
-                <Link href={LANDING_PAGE_CONTENT.hero.cta.primary.href}>
-                  {LANDING_PAGE_CONTENT.hero.cta.primary.label}
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="text-base" asChild>
-                <Link href={LANDING_PAGE_CONTENT.hero.cta.secondary.href}>
-                  {LANDING_PAGE_CONTENT.hero.cta.secondary.label}
-                </Link>
-              </Button>
+            {/* CTA - Tydelig og moderne */}
+            <div className="flex flex-col gap-3 pt-4 sm:flex-row">
+              <Link
+                href="/produkter"
+                className="group inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-base font-medium text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                Se våre markiser
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/tilbud"
+                className="inline-flex items-center justify-center rounded-md border border-input bg-background/80 px-6 py-3 text-base font-medium text-foreground backdrop-blur-sm transition-all hover:bg-accent hover:text-accent-foreground"
+              >
+                Be om uforpliktende tilbud
+              </Link>
+            </div>
+
+            {/* Trygghetselementer - Subtile norske preferanser */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-6 text-sm text-muted-foreground">
+              <div className="flex items-center gap-1.5">
+                <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                <span>Norske håndverkere</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                <span>Skreddersydd mål</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                <span>5 års garanti</span>
+              </div>
             </div>
           </div>
-        </Container>
-      </Section>
+        </div>
 
-      {/* Stats Bar */}
-      <Section className="py-12 border-y bg-muted/30">
-        <Container>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {LANDING_PAGE_CONTENT.stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+        {/* Scroll indikator - Modern touch */}
+        <div className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 animate-bounce md:block">
+          <div className="flex flex-col items-center gap-1 text-xs font-medium text-white">
+            <span className="text-[10px] uppercase tracking-wider">
+              Utforsk
+            </span>
+            <ArrowDown />
           </div>
-        </Container>
-      </Section>
-
-      <BenefitsSection />
+        </div>
+      </section>
 
       {/* Products Section */}
-      <Section className="py-20 md:py-32" id="produkter">
+      {/* <Section className="py-20 md:py-32" id="produkter">
         <Container>
           <div className="max-w-3xl mb-16">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
@@ -194,7 +311,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="space-y-24">
+          <div className="space-y-40">
             {LANDING_PAGE_CONTENT.products.items.map((product, index) => (
               <div
                 key={product.id}
@@ -202,9 +319,8 @@ export default function LandingPage() {
                   index % 2 === 1 ? "lg:grid-flow-dense" : ""
                 }`}
               >
-                {/* Product Image Placeholder */}
                 <div
-                  className={`relative aspect-[4/3] rounded-lg bg-gradient-to-br ${
+                  className={`relative aspect-[4/3] rounded-lg bg-linear-to-br ${
                     product.id === "jamaica"
                       ? "from-slate-100 to-slate-200"
                       : product.id === "corsica"
@@ -212,8 +328,24 @@ export default function LandingPage() {
                         : "from-zinc-100 to-zinc-200"
                   } ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
                 >
+                  <div
+                    role="img"
+                    className={cn(
+                      "absolute inset-0 z-1 after:absolute after:inset-0 after:content-[''] after:from-transparent after:via-transparent after:to-transparent",
+                      index % 2 === 0
+                        ? "after:bg-linear-to-l"
+                        : "after:bg-linear-to-r",
+                    )}
+                    aria-label={product.name}
+                    style={{
+                      backgroundImage: `url('${product.href}')`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "top",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                  />
                   {product.featured && (
-                    <div className="absolute top-6 left-6 inline-flex items-center px-3 py-1 text-xs font-medium bg-background border rounded-full shadow-sm">
+                    <div className="absolute z-2 top-6 left-6 inline-flex items-center px-3 py-1 text-xs font-medium bg-background border rounded-full shadow-sm">
                       Mest populær
                     </div>
                   )}
@@ -226,7 +358,6 @@ export default function LandingPage() {
                   </div>
                 </div>
 
-                {/* Product Info */}
                 <div
                   className={
                     index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
@@ -244,7 +375,6 @@ export default function LandingPage() {
                     {product.description}
                   </p>
 
-                  {/* Features */}
                   <div className="space-y-3 mb-8">
                     {product.features.map((feature, i) => (
                       <div key={i} className="flex items-center gap-3">
@@ -254,7 +384,6 @@ export default function LandingPage() {
                     ))}
                   </div>
 
-                  {/* Specs */}
                   <div className="grid grid-cols-3 gap-4 p-4 rounded-lg border bg-muted/50 mb-6">
                     <div>
                       <div className="text-xs text-muted-foreground mb-1">
@@ -299,28 +428,14 @@ export default function LandingPage() {
           </div>
         </Container>
       </Section>
+      <BenefitsSection />
+      <TrustSection /> */}
 
-      <TrustSection />
-
-      {/* CTA Section */}
-      <Section className="pb-0!">
-        <Container className="bg-primary text-primary-foreground p-8 rounded-t-3xl">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">
-              {LANDING_PAGE_CONTENT.cta.title}
-            </h2>
-            <p className="text-lg text-primary-foreground/80 mb-10">
-              {LANDING_PAGE_CONTENT.cta.description}
-            </p>
-            <Button size="lg" variant="outline" className="text-base" asChild>
-              <Link href={LANDING_PAGE_CONTENT.cta.button.href}>
-                {LANDING_PAGE_CONTENT.cta.button.label}
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-        </Container>
-      </Section>
+      <ProductShowcase />
+      <FeaturesSection />
+      <HowItWorks />
+      <TestimonialsSection />
+      <CTASection />
     </>
   );
 }

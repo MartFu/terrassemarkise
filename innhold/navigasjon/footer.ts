@@ -63,3 +63,41 @@ export const FOOTER_CONTENT: FooterProps = {
     },
   ],
 };
+
+export const footer = {
+  logo: "Terrassemarkise",
+  tagline: "Skandinaviske terrassemarkiser for de øyeblikkene som betyr mest.",
+  sections: [
+    {
+      title: "Produkter",
+      links: [
+        { label: "Palladio", href: "/produkter/palladio-terrassemarkise" },
+        { label: "Corsica", href: "/produkter/corsica-terrassemarkise" },
+        { label: "Jamaica", href: "/produkter/jamaica-terrassemarkise" },
+      ],
+    },
+    {
+      title: "Veiledning",
+      links: [
+        { label: "Guider & tips", href: "/veiledning" },
+        { label: "Kundehistorier", href: "/veiledning/case-studier" },
+        { label: "Prisberegner", href: "/veiledning/verktoy" },
+      ],
+    },
+    {
+      title: "Selskapet",
+      links: [
+        { label: "Om oss", href: "/om-oss" },
+        { label: "Kontakt", href: "/kontakt" },
+        { label: "Juridisk", href: "/juridisk" },
+      ],
+    },
+  ],
+
+  parentCompany: {
+    text: "En del av",
+    name: "Solskjerming AS",
+    href: "https://solskjerming-as.no",
+  },
+  copyright: `© ${new Date().getFullYear()} Solskjerming AS. Alle rettigheter forbeholdt.`,
+};

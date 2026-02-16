@@ -5,8 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Link } from "@/components/ui/link";
 import { Section } from "@/components/ui/section";
 import { Textarea } from "@/components/ui/textarea";
-import { COMPANY_INFO } from "@/content/company";
-import { CONTACT_PAGE_CONTENT } from "@/content/pages/kontakt";
+import { COMPANY_INFO } from "@/innhold/company";
+import { CONTACT_PAGE_CONTENT } from "@/innhold/sider/kontakt";
 import {
   Mail,
   Phone,

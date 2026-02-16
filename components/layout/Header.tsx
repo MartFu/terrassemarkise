@@ -9,9 +9,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Container } from "./ui/container";
-import { HREF_AWNING_STORE } from "@/content/company";
-import { Logo } from "./ui/logo";
+import { Container } from "@/components/ui/container";
+import { HREF_AWNING_STORE } from "@/innhold/company";
+import { Logo } from "@/components/ui/logo";
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
@@ -51,13 +51,11 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 export function Header() {
   const navLinkClassName =
-    "bg-transparent! hover:bg-transparent! cursor-pointer hover:text-primary";
+    "bg-transparent! hover:bg-transparent! text-sidebar-foreground cursor-pointer hover:text-accent";
   return (
-    <header className="bg-sidebar/90 backdrop-blur-xl text-sidebar-foreground border-b border-sidebar-border/30 sticky top-0 z-999">
-      <Container className="h-[90px] flex items-center justify-between">
-        <Link href="/" aria-label="Til forsiden">
-          <Logo />
-        </Link>
+    <header className="bg-sidebar/90 backdrop-blur-md text-foreground border-b border-sidebar-border sticky top-0 z-999">
+      <Container className="h-[var(--header-height)] flex items-center justify-between">
+        <Logo />
 
         <NavigationMenu
           aria-label="Primærnavigasjon"
@@ -116,7 +114,7 @@ export function Header() {
               <NavigationMenuLink
                 asChild
                 className={
-                  "bg-primary hover:bg-primary/90 text-primary-foreground px-4"
+                  "bg-primary hover:bg-primary/90 text-primary-foreground px-4 ml-4"
                 }
               >
                 <Link

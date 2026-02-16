@@ -3,14 +3,23 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-export function Logo() {
+export function Logo({
+  className,
+  imageClassName = "h-18 w-auto",
+}: {
+  className?: string;
+  imageClassName?: string;
+}) {
   return (
-    <Link href="/" className="transition-transform active:scale-95">
+    <Link
+      href="/"
+      className={cn("transition-transform active:scale-95", className)}
+    >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/solskjerming-as-logo.png"
+        src="/assets/logo.png"
         alt="Solkjerming AS"
-        className={cn("transition-all duration-300 w-auto h-18")}
+        className={cn("transition-all duration-300", imageClassName)}
       />
     </Link>
   );

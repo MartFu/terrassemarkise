@@ -34,9 +34,9 @@ export const Container = <T extends React.ElementType = "div">({
     <Component
       ref={ref}
       className={cn(
-        "mx-auto px-4 sm:px-6 lg:px-8",
+        "mx-auto px-4 sm:px-6 lg:px-12 xl:px-16",
         !fluid &&
-          "w-full max-w-5xl md:max-w-screen-3xl lg:max-w-screen-5xl xl:max-w-screen-7xl 2xl:max-w-screen-2xl",
+          "w-full max-w-5xl md:max-w-6xl lg:max-w-7xl xl:max-w-8xl 2xl:max-w-screen-2xl",
         fluid && "w-full",
         debug && "border-2 border-red-500",
         className,

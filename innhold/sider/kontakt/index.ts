@@ -1,4 +1,4 @@
-import { COMPANY_INFO } from "@/content/company";
+import { COMPANY_INFO } from "@/innhold/company";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 // Configuration object
