@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <Section>
+    <Section className="min-h-[100vh-var(--header-height)]">
       <Container className="text-center space-y-4 pt-24">
         <h2 className="text-2xl font-semibold">404 - Siden ble ikke funnet</h2>
         <p className="mb-8">Beklager, vi fant ikke siden du lette etter.</p>

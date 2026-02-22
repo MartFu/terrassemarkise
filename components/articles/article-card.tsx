@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Heading, Text } from "../ui/typography";
+import { SITE_URLS } from "@/lib/constants";
 
 interface GuideCardProps {
   slug: string;
@@ -9,6 +10,7 @@ interface GuideCardProps {
   category: string;
   readTime: string;
   basePath?: string;
+  date?: string;
 }
 
 const GuideCard = ({
@@ -17,11 +19,12 @@ const GuideCard = ({
   excerpt,
   category,
   readTime,
-  basePath = "/veiledning",
+  date,
+  basePath = SITE_URLS.RESOURCES,
 }: GuideCardProps) => {
   return (
     <Link
-      href={`${basePath}/${slug}`}
+      href={`${basePath}${slug}`}
       className="group flex flex-col rounded-lg border border-border bg-card p-6 transition-all duration-300 hover:shadow-md hover:shadow-foreground/5"
     >
       <div className="flex items-center justify-between gap-3 text-xs text-muted-foreground">

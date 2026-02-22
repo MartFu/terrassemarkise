@@ -11,7 +11,7 @@ interface ImageModalProps {
   onClose: () => void;
   onNext: () => void;
   onPrev: () => void;
-  onSelect: (image: GalleryImage) => void; // Added onSelect prop
+  onSelect: (image: GalleryImage) => void;
 }
 
 export function ImageModal({
@@ -21,7 +21,7 @@ export function ImageModal({
   onClose,
   onNext,
   onPrev,
-  onSelect, // Added onSelect
+  onSelect,
 }: ImageModalProps) {
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -112,14 +112,14 @@ export function ImageModal({
       </div>
 
       {/* Thumbnail strip - Fixed width issue */}
-      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 min-w-60">
         <div className="absolute z-50 -top-6 left-1/2 -translate-x-1/2 w-4/5 text-center bg-black/70 text-white text-sm rounded-t px-4 py-0.5 text-nowrap">
           {image.alt}
         </div>
         <div className="flex gap-2 p-2 rounded-lg bg-card border shadow-lg backdrop-blur-md overflow-x-auto max-w-[90vw] scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
           {images.map((img, idx) => (
             <button
-              key={`${img.id}_${idx}`}
+              key={`thumbnail-${img.id}-${idx}`}
               onClick={(e) => {
                 e.stopPropagation();
                 onSelect(img); // Call onSelect with the clicked image
@@ -135,7 +135,7 @@ export function ImageModal({
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={img.src}
-                alt=""
+                alt={img?.alt ?? "thumbnail"}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />

@@ -1,95 +1,47 @@
-import type { FooterProps } from "@/types";
+import { EXTERNAL_URLS, SITE_URLS } from "@/lib/constants";
 
 /* 
 
   Konfigurerbart innhold assosiert med <Footer> komponenten.
 
 */
-export const FOOTER_CONTENT: FooterProps = {
-  brandSection: {
-    title: "Solskjerming AS",
-    description:
-      "Din komplette guide til terrassemarkiser. Vi hjelper deg med å finne den perfekte løsningen for ditt uterom.",
-
-    /* 
-    
-    Brand kan defineres med følgende props
-     - logo (src) - string
-     - href - string
-     - ariaLabel - string
-    */
-    brand: undefined,
-  },
-  navigation: {
-    products: [
-      {
-        title: "Corsica",
-        href: "https://www.solskjerming-as.no/nettbutikk/utvendig-solskjerming/markiser/terrassemarkiser/corsica",
-      },
-      {
-        title: "Palladio",
-        href: "https://www.solskjerming-as.no/nettbutikk/utvendig-solskjerming/markiser/terrassemarkiser/palladio",
-      },
-      {
-        title: "Jamaica",
-        href: "https://www.solskjerming-as.no/nettbutikk/utvendig-solskjerming/markiser/terrassemarkiser/jamaica",
-      },
-    ],
-    resources: [
-      { title: "Monteringsveiledning", href: "/veiledning" },
-      { title: "Inspirasjon", href: "/inspirasjon" },
-      { title: "Ofte stilte spørsmål", href: "/veiledning#faq" },
-    ],
-    contact: [
-      {
-        title: "Kundeservice",
-        href: "https://www.solskjerming-as.no/kundeservice/kontaktoss",
-      },
-      {
-        title: "Om oss",
-        href: "https://www.solskjerming-as.no/kundeservice/om-solskjerming-as",
-      },
-    ],
-  },
-
-  legal: [
-    {
-      title: "Personvern",
-      href: "juridisk/personvern",
-    },
-    {
-      title: "Betingelser",
-      href: "juridisk/betingelser",
-    },
-  ],
-};
-
-export const footer = {
+export const FOOTER_CONTENT = {
   logo: "Terrassemarkise",
   tagline: "Skandinaviske terrassemarkiser for de øyeblikkene som betyr mest.",
   sections: [
     {
       title: "Produkter",
       links: [
-        { label: "Palladio", href: "/produkter/palladio-terrassemarkise" },
-        { label: "Corsica", href: "/produkter/corsica-terrassemarkise" },
-        { label: "Jamaica", href: "/produkter/jamaica-terrassemarkise" },
+        {
+          label: "Palladio",
+          href: SITE_URLS.AWNINGS + "palladio",
+        },
+        {
+          label: "Corsica",
+          href: SITE_URLS.AWNINGS + "corsica",
+        },
+        {
+          label: "Jamaica",
+          href: SITE_URLS.AWNINGS + "jamaica",
+        },
+        // { label: "Produkt XYZ", href: SITE_URLS.AWNINGS + "/produkt-xyz" }, <-- Legg enkelt til nye lenker i footer slik
       ],
     },
     {
       title: "Veiledning",
       links: [
-        { label: "Guider & tips", href: "/veiledning" },
-        { label: "Kundehistorier", href: "/veiledning/case-studier" },
-        { label: "Prisberegner", href: "/veiledning/verktoy" },
+        { label: "Guider & tips", href: SITE_URLS.RESOURCES },
+        { label: "Prosjekter", href: SITE_URLS.CASE_STUDIES },
+        { label: "Kalkulator", href: SITE_URLS.TOOLS + "kalkulator" },
       ],
     },
     {
       title: "Selskapet",
       links: [
-        { label: "Om oss", href: "/om-oss" },
-        { label: "Kontakt", href: "/kontakt" },
-        { label: "Juridisk", href: "/juridisk" },
+        { label: "Om oss", href: SITE_URLS.ABOUT },
+        { label: "Kontakt", href: SITE_URLS.CONTACT },
+        { label: "Juridisk", href: SITE_URLS.LEGAL },
+        // { label: "Prosjekter", href: "/prosjekter" }, <-- Legg enkelt til nye lenker i footer slik
       ],
     },
   ],
@@ -97,7 +49,7 @@ export const footer = {
   parentCompany: {
     text: "En del av",
     name: "Solskjerming AS",
-    href: "https://solskjerming-as.no",
+    href: EXTERNAL_URLS.MAIN_DOMAIN_BASE,
   },
   copyright: `© ${new Date().getFullYear()} Solskjerming AS. Alle rettigheter forbeholdt.`,
 };

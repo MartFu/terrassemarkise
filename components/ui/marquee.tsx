@@ -40,7 +40,7 @@ export function Marquee({
         aria-label="Spill/ikke spill animasjonen"
         onClick={() => setPaused(!paused)}
         title={paused ? "Spill animasjon" : "Ikke spill animasjonen"}
-        className="absolute z-1 p-1 bg-accent cursor-pointer rounded-md top-0 group-hover:opacity-100 opacity-0"
+        className="absolute z-1 p-1 bg-accent text-accent-foreground cursor-pointer rounded top-0 group-hover:opacity-100 opacity-0"
       >
         {paused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
       </button>

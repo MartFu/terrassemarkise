@@ -1,6 +1,6 @@
 "use client";
 
-import { ProductSpecItem } from "@/innhold/produkter";
+import { ProductSpecItem } from "@/lib/products/types";
 import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
 import { useState } from "react";
@@ -12,9 +12,9 @@ export function ProductSpecList({ specs }: { specs: ProductSpecItem[] }) {
     <div className="grid gap-px">
       <button
         onClick={() => setExpanded(!expanded)}
-        className="py-2 px-4 text-sm cursor-pointer border border-border/40 bg-card/30 hover:bg-card/80 flex items-center justify-between w-full focus-visible:outline-0 focus-visible:ring-0"
+        className="h-10 px-4 text-sm cursor-pointer border border-border/40 bg-card/30 hover:bg-card/80 flex items-center justify-between w-full focus-visible:outline-0 focus-visible:ring-0"
       >
-        <span className="pointer-events-none underline">{`${!expanded ? "Vis" : "Skjul"} tekniske detaljer`}</span>
+        <span className="pointer-events-none underline text-xs">{`${!expanded ? "Vis" : "Skjul"} tekniske detaljer`}</span>
         <ChevronRight
           className={cn(
             "w-4 h-4 transition-[rotate]",

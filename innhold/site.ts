@@ -3,6 +3,7 @@
  * Central place for global content that appears across multiple pages
  */
 
+import { SITE_URLS } from "@/lib/constants";
 import type { NavItem, CompanyInfo, ContactInfo, CtaBanner } from "./types";
 
 export const siteConfig = {
@@ -40,7 +41,7 @@ export const footerNavigation = {
   produkter: {
     title: "Produkter",
     links: [
-      { label: "Alle produkter", href: "/produkter" },
+      { label: "Alle produkter", href: SITE_URLS.PRODUCTS },
       { label: "Kategori 1", href: "/produkter?kategori=1" },
       { label: "Kategori 2", href: "/produkter?kategori=2" },
       { label: "Nettbutikk", href: siteConfig.shopUrl },
@@ -49,16 +50,15 @@ export const footerNavigation = {
   ressurser: {
     title: "Ressurser",
     links: [
-      { label: "Veiledninger", href: "/veiledning" },
-      { label: "Verktøy", href: "/veiledning#verktoy" },
-      { label: "FAQ", href: "/kontakt#faq" },
+      { label: "Veiledninger", href: SITE_URLS.RESOURCES },
+      { label: "Verktøy", href: SITE_URLS.TOOLS },
     ],
   },
   selskap: {
     title: "Selskap",
     links: [
-      { label: "Om oss", href: "/om-oss" },
-      { label: "Kontakt oss", href: "/kontakt" },
+      { label: "Om oss", href: SITE_URLS.ABOUT },
+      { label: "Kontakt oss", href: SITE_URLS.CONTACT },
       { label: "Karriere", href: "/om-oss#karriere" },
     ],
   },

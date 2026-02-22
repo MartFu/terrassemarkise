@@ -4,12 +4,16 @@
  * Designed for warmth, comfort, and understated luxury
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Cabinet+Grotesk:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;450;500&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
+
+/* For sticky elements */
+@custom-variant stuck (&[data-stuck]);
+@custom-variant group-stuck (.group[data-stuck] &);
 
 @theme inline {
   --color-background: var(--background);
@@ -36,8 +40,8 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--background);
+  --color-sidebar-foreground: var(--foreground);
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
   --color-sidebar-accent: var(--sidebar-accent);
@@ -46,8 +50,8 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
   --font-sans: "Inter", ui-sans-serif, system-ui;
-  --font-display: "Montserrat", sans-serif;
-  --font-serif: "Playfair Display", ui-serif, Georgia;
+  --font-display: "Instrument Sans", ui-sans-serif, system-ui;
+  --font-serif: "Instrument Sans", ui-sans-serif, system-ui;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -58,8 +62,9 @@
 }
 
 :root {
-  --header-height: 90px;
-  --footer-height: 426px;
+  --header-height: 5.625rem;
+  --footer-height: 22.5rem;
+  --footer-compact-height: 9.5rem;
 
   --background: oklch(1 0 0);
   --foreground: oklch(0.1452 0.0021 286.1313);
@@ -67,12 +72,12 @@
   --card-foreground: oklch(0.1452 0.0021 286.1313);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.1452 0.0021 286.1313);
-  --primary: oklch(0.5868 0.1455 151.94);
+  --primary: oklch(0.4954 0.1187 155.26);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.9163 0.042 285.5407);
-  --secondary-foreground: oklch(0.2573 0.0861 281.2883);
-  --muted: oklch(0.956 0.004 286.324);
-  --muted-foreground: oklch(0.5007 0.0047 286.2288);
+  --secondary: oklch(0.93 0.018 75);
+  --secondary-foreground: oklch(0.28 0.04 75);
+  --muted: oklch(0.945 0.008 75);
+  --muted-foreground: oklch(0.5 0.012 75);
   --accent: oklch(0.5854 0.2041 277.1173);
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.6368 0.2078 25.3313);
@@ -118,6 +123,10 @@
   --shadow-2xl: 0px 4px 15px 0px hsl(0 0% 0% / 0.2);
   --tracking-normal: 0.01em;
   --spacing: 0.25rem;
+
+  @media (width >= 40rem) {
+    --footer-height: calc(24px+830px+16px);
+  }
 }
 
 .dark {
@@ -127,7 +136,7 @@
   --card-foreground: oklch(0.9626 0.0066 286.2742);
   --popover: oklch(0 0 0);
   --popover-foreground: oklch(0.9626 0.0066 286.2742);
-  --primary: oklch(0.5679 0.2113 276.7065);
+  --primary: oklch(0.4954 0.1187 155.26);
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.2542 0.0611 281.1423);
   --secondary-foreground: oklch(0.9163 0.042 285.5407);
@@ -145,7 +154,7 @@
   --chart-3: oklch(0.7853 0.1041 274.7134);
   --chart-4: oklch(0.5413 0.2466 293.009);
   --chart-5: oklch(0.3588 0.1354 278.6973);
-  --sidebar: oklch(0.0969 0 0);
+  --sidebar: oklch(0.11 0 0);
   --sidebar-foreground: oklch(0.9626 0.0066 286.2742);
   --sidebar-primary: oklch(0.5679 0.2113 276.7065);
   --sidebar-primary-foreground: oklch(1 0 0);
@@ -199,6 +208,10 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  p {
+    @apply opacity-80;
+  }
+
   h1,
   h2,
   h3,
@@ -207,8 +220,66 @@
   h6 {
     font-family: var(--font-display);
     font-optical-sizing: auto;
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
   }
+
+  h1,
+  h2 {
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/*
+
+Animation
+
+*/
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: var(--fadeup-final-opacity, 1);
+    transform: translateY(0);
+  }
+}
+
+.bg-noise {
+  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noise)" opacity="0.2"/%3E%3C/svg%3E');
+  background-repeat: repeat;
+}
+
+.dark .bg-noise {
+  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3CfeColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.03"/%3E%3C/svg%3E');
+}
+
+.sticky-el {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 5;
 }

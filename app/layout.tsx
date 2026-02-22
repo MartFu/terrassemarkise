@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 
 import "./globals.css";
 import Layout from "@/components/layout";
+import StagingLock from "@/components/soft-staging-lock";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -27,11 +28,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html suppressHydrationWarning lang="en" className={inter.variable}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <Layout>{children}</Layout>
+        <StagingLock>
+          <Layout>{children}</Layout>
+        </StagingLock>
       </body>
     </html>
   );

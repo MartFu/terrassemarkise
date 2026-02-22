@@ -18,7 +18,7 @@ export interface HeroContent {
   description: string;
   primaryCta?: CtaButton;
   secondaryCta?: CtaButton;
-  image?: ImageContent;
+  image?: ImageWithMetadata;
   badges?: string[];
 }
 
@@ -28,7 +28,7 @@ export interface CtaButton {
   external?: boolean;
 }
 
-export interface ImageContent {
+export interface ImageWithMetadata {
   src: string;
   alt: string;
   width?: number;
@@ -44,7 +44,7 @@ export interface TrustIndicator {
 
 export interface TrustLogos {
   title?: string;
-  logos: ImageContent[];
+  logos: ImageWithMetadata[];
 }
 
 // Features
@@ -69,7 +69,7 @@ export interface Testimonial {
     name: string;
     role?: string;
     company?: string;
-    avatar?: ImageContent;
+    avatar?: ImageWithMetadata;
   };
   rating?: number;
 }
@@ -92,7 +92,7 @@ export interface Product {
     currency: string;
     unit?: string;
   };
-  image: ImageContent;
+  image: ImageWithMetadata;
   features?: string[];
   category?: string;
   tags?: string[];
@@ -113,8 +113,10 @@ export interface ProductSection {
 export interface TeamMember {
   name: string;
   role: string;
-  bio?: string;
-  image: ImageContent;
+  description?: string;
+  education?: string;
+  image: ImageWithMetadata;
+  imageAlt?: string;
   social?: {
     linkedin?: string;
     email?: string;
@@ -184,13 +186,13 @@ export interface Article {
   content?: string;
   author?: {
     name: string;
-    avatar?: ImageContent;
+    avatar?: ImageWithMetadata;
   };
   publishedAt: string;
   updatedAt?: string;
   category: string;
   tags?: string[];
-  image?: ImageContent;
+  image?: ImageWithMetadata;
   readingTime?: string;
 }
 

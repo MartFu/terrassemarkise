@@ -9,14 +9,18 @@ import {
   ArrowUpRight,
   Grid,
   List,
+  Plus,
+  Minus,
+  ChevronUp,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, truncate } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Section } from "../ui/section";
+import { Section } from "@/components/ui/section";
 import Link from "next/link";
+import { SITE_URLS } from "@/lib/constants";
 
 // Types
 export interface Article {
@@ -64,23 +68,20 @@ function ArticleMeta({
   return (
     <div
       className={cn(
-        "flex items-center gap-4 text-sm",
+        "flex flex-wrap items-center justify-between text-sm",
         featured ? "text-foreground" : "text-muted-foreground",
         className,
       )}
     >
-      <div className="flex items-center gap-1.5">
+      <div className="flex flex-nowrap items-center gap-1.5">
         <Calendar className="h-3.5 w-3.5" />
         <time>{date}</time>
       </div>
       {readTime && (
-        <>
-          <span className="text-border">•</span>
-          <div className="flex items-center gap-1.5">
-            <Clock className="h-3.5 w-3.5" />
-            <span>{readTime}</span>
-          </div>
-        </>
+        <div className="flex flex-nowrap items-center gap-1.5">
+          <Clock className="h-3.5 w-3.5" />
+          <span>{readTime}</span>
+        </div>
       )}
     </div>
   );
@@ -89,9 +90,9 @@ function ArticleMeta({
 // Featured Article Card (Large)
 function FeaturedArticleCard({ article }: { article: Article }) {
   return (
-    <article className="group relative overflow-hidden border-b border-border/30 hover:bg-accent/10">
+    <article className="group relative overflow-hidden border border-border/30 hover:bg-accent/10 rounded-md">
       <Link
-        href={`/veiledning/${article.id}`}
+        href={SITE_URLS.RESOURCES + article.id}
         className="hover:no-underline! py-0!"
       >
         {article.image && (
@@ -138,22 +139,22 @@ function ArticleCard({ article }: { article: Article }) {
   return (
     <article
       className={
-        "group relative flex flex-col overflow-hidden hover:bg-secondary/10 border-border/30 border"
+        "group group-hover/list:opacity-60 hover:opacity-100 relative flex flex-col overflow-hidden hover:bg-secondary/10 border-border/30 border rounded-md"
       }
     >
       <Link
-        href={`/veiledning/${article.id}`}
+        href={`/${article.id}`}
         className="flex flex-col h-full hover:no-underline!"
       >
         <div className="flex flex-col flex-1 p-8">
           <div className="mb-3">
             <CategoryBadge category={article.category} />
           </div>
-          <h3 className="mb-3 text-xl font-bold tracking-tight text-foreground transition-colors group-hover:text-accent leading-tight">
+          <h3 className="mb-3 text-lg font-bold tracking-tight text-foreground transition-colors group-hover:text-accent leading-tight">
             {article.title}
           </h3>
-          <p className="mb-4 flex-1 text-muted-foreground leading-relaxed line-clamp-3">
-            {article.excerpt}
+          <p className="mb-4 flex-1 text-sm text-muted-foreground leading-relaxed line-clamp-3">
+            {truncate(article.excerpt, 100)}
           </p>
           <ArticleMeta
             date={article.date}
@@ -169,9 +170,9 @@ function ArticleCard({ article }: { article: Article }) {
 // List View Article Card
 function ArticleListItem({ article }: { article: Article }) {
   return (
-    <article className="group relative my-px ml-px border-l border-y border-border/30 last:border-b-0 transition-colors hover:bg-secondary/20">
+    <article className="group group-hover/list:opacity-60 hover:opacity-100 transition-opacity relative my-px ml-px border-l border-y border-border/30 last:border-b-0 transition-colors hover:bg-secondary/20">
       <Link
-        href={`/articles/${article.id}`}
+        href={SITE_URLS.RESOURCES + article.id}
         className="flex gap-6 py-6 px-4 hover:no-underline!"
       >
         {article.image && (
@@ -220,12 +221,14 @@ function ArticleFilters({
   onCategoryChange: (category: string | null) => void;
   onToggleLayout: () => void;
 }) {
+  const [tagsExpanded, setTagsExpanded] = useState(false);
+
   return (
-    <div className="flex flex-wrap items-center gap-2">
+    <div className="flex flex-wrap items-center gap-1">
       <div className="w-full flex items-center gap-1">
         <div className="relative flex-1">
           <Search className="w-4 h-4 absolute top-1/2 -translate-y-1/2 right-2" />
-          <Input placeholder="Søk..." className="w-full" />
+          <Input placeholder="Søk..." className="w-full bg-background" />
         </div>
         <Button
           title={"Vis som " + (layout === "grid" ? "liste" : "rutenett")}
@@ -237,11 +240,12 @@ function ArticleFilters({
           {layout === "grid" ? <List /> : <Grid />}
         </Button>
       </div>
-      <span className="w-full uppercase font-serif tracking-wide text-sm font-semibold">
+      <span className="w-full uppercase tracking-wide text-sm font-semibold my-1">
         Tagger
       </span>
       <Button
         variant={"outline"}
+        size="sm"
         onClick={() => onCategoryChange(null)}
         className={cn(
           activeCategory === null ? "bg-accent text-accent-foreground" : "",
@@ -250,21 +254,50 @@ function ArticleFilters({
         Alle
       </Button>
 
-      {categories.map((category) => (
-        <Button
-          key={category}
-          value={category}
-          variant={"outline"}
-          onClick={() => onCategoryChange(category)}
-          className={cn(
-            activeCategory === category
-              ? "bg-accent text-accent-foreground"
-              : "",
-          )}
-        >
-          {category}
-        </Button>
-      ))}
+      {tagsExpanded &&
+        categories.map((category) => (
+          <Button
+            key={category}
+            value={category}
+            variant={"outline"}
+            size="sm"
+            onClick={() => onCategoryChange(category)}
+            className={cn(
+              activeCategory === category
+                ? "bg-accent text-accent-foreground"
+                : "",
+            )}
+          >
+            {category}
+          </Button>
+        ))}
+
+      {!tagsExpanded &&
+        categories.slice(0, 3).map((category) => (
+          <Button
+            key={category}
+            value={category}
+            variant={"outline"}
+            size="sm"
+            onClick={() => onCategoryChange(category)}
+            className={cn(
+              activeCategory === category
+                ? "bg-accent text-accent-foreground"
+                : "",
+            )}
+          >
+            {category}
+          </Button>
+        ))}
+
+      <Button
+        variant={"ghost"}
+        size="sm"
+        onClick={() => setTagsExpanded(!tagsExpanded)}
+      >
+        {tagsExpanded ? "Vis færre" : "Vis flere"}
+        {tagsExpanded ? <ChevronUp /> : <Plus />}
+      </Button>
     </div>
   );
 }
@@ -305,8 +338,8 @@ export function ArticleList({ articles, className }: ArticleListProps) {
         )}
       </Container>
 
-      <Container className="grid md:grid-cols-[0.33fr_1fr]">
-        <div className="mb-2 border-0 md:mb-0 h-full relative md:border-r md:border-t border-border/30 pt-2 pr-2 mt-px">
+      <Container className="grid md:grid-cols-[0.28fr_1fr] min-h-120 gap-2">
+        <div className="mb-2 bg-card/50 border-0 md:mb-0 h-full relative md:border border-border/30 p-2 rounded-md mt-2">
           <div className="block md:sticky top-32">
             {categories.length > 1 && (
               <ArticleFilters
@@ -322,10 +355,10 @@ export function ArticleList({ articles, className }: ArticleListProps) {
           </div>
         </div>
 
-        <div className="pt-0">
+        <div className="pt-2">
           {/* Regular Articles */}
           {layout === "grid" && (
-            <div className="grid md:grid-cols-2 2xl:grid-cols-3 gap-px p-px">
+            <div className="grid md:grid-cols-2 2xl:grid-cols-3 gap-2 p-px group/list">
               {regularArticles.map((article) => (
                 <ArticleCard key={article.id} article={article} />
               ))}
@@ -333,7 +366,7 @@ export function ArticleList({ articles, className }: ArticleListProps) {
           )}
 
           {layout === "list" && (
-            <div className="divide-y divide-border">
+            <div className="divide-y divide-border group/list">
               {regularArticles.map((article) => (
                 <ArticleListItem key={article.id} article={article} />
               ))}

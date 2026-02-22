@@ -1,21 +1,25 @@
-import { ImageGallery } from "@/components/product-gallery";
+import Breadcrumbs from "@/components/breadcrumbs";
+import { ImageGallery } from "@/components/shared/product-gallery";
+import { FAQSection } from "@/components/shared/faq-section";
 import { ProductSpecList } from "@/components/spec-list";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
+import { Stack } from "@/components/ui/stack";
 import { Heading } from "@/components/ui/typography";
 import { products } from "@/innhold/produkter";
-import { cn } from "@/lib/utils";
-import { ArrowLeft, Check } from "lucide-react";
-import Image from "next/image";
+import { Check, ExternalLink, Send } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { EXTERNAL_URLS, SITE_URLS } from "@/lib/constants";
 
 export function generateStaticParams() {
   try {
@@ -40,24 +44,37 @@ export default async function ProductDetails({
 
   return (
     <article className="min-h-screen">
-      <Container className="py-4">
-        <Link
-          href="/produkter"
-          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
-        >
-          <ArrowLeft size={14} /> Tilbake til produkter
-        </Link>
-      </Container>
-      <Section className="py-0!">
+      <Section className="py-8!">
+        <Container className="pb-0">
+          <Breadcrumbs
+            breadcrumbs={[
+              {
+                label: "Hjem",
+                href: "/",
+              },
+              {
+                label: "Produkter",
+                href: "/produkter",
+              },
+              {
+                label: product.name,
+              },
+            ]}
+          />
+        </Container>
+      </Section>
+      <Section className="pt-0!">
         <Container>
-          <div className="flex flex-col gap-8">
-            <ImageGallery images={product.images} />
+          <Stack space={8}>
+            <ImageGallery
+              images={product.images.map((img) => ({ ...img, id: img.src }))}
+            />
 
             {/* Product Info */}
             <div className="space-y-8">
               {/* Header: Name & Price */}
               <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-                <div className="space-y-1.5">
+                <Stack space={2}>
                   <Heading
                     level="h1"
                     className="text-xl! md:text-xl! lg:text-2xl!"
@@ -67,12 +84,14 @@ export default async function ProductDetails({
                   <p className="text-base text-muted-foreground">
                     {product.tagline}
                   </p>
-                </div>
+                </Stack>
 
                 <div className="md:text-right">
-                  <span className="block font-heading text-lg md:text-xl lg:text-2xl font-semibold text-accent">
-                    {product.price}
-                  </span>
+                  <div className="block space-x-2 font-heading text-lg md:text-xl lg:text-2xl font-semibold ">
+                    <span>Fra</span>
+                    <span className="text-accent">{product.priceFrom}</span>
+                    <span>,-</span>
+                  </div>
                   <span className="text-xs text-muted-foreground">
                     inkl. mva, ekskl. montering
                   </span>
@@ -87,10 +106,10 @@ export default async function ProductDetails({
                     {product.description}
                   </p>
 
-                  <div className="space-y-6">
+                  <div className="space-y-10">
                     {/* Features List */}
                     <ul className="space-y-3">
-                      {product.features.map((feature) => (
+                      {product.highlights.map((feature) => (
                         <li
                           key={feature}
                           className="flex items-start gap-2.5 text-sm text-foreground"
@@ -107,62 +126,97 @@ export default async function ProductDetails({
                     {/* Actions */}
                     <div className="flex flex-wrap items-center gap-3">
                       <Button size="lg" asChild>
-                        <Link href="/kontakt">Konfigurer i nettbutikken</Link>
+                        <Link
+                          href={
+                            EXTERNAL_URLS.MAIN_DOMAIN_STORE_AWNINGS_TERRACE_AWNINGS +
+                            "/" +
+                            product.slug
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Konfigurer i nettbutikken
+                          <ExternalLink />
+                        </Link>
                       </Button>
                       <Button variant="outline" size="lg" asChild>
                         <Link
-                          href="https://solskjerming-as.no"
+                          href={
+                            EXTERNAL_URLS.MAIN_DOMAIN_STORE_AWNINGS_TERRACE_AWNINGS
+                          }
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           Utforsk hele vårt sortiment
+                          <ExternalLink />
                         </Link>
                       </Button>
                     </div>
                   </div>
                 </div>
 
-                <div className="h-full relative grid gap-3">
+                <Stack space={2} className="relative">
                   {product.highlights.map((f) => (
-                    <div
-                      key={f.label}
-                      className="relative flex items-center justify-between gap-1.5 border border-border/40 bg-card/30 px-4 py-2"
+                    <Stack
+                      direction={"row"}
+                      align="center"
+                      justify="between"
+                      key={f}
+                      className="border border-border/40 bg-card/30 px-4 h-10"
                     >
                       <span className="text-xs uppercase tracking-wider text-muted-foreground">
-                        {f.label}
+                        {f}
                       </span>
                       <span className="block font-heading text-sm font-medium text-foreground">
-                        {f.value}
+                        {f}
                       </span>
-                    </div>
+                    </Stack>
                   ))}
-                  <ProductSpecList specs={product.specs} />
-                </div>
+                  <ProductSpecList specs={product.getSpecs()} />
+                </Stack>
               </div>
             </div>
-          </div>
+          </Stack>
         </Container>
       </Section>
 
-      <Section className="mt-16">
-        <Container className="space-y-3">
-          <Heading level={"h2"}>Ofte stilte spørsmål</Heading>
-          <Accordion
-            type="single"
-            defaultValue={product?.faqs[0]?.question}
-            collapsible
-          >
-            {product?.faqs &&
-              product.faqs.length > 0 &&
-              product.faqs.map((faq) => (
-                <AccordionItem value={faq.question} key={faq.question}>
-                  <AccordionTrigger>{faq.question}</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-4">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-          </Accordion>
+      {/* {product?.faqs && (
+        <FAQSection
+          title={`Kunder som handler ${product.name} lurer ofte på`}
+          faqs={product.faqs}
+        />
+      )} */}
+
+      <Section>
+        <Container>
+          <Card className="text-center bg-card/40">
+            <CardHeader>
+              <CardTitle>Fant du ikke det du lette etter?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription>
+                Send oss en melding, så hjelper vi deg med å finne <br /> den
+                beste løsningen for akkurat ditt tilfelle!
+              </CardDescription>
+              <div className="space-x-2 mt-10">
+                <Button asChild>
+                  <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={EXTERNAL_URLS.MAIN_DOMAIN_STORE_AWNINGS}
+                  >
+                    Se hele vårt sortiment
+                    <ExternalLink />
+                  </Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link href={SITE_URLS.CONTACT}>
+                    Send oss en melding <Send />
+                  </Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </Container>
       </Section>
     </article>

@@ -1,19 +1,20 @@
-// app/components/error-boundary.tsx
+// components/error-boundary.tsx
 "use client";
 
 import { Component, ErrorInfo, ReactNode } from "react";
 import { ErrorDisplay } from "./error-display";
+import { ContentServiceError } from "@/lib/content-loader.error";
 
 interface Props {
   children: ReactNode;
   fallback?: ReactNode;
-  context?: "veiledning" | "juridisk";
+  context?: "veiledning" | "juridisk" | string;
   slug?: string;
 }
 
 interface State {
   hasError: boolean;
-  error?: Error;
+  error?: Error | ContentServiceError;
 }
 
 export class ErrorBoundary extends Component<Props, State> {
@@ -27,16 +28,26 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error("ErrorBoundary caught an error:", error, errorInfo);
+    console.error("[ErrorBoundary] Caught error:", {
+      error: error.message,
+      stack: error.stack,
+      componentStack: errorInfo.componentStack,
+      context: this.props.context,
+      slug: this.props.slug,
+    });
   }
 
   render() {
     if (this.state.hasError) {
-      return this.props.fallback || (
+      if (this.props.fallback) {
+        return this.props.fallback;
+      }
+
+      return (
         <ErrorDisplay
           error={this.state.error}
-          context={this.props.context || "veiledning"}
-          slug={this.props.slug || ""}
+          context={this.props.context}
+          slug={this.props.slug}
         />
       );
     }

@@ -1,0 +1,922 @@
+(globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([typeof document === "object" ? document.currentScript : undefined,
+"[project]/lib/utils.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "cn",
+    ()=>cn,
+    "debounce",
+    ()=>debounce,
+    "throttle",
+    ()=>throttle,
+    "truncate",
+    ()=>truncate
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/clsx/dist/clsx.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$tailwind$2d$merge$2f$dist$2f$bundle$2d$mjs$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/tailwind-merge/dist/bundle-mjs.mjs [app-client] (ecmascript)");
+;
+;
+function cn(...inputs) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$tailwind$2d$merge$2f$dist$2f$bundle$2d$mjs$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["twMerge"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["clsx"])(inputs));
+}
+function debounce(fn, delay) {
+    let timeoutId = null;
+    return (...args)=>{
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+        timeoutId = setTimeout(()=>{
+            fn(...args);
+            timeoutId = null;
+        }, delay);
+    };
+}
+function throttle(fn, limit) {
+    let inThrottle = false;
+    return (...args)=>{
+        if (!inThrottle) {
+            fn(...args);
+            inThrottle = true;
+            setTimeout(()=>{
+                inThrottle = false;
+            }, limit);
+        }
+    };
+}
+const truncate = (text, length = 100)=>{
+    if (!text || text.length <= length) {
+        return text;
+    }
+    // Ensure we don't return just "..." if length is very small
+    const threshold = length > 3 ? length - 3 : length;
+    return `${text.substring(0, threshold).trim()}...`;
+};
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/components/ui/navigation-menu.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "NavigationMenu",
+    ()=>NavigationMenu,
+    "NavigationMenuContent",
+    ()=>NavigationMenuContent,
+    "NavigationMenuIndicator",
+    ()=>NavigationMenuIndicator,
+    "NavigationMenuItem",
+    ()=>NavigationMenuItem,
+    "NavigationMenuLink",
+    ()=>NavigationMenuLink,
+    "NavigationMenuList",
+    ()=>NavigationMenuList,
+    "NavigationMenuTrigger",
+    ()=>NavigationMenuTrigger,
+    "NavigationMenuViewport",
+    ()=>NavigationMenuViewport,
+    "navigationMenuTriggerStyle",
+    ()=>navigationMenuTriggerStyle
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$class$2d$variance$2d$authority$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/class-variance-authority/dist/index.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$navigation$2d$menu$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__NavigationMenu$3e$__ = __turbopack_context__.i("[project]/node_modules/@radix-ui/react-navigation-menu/dist/index.mjs [app-client] (ecmascript) <export * as NavigationMenu>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/utils.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDownIcon$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-down.js [app-client] (ecmascript) <export default as ChevronDownIcon>");
+;
+;
+;
+;
+;
+function NavigationMenu({ className, children, viewport = true, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$navigation$2d$menu$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__NavigationMenu$3e$__["NavigationMenu"].Root, {
+        "data-slot": "navigation-menu",
+        "data-viewport": viewport,
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("max-w-max group/navigation-menu relative flex max-w-max flex-1 items-center justify-center", className),
+        ...props,
+        children: [
+            children,
+            viewport && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(NavigationMenuViewport, {}, void 0, false, {
+                fileName: "[project]/components/ui/navigation-menu.tsx",
+                lineNumber: 27,
+                columnNumber: 20
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/ui/navigation-menu.tsx",
+        lineNumber: 17,
+        columnNumber: 5
+    }, this);
+}
+_c = NavigationMenu;
+function NavigationMenuList({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$navigation$2d$menu$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__NavigationMenu$3e$__["NavigationMenu"].List, {
+        "data-slot": "navigation-menu-list",
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("gap-0 group flex flex-1 list-none items-center justify-center", className),
+        ...props
+    }, void 0, false, {
+        fileName: "[project]/components/ui/navigation-menu.tsx",
+        lineNumber: 37,
+        columnNumber: 5
+    }, this);
+}
+_c1 = NavigationMenuList;
+function NavigationMenuItem({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$navigation$2d$menu$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__NavigationMenu$3e$__["NavigationMenu"].Item, {
+        "data-slot": "navigation-menu-item",
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("relative", className),
+        ...props
+    }, void 0, false, {
+        fileName: "[project]/components/ui/navigation-menu.tsx",
+        lineNumber: 53,
+        columnNumber: 5
+    }, this);
+}
+_c2 = NavigationMenuItem;
+const navigationMenuTriggerStyle = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$class$2d$variance$2d$authority$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cva"])("bg-background hover:bg-muted focus:bg-muted data-open:hover:bg-muted data-open:focus:bg-muted data-open:bg-muted/50 focus-visible:ring-ring/50 data-popup-open:bg-muted/50 data-popup-open:hover:bg-muted rounded-md px-4 py-2 text-sm font-medium transition-all focus-visible:ring-[3px] focus-visible:outline-1 disabled:opacity-50 group/navigation-menu-trigger inline-flex h-9 w-max items-center justify-center disabled:pointer-events-none outline-none");
+function NavigationMenuTrigger({ className, children, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$navigation$2d$menu$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__NavigationMenu$3e$__["NavigationMenu"].Trigger, {
+        "data-slot": "navigation-menu-trigger",
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])(navigationMenuTriggerStyle(), "group", className),
+        ...props,
+        children: [
+            children,
+            " ",
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDownIcon$3e$__["ChevronDownIcon"], {
+                className: "relative top-[1px] ml-1 size-3 transition duration-300 group-data-open/navigation-menu-trigger:rotate-180 group-data-popup-open/navigation-menu-trigger:rotate-180",
+                "aria-hidden": "true"
+            }, void 0, false, {
+                fileName: "[project]/components/ui/navigation-menu.tsx",
+                lineNumber: 77,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/ui/navigation-menu.tsx",
+        lineNumber: 71,
+        columnNumber: 5
+    }, this);
+}
+_c3 = NavigationMenuTrigger;
+function NavigationMenuContent({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$navigation$2d$menu$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__NavigationMenu$3e$__["NavigationMenu"].Content, {
+        "data-slot": "navigation-menu-content",
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 group-data-[viewport=false]/navigation-menu:bg-popover group-data-[viewport=false]/navigation-menu:text-popover-foreground group-data-[viewport=false]/navigation-menu:data-open:animate-in group-data-[viewport=false]/navigation-menu:data-closed:animate-out group-data-[viewport=false]/navigation-menu:data-closed:zoom-out-95 group-data-[viewport=false]/navigation-menu:data-open:zoom-in-95 group-data-[viewport=false]/navigation-menu:data-open:fade-in-0 group-data-[viewport=false]/navigation-menu:data-closed:fade-out-0 group-data-[viewport=false]/navigation-menu:ring-foreground/10 p-2 pr-2.5 ease-[cubic-bezier(0.22,1,0.36,1)] group-data-[viewport=false]/navigation-menu:rounded-md group-data-[viewport=false]/navigation-menu:shadow group-data-[viewport=false]/navigation-menu:ring-1 group-data-[viewport=false]/navigation-menu:duration-300 top-0 left-0 w-full group-data-[viewport=false]/navigation-menu:top-full group-data-[viewport=false]/navigation-menu:mt-1.5 group-data-[viewport=false]/navigation-menu:overflow-hidden **:data-[slot=navigation-menu-link]:focus:ring-0 **:data-[slot=navigation-menu-link]:focus:outline-none md:absolute md:w-auto", className),
+        ...props
+    }, void 0, false, {
+        fileName: "[project]/components/ui/navigation-menu.tsx",
+        lineNumber: 87,
+        columnNumber: 5
+    }, this);
+}
+_c4 = NavigationMenuContent;
+function NavigationMenuViewport({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("absolute top-full left-0 isolate z-50 flex justify-center"),
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$navigation$2d$menu$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__NavigationMenu$3e$__["NavigationMenu"].Viewport, {
+            "data-slot": "navigation-menu-viewport",
+            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("bg-popover text-popover-foreground data-open:animate-in data-closed:animate-out data-closed:zoom-out-95 data-open:zoom-in-90 ring-foreground/10 rounded-lg shadow ring-1 duration-100 origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden md:w-[var(--radix-navigation-menu-viewport-width)]", className),
+            ...props
+        }, void 0, false, {
+            fileName: "[project]/components/ui/navigation-menu.tsx",
+            lineNumber: 108,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/components/ui/navigation-menu.tsx",
+        lineNumber: 103,
+        columnNumber: 5
+    }, this);
+}
+_c5 = NavigationMenuViewport;
+function NavigationMenuLink({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$navigation$2d$menu$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__NavigationMenu$3e$__["NavigationMenu"].Link, {
+        "data-slot": "navigation-menu-link",
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("data-[active=true]:focus:bg-muted data-[active=true]:hover:bg-muted data-[active=true]:bg-muted/50 focus-visible:ring-ring/50 hover:bg-muted focus:bg-muted flex items-center gap-1.5 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4", className),
+        ...props
+    }, void 0, false, {
+        fileName: "[project]/components/ui/navigation-menu.tsx",
+        lineNumber: 125,
+        columnNumber: 5
+    }, this);
+}
+_c6 = NavigationMenuLink;
+function NavigationMenuIndicator({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$navigation$2d$menu$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__NavigationMenu$3e$__["NavigationMenu"].Indicator, {
+        "data-slot": "navigation-menu-indicator",
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden", className),
+        ...props,
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "bg-border rounded-tl-sm shadow-md relative top-[60%] h-2 w-2 rotate-45"
+        }, void 0, false, {
+            fileName: "[project]/components/ui/navigation-menu.tsx",
+            lineNumber: 146,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/components/ui/navigation-menu.tsx",
+        lineNumber: 138,
+        columnNumber: 5
+    }, this);
+}
+_c7 = NavigationMenuIndicator;
+;
+var _c, _c1, _c2, _c3, _c4, _c5, _c6, _c7;
+__turbopack_context__.k.register(_c, "NavigationMenu");
+__turbopack_context__.k.register(_c1, "NavigationMenuList");
+__turbopack_context__.k.register(_c2, "NavigationMenuItem");
+__turbopack_context__.k.register(_c3, "NavigationMenuTrigger");
+__turbopack_context__.k.register(_c4, "NavigationMenuContent");
+__turbopack_context__.k.register(_c5, "NavigationMenuViewport");
+__turbopack_context__.k.register(_c6, "NavigationMenuLink");
+__turbopack_context__.k.register(_c7, "NavigationMenuIndicator");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/components/ui/container.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Bleed",
+    ()=>Bleed,
+    "Container",
+    ()=>Container
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/utils.ts [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+;
+;
+function toRem(units) {
+    return `${units * 0.25}rem`;
+}
+/**
+ * Returns inline styles that produce the requested bleed for a single axis.
+ * Uses the `calc(50% - 50vw)` trick so it works regardless of container width
+ * and doesn't rely on `position: relative` shenanigans.
+ */ function fullBleedStyles(sides) {
+    const h = sides === "horizontal" || sides === "both" || sides === "left" || sides === "right";
+    const v = sides === "vertical" || sides === "both" || sides === "top" || sides === "bottom";
+    const styles = {};
+    if (h) {
+        const bleedLeft = sides === "right" ? undefined : "calc(50% - 50vw)";
+        const bleedRight = sides === "left" ? undefined : "calc(50% - 50vw)";
+        if (bleedLeft !== undefined) styles.marginLeft = bleedLeft;
+        if (bleedRight !== undefined) styles.marginRight = bleedRight;
+        styles.width = "100vw";
+        styles.maxWidth = "100vw";
+    }
+    if (v) {
+        const bleedTop = sides === "bottom" ? undefined : "calc(50% - 50vh)";
+        const bleedBottom = sides === "top" ? undefined : "calc(50% - 50vh)";
+        if (bleedTop !== undefined) styles.marginTop = bleedTop;
+        if (bleedBottom !== undefined) styles.marginBottom = bleedBottom;
+    }
+    return styles;
+}
+/**
+ * Returns inline styles for a fixed numeric bleed.
+ * Relies on CSS custom properties so the Tailwind negative-margin utilities
+ * (`-ml-(--bleed-left)` etc.) resolve correctly in Tailwind v4.
+ * In Tailwind v3 projects swap the utilities for `style={{ marginLeft: -value }}`.
+ */ function fixedBleedStyles(amount, sides) {
+    const v = toRem(amount);
+    switch(sides){
+        case "left":
+            return {
+                "--bleed-left": v
+            };
+        case "right":
+            return {
+                "--bleed-right": v
+            };
+        case "top":
+            return {
+                "--bleed-top": v
+            };
+        case "bottom":
+            return {
+                "--bleed-bottom": v
+            };
+        case "horizontal":
+            return {
+                "--bleed-x": v
+            };
+        case "vertical":
+            return {
+                "--bleed-y": v
+            };
+        case "both":
+            return {
+                "--bleed-all": v
+            };
+    }
+}
+function objectBleedStyles(amount) {
+    const styles = {};
+    const resolve = (val, dimension)=>val === "full" ? dimension === "h" ? "calc(50% - 50vw)" : "calc(50% - 50vh)" : `-${toRem(val)}`;
+    if (amount.left !== undefined) styles.marginLeft = resolve(amount.left, "h");
+    if (amount.right !== undefined) styles.marginRight = resolve(amount.right, "h");
+    if (amount.top !== undefined) styles.marginTop = resolve(amount.top, "v");
+    if (amount.bottom !== undefined) styles.marginBottom = resolve(amount.bottom, "v");
+    // If any horizontal side bled, we need to widen the element
+    if (amount.left !== undefined || amount.right !== undefined) {
+        const leftRem = amount.left === "full" ? "50vw" : amount.left !== undefined ? toRem(amount.left) : "0px";
+        const rightRem = amount.right === "full" ? "50vw" : amount.right !== undefined ? toRem(amount.right) : "0px";
+        styles.width = `calc(100% + ${leftRem} + ${rightRem})`;
+        styles.maxWidth = "none";
+    }
+    return styles;
+}
+// Tailwind v4 utility classes for fixed numeric bleeds
+const fixedBleedClasses = {
+    left: "-ml-(--bleed-left)",
+    right: "-mr-(--bleed-right)",
+    top: "-mt-(--bleed-top)",
+    bottom: "-mb-(--bleed-bottom)",
+    horizontal: "-mx-(--bleed-x)",
+    vertical: "-my-(--bleed-y)",
+    both: "-m-(--bleed-all)"
+};
+const Bleed = /*#__PURE__*/ _s(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].forwardRef(_c = _s(function Bleed({ children, className, sides = "horizontal", amount = "full", backgroundOnly = false, backgroundColor, style, ...props }, ref) {
+    _s();
+    if (("TURBOPACK compile-time value", "development") === "development" && backgroundOnly && amount !== "full") {
+        console.warn("[Bleed] `backgroundOnly` is designed for full-bleed sections. " + "With a numeric or object `amount` the compensating padding may be inaccurate.");
+    }
+    const { bleedStyle, bleedClass } = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].useMemo({
+        "Bleed.Bleed.useMemo": ()=>{
+            if (amount === "full") {
+                return {
+                    bleedStyle: fullBleedStyles(sides),
+                    bleedClass: ""
+                };
+            }
+            if (typeof amount === "number") {
+                return {
+                    bleedStyle: fixedBleedStyles(amount, sides),
+                    bleedClass: fixedBleedClasses[sides]
+                };
+            }
+            // object
+            return {
+                bleedStyle: objectBleedStyles(amount),
+                bleedClass: ""
+            };
+        }
+    }["Bleed.Bleed.useMemo"], [
+        amount,
+        sides
+    ]);
+    /**
+     * For backgroundOnly mode we compensate with padding so the children
+     * remain at the original container width. This is pure CSS — no
+     * ResizeObserver or getComputedStyle needed.
+     *
+     * For a full horizontal bleed the compensating padding equals
+     * `calc(50vw - 50%)` on each side.
+     */ const innerStyle = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].useMemo({
+        "Bleed.Bleed.useMemo[innerStyle]": ()=>{
+            if (!backgroundOnly) return {};
+            if (amount === "full") {
+                // Mirror the bleed outward so content is re-centered
+                return {
+                    paddingLeft: "calc(50vw - 50%)",
+                    paddingRight: "calc(50vw - 50%)"
+                };
+            }
+            if (typeof amount === "number") {
+                const v = toRem(amount);
+                if (sides === "horizontal" || sides === "both") return {
+                    paddingLeft: v,
+                    paddingRight: v
+                };
+                if (sides === "left") return {
+                    paddingLeft: v
+                };
+                if (sides === "right") return {
+                    paddingRight: v
+                };
+            }
+            return {};
+        }
+    }["Bleed.Bleed.useMemo[innerStyle]"], [
+        backgroundOnly,
+        amount,
+        sides
+    ]);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        ref: ref,
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])(bleedClass, backgroundColor, className),
+        style: {
+            ...bleedStyle,
+            ...style
+        },
+        ...props,
+        children: backgroundOnly ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            style: innerStyle,
+            children: children
+        }, void 0, false, {
+            fileName: "[project]/components/ui/container.tsx",
+            lineNumber: 252,
+            columnNumber: 27
+        }, this) : children
+    }, void 0, false, {
+        fileName: "[project]/components/ui/container.tsx",
+        lineNumber: 246,
+        columnNumber: 7
+    }, this);
+}, "rjJ1j6bP0kB/SUMuRuQmteqC6EI=")), "rjJ1j6bP0kB/SUMuRuQmteqC6EI=");
+_c1 = Bleed;
+Bleed.displayName = "Bleed";
+const DEFAULT_PADDING_X = {
+    default: "px-4",
+    sm: "sm:px-6",
+    md: "md:px-10",
+    lg: "lg:px-16",
+    xl: "xl:px-20"
+};
+function Container({ as, ref, children, className, fluid = false, debug = false, maxWidth = "1440px", paddingX, ...props }) {
+    const Component = as ?? "div";
+    const px = {
+        ...DEFAULT_PADDING_X,
+        ...paddingX
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Component, {
+        ref: ref,
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("mx-auto w-full", px.default, px.sm, px.md, px.lg, px.xl, !fluid && "max-w-(--container-max)", debug && "outline-2 outline-red-500 outline-offset-2", className),
+        style: {
+            "--container-max": maxWidth
+        },
+        ...props,
+        children: children
+    }, void 0, false, {
+        fileName: "[project]/components/ui/container.tsx",
+        lineNumber: 345,
+        columnNumber: 5
+    }, this);
+}
+_c2 = Container;
+Container.displayName = "Container";
+var _c, _c1, _c2;
+__turbopack_context__.k.register(_c, "Bleed$React.forwardRef");
+__turbopack_context__.k.register(_c1, "Bleed");
+__turbopack_context__.k.register(_c2, "Container");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/innhold/selskap/index.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "COMPANY_INFO",
+    ()=>COMPANY_INFO,
+    "HREF_AWNING_STORE",
+    ()=>HREF_AWNING_STORE,
+    "MAIN_DOMAIN",
+    ()=>MAIN_DOMAIN,
+    "SOCIAL_LINKS",
+    ()=>SOCIAL_LINKS,
+    "TEAM",
+    ()=>TEAM,
+    "URL_EXTENSION_AWNING_TERRACE_AWNINGS",
+    ()=>URL_EXTENSION_AWNING_TERRACE_AWNINGS,
+    "URL_EXTENSION_STORE_BASE",
+    ()=>URL_EXTENSION_STORE_BASE,
+    "getCompanyOwner",
+    ()=>getCompanyOwner,
+    "getTeamMemberByName",
+    ()=>getTeamMemberByName
+]);
+const MAIN_DOMAIN = "https://www.solskjerming-as.no";
+const URL_EXTENSION_STORE_BASE = "/nettbutikk";
+const URL_EXTENSION_AWNING_TERRACE_AWNINGS = "/utvendig-solskjerming/markiser/terrassemarkiser";
+const HREF_AWNING_STORE = `${MAIN_DOMAIN}${URL_EXTENSION_STORE_BASE}${URL_EXTENSION_AWNING_TERRACE_AWNINGS}`;
+const COMPANY_INFO = {
+    name: "Solskjerming AS",
+    address: "Måkeveien 6",
+    city: "Fredrikstad",
+    zip: "1679 Kråkerøy",
+    phone: "+47 6910 9888",
+    email: "post@solskjerming-as.no",
+    orgNumber: "911 884 348",
+    days: "Mandag - Fredag",
+    hours: "09:00 - 16:00",
+    foundingYear: 2013,
+    googleMapsUrl: "https://www.google.com/maps/place/Solskjerming+AS/@59.1923084,10.8940538,776m/data=!3m1!1e3!4m8!3m7!1s0x46441d30e3966679:0xf37539405794f955!8m2!3d59.1923084!4d10.8966341!9m1!1b1!16s%2Fg%2F12mkvpyvk?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D"
+};
+const TEAM = [
+    {
+        name: "Håkon Renskoug",
+        role: "Eier og produktansvarlig",
+        description: "Maskiningeniør",
+        image: "assets/team/h-renskoug.jpg",
+        imageAlt: "Portrett av Håkon Renskoug",
+        isOwner: true
+    },
+    {
+        name: "Morten Øhrn",
+        role: "Daglig leder",
+        image: "assets/team/m-ohrn.jpg",
+        imageAlt: "Portrett av Morten Øhrn"
+    },
+    {
+        name: "Ståle Krabset",
+        role: "Økonomiansvarlig",
+        description: "Bygningsingeniør",
+        imageAlt: "Portrett av Ståle Krabset",
+        image: "assets/team/s-krabset.jpg"
+    }
+];
+const SOCIAL_LINKS = [
+    {
+        name: "Facebook",
+        href: "https://www.facebook.com/Solskjerming.AS",
+        icon: "Facebook"
+    },
+    {
+        name: "YouTube",
+        href: "https://www.youtube.com/@SolskjermingAS",
+        icon: "YouTube"
+    }
+];
+const getTeamMemberByName = (name)=>{
+    return TEAM.find((member)=>member.name === name);
+};
+const getCompanyOwner = ()=>{
+    const owner = getTeamMemberByName("Håkon Renskoug");
+    if (!owner) {
+        throw new Error("[getCompanyOwner]: Owner not found in TEAM. Update TEAM variable to include owner or rewrite function getCompanyOwner");
+    }
+    return owner;
+};
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/components/ui/logo.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Logo",
+    ()=>Logo
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/utils.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+"use client";
+;
+;
+;
+function Logo({ className, imageClassName = "h-18 w-auto" }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+        href: "/",
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])(className),
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                src: "/assets/logo.png",
+                alt: "Solkjerming AS",
+                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("block dark:hidden", imageClassName)
+            }, void 0, false, {
+                fileName: "[project]/components/ui/logo.tsx",
+                lineNumber: 16,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                src: "/assets/logo-white.png",
+                alt: "Solkjerming AS",
+                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("hidden dark:block", imageClassName)
+            }, void 0, false, {
+                fileName: "[project]/components/ui/logo.tsx",
+                lineNumber: 22,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/ui/logo.tsx",
+        lineNumber: 14,
+        columnNumber: 5
+    }, this);
+}
+_c = Logo;
+var _c;
+__turbopack_context__.k.register(_c, "Logo");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/components/layout/Header.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Header",
+    ()=>Header
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$navigation$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/navigation-menu.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$container$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/container.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$innhold$2f$selskap$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/innhold/selskap/index.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$logo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/logo.tsx [app-client] (ecmascript)");
+"use client";
+;
+;
+;
+;
+;
+;
+const components = [
+    {
+        title: "Alert Dialog",
+        href: "/docs/primitives/alert-dialog",
+        description: "A modal dialog that interrupts the user with important content and expects a response."
+    },
+    {
+        title: "Hover Card",
+        href: "/docs/primitives/hover-card",
+        description: "For sighted users to preview content available behind a link."
+    },
+    {
+        title: "Progress",
+        href: "/docs/primitives/progress",
+        description: "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar."
+    },
+    {
+        title: "Scroll-area",
+        href: "/docs/primitives/scroll-area",
+        description: "Visually or semantically separates content."
+    },
+    {
+        title: "Tabs",
+        href: "/docs/primitives/tabs",
+        description: "A set of layered sections of content—known as tab panels—that are displayed one at a time."
+    },
+    {
+        title: "Tooltip",
+        href: "/docs/primitives/tooltip",
+        description: "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it."
+    }
+];
+function Header() {
+    const navLinkClassName = "bg-transparent! hover:bg-transparent! text-sidebar-foreground cursor-pointer hover:text-accent";
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
+        className: "bg-sidebar/90 backdrop-blur-md text-foreground border-b border-sidebar-border sticky top-0 z-999 shadow-sm",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$container$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Container"], {
+            className: "h-(--header-height) flex items-center justify-between",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$logo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Logo"], {}, void 0, false, {
+                    fileName: "[project]/components/layout/Header.tsx",
+                    lineNumber: 58,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$navigation$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NavigationMenu"], {
+                    "aria-label": "Primærnavigasjon",
+                    className: "hidden md:flex",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$navigation$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NavigationMenuList"], {
+                        className: "gap-2",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$navigation$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NavigationMenuItem"], {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$navigation$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NavigationMenuTrigger"], {
+                                        className: navLinkClassName,
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                            href: "/produkter",
+                                            children: "Produkter"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/layout/Header.tsx",
+                                            lineNumber: 67,
+                                            columnNumber: 17
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/layout/Header.tsx",
+                                        lineNumber: 66,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$navigation$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NavigationMenuContent"], {
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                            className: "grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]",
+                                            children: components.map((component)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(NavigationMenuListItem, {
+                                                    title: component.title,
+                                                    href: component.href,
+                                                    children: component.description
+                                                }, component.title, false, {
+                                                    fileName: "[project]/components/layout/Header.tsx",
+                                                    lineNumber: 72,
+                                                    columnNumber: 21
+                                                }, this))
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/layout/Header.tsx",
+                                            lineNumber: 70,
+                                            columnNumber: 17
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/layout/Header.tsx",
+                                        lineNumber: 69,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/layout/Header.tsx",
+                                lineNumber: 65,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$navigation$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NavigationMenuItem"], {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$navigation$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NavigationMenuTrigger"], {
+                                        className: navLinkClassName,
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                            href: "/veiledning",
+                                            children: "Veiledning"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/layout/Header.tsx",
+                                            lineNumber: 85,
+                                            columnNumber: 17
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/layout/Header.tsx",
+                                        lineNumber: 84,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$navigation$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NavigationMenuContent"], {
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                            className: "grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]",
+                                            children: components.map((component)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(NavigationMenuListItem, {
+                                                    title: component.title,
+                                                    href: component.href,
+                                                    children: component.description
+                                                }, component.title, false, {
+                                                    fileName: "[project]/components/layout/Header.tsx",
+                                                    lineNumber: 90,
+                                                    columnNumber: 21
+                                                }, this))
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/layout/Header.tsx",
+                                            lineNumber: 88,
+                                            columnNumber: 17
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/layout/Header.tsx",
+                                        lineNumber: 87,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/layout/Header.tsx",
+                                lineNumber: 83,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$navigation$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NavigationMenuItem"], {
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$navigation$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NavigationMenuLink"], {
+                                    asChild: true,
+                                    className: navLinkClassName,
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                        href: "/om-oss",
+                                        children: "Om oss"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/layout/Header.tsx",
+                                        lineNumber: 104,
+                                        columnNumber: 17
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/components/layout/Header.tsx",
+                                    lineNumber: 103,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/layout/Header.tsx",
+                                lineNumber: 102,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$navigation$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NavigationMenuItem"], {
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$navigation$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NavigationMenuLink"], {
+                                    asChild: true,
+                                    className: navLinkClassName,
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                        href: "/kontakt",
+                                        children: "Kontakt"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/layout/Header.tsx",
+                                        lineNumber: 109,
+                                        columnNumber: 17
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/components/layout/Header.tsx",
+                                    lineNumber: 108,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/layout/Header.tsx",
+                                lineNumber: 107,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$navigation$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NavigationMenuItem"], {
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$navigation$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NavigationMenuLink"], {
+                                    asChild: true,
+                                    className: "bg-primary hover:bg-primary/90 text-primary-foreground px-4 ml-4 rounded-full",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                        href: __TURBOPACK__imported__module__$5b$project$5d2f$innhold$2f$selskap$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["HREF_AWNING_STORE"],
+                                        rel: "noopener noreferrer",
+                                        target: "_black",
+                                        children: "Besøk nettbutikken"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/layout/Header.tsx",
+                                        lineNumber: 120,
+                                        columnNumber: 17
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/components/layout/Header.tsx",
+                                    lineNumber: 114,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/layout/Header.tsx",
+                                lineNumber: 113,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/layout/Header.tsx",
+                        lineNumber: 64,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/components/layout/Header.tsx",
+                    lineNumber: 60,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/components/layout/Header.tsx",
+            lineNumber: 57,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/components/layout/Header.tsx",
+        lineNumber: 56,
+        columnNumber: 5
+    }, this);
+}
+_c = Header;
+function NavigationMenuListItem({ title, children, href, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+        ...props,
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$navigation$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["NavigationMenuLink"], {
+            asChild: true,
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                href: href,
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex flex-col gap-1 text-sm",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "leading-none font-medium",
+                            children: title
+                        }, void 0, false, {
+                            fileName: "[project]/components/layout/Header.tsx",
+                            lineNumber: 146,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "text-muted-foreground line-clamp-2",
+                            children: children
+                        }, void 0, false, {
+                            fileName: "[project]/components/layout/Header.tsx",
+                            lineNumber: 147,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/layout/Header.tsx",
+                    lineNumber: 145,
+                    columnNumber: 11
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/components/layout/Header.tsx",
+                lineNumber: 144,
+                columnNumber: 9
+            }, this)
+        }, void 0, false, {
+            fileName: "[project]/components/layout/Header.tsx",
+            lineNumber: 143,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/components/layout/Header.tsx",
+        lineNumber: 142,
+        columnNumber: 5
+    }, this);
+}
+_c1 = NavigationMenuListItem;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "Header");
+__turbopack_context__.k.register(_c1, "NavigationMenuListItem");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+]);
+
+//# sourceMappingURL=_8fe5058d._.js.map

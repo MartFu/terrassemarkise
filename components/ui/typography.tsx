@@ -4,12 +4,12 @@ import { forwardRef, ElementType } from "react";
 
 // --- Heading ---
 
-const headingVariants = cva("tracking-tight font-semibold text-foreground", {
+const headingVariants = cva("tracking-tight", {
   variants: {
     level: {
-      h1: "text-2xl md:text-3xl lg:text-4xl leading-tight",
+      h1: "text-2xl md:text-3xl lg:text-5xl leading-tight max-w-[28ch]",
       h2: "text-xl md:text-2xl lg:text-3xl leading-tight",
-      h3: "text-2xl md:text-3xl leading-snug",
+      h3: "text-xl md:text-xl leading-snug",
       h4: "text-xl md:text-2xl leading-snug",
       h5: "text-lg md:text-xl leading-snug",
       h6: "text-base md:text-lg leading-snug font-medium",
@@ -26,7 +26,7 @@ const headingVariants = cva("tracking-tight font-semibold text-foreground", {
   },
 });
 
-interface HeadingProps
+export interface HeadingProps
   extends
     React.HTMLAttributes<HTMLHeadingElement>,
     VariantProps<typeof headingVariants> {
@@ -40,7 +40,11 @@ export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
     return (
       <Component
         ref={ref}
-        className={cn(className, headingVariants({ level, impact }))}
+        className={cn(
+          "text-inherit",
+          className,
+          headingVariants({ level, impact }),
+        )}
         {...props}
       />
     );
@@ -50,7 +54,7 @@ Heading.displayName = "Heading";
 
 // --- Text ---
 
-const textVariants = cva("text-foreground", {
+const textVariants = cva("max-w-lg", {
   variants: {
     size: {
       xl: "text-lg md:text-xl leading-relaxed",
@@ -65,7 +69,7 @@ const textVariants = cva("text-foreground", {
       semibold: "font-semibold",
     },
     color: {
-      default: "text-foreground",
+      default: "text-inherit",
       muted: "text-muted-foreground",
       accent: "text-accent-foreground",
     },
@@ -77,7 +81,7 @@ const textVariants = cva("text-foreground", {
   },
 });
 
-interface TextProps
+export interface TextProps
   extends
     Omit<React.HTMLAttributes<HTMLElement>, "color">,
     VariantProps<typeof textVariants> {
@@ -93,7 +97,7 @@ export const Text = forwardRef<HTMLElement, TextProps>(
     return (
       <Component
         ref={ref}
-        className={cn(textVariants({ size, weight, color }), className)}
+        className={cn(className, textVariants({ size, weight, color }))}
         {...props}
       />
     );

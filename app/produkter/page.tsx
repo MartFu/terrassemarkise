@@ -1,91 +1,166 @@
-import { Button } from "@/components/ui/button";
+/* eslint-disable @next/next/no-img-element */
+
+import { PageHeader } from "@/components/shared/page-header";
+
+import { FAQSection } from "@/components/shared/faq-section";
+
+import { cn } from "@/lib/utils";
+
+import { ContactCTA } from "@/components/shared/contact-cta";
+import { ProductShowcase } from "@/components/products/product-showcase";
+import { submitContactForm } from "../actions/contact";
+import { ComparisonTable } from "@/components/comparison-table/table";
+import {
+  generateStaticProductComparisonData,
+  productComparisonTableMetadata,
+} from "@/innhold/produkter/comparison.data";
+import {
+  Section,
+  SectionDescription,
+  SectionHeader,
+  SectionTitle,
+} from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
-import { Section } from "@/components/ui/section";
-import { products } from "@/innhold/produkter";
-import { ArrowRight, Check } from "lucide-react";
-import Link from "next/link";
+import { Stack } from "@/components/ui/stack";
+import { Text } from "@/components/ui/typography";
+import { Info } from "lucide-react";
 
 export default async function Page() {
+  const comparisonData = generateStaticProductComparisonData();
+
+  console.log("COMP data", comparisonData);
+
   return (
-    <Section>
-      <Container>
-        {products.map((product, i) => (
-          <div
-            key={product.slug}
-            className={`grid items-center gap-10 lg:grid-cols-2 ${
-              i % 2 === 1 ? "lg:direction-rtl" : ""
-            }`}
-          >
-            {/* Image */}
-            <Link
-              href={`/produkter/${product.slug}`}
-              className={`group overflow-hidden rounded-lg ${
-                i % 2 === 1 ? "lg:order-2" : ""
-              }`}
-            >
-              <div className="relative aspect-473 overflow-hidden rounded-lg">
-                {/*  eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={product.images?.[0]?.src ?? ""}
-                  alt={product.name}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-foreground/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              </div>
-            </Link>
+    <>
+      <PageHeader
+        className="min-h-[50vh]"
+        title={["Terrassemarkiser —", "skreddersydd på dine mål"]}
+        description="Vi produserer din markise på bestilling, slik at den passer optimalt til ditt tilfelle."
+        backgroundImage="/mock/product-folding.png"
+        backgroundImageOptions={{
+          opacity: 1,
+          objectFit: "cover",
+          objectPosition: "center",
+        }}
+        overlay="xl"
+        breadcrumbs={[{ label: "Hjem", href: "/" }, { label: "Produkter" }]}
+      />
 
-            {/* Info */}
-            <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-              <span className="text-xs font-medium uppercase tracking-widest text-accent">
-                {product.price}
-              </span>
-              <h2 className="mt-2 font-heading text-3xl font-semibold text-foreground md:text-4xl">
-                {product.name}
-              </h2>
-              <p className="mt-1 text-muted-foreground">{product.tagline}</p>
-              <p className="mt-4 max-w-lg leading-relaxed text-muted-foreground">
-                {product.description}
-              </p>
-
-              {/* Highlights */}
-              <div className="mt-6 flex flex-wrap gap-6">
-                {product.highlights.map((h) => (
-                  <div key={h.label}>
-                    <span className="block font-heading text-xl font-semibold text-foreground">
-                      {h.value}
-                    </span>
-                    <span className="text-xs uppercase tracking-wider text-muted-foreground">
-                      {h.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Features */}
-              <ul className="mt-6 grid gap-1.5 sm:grid-cols-2">
-                {product.features.slice(0, 4).map((f) => (
-                  <li
-                    key={f}
-                    className="flex items-start gap-2 text-sm text-foreground"
-                  >
-                    <Check size={14} className="mt-0.5 shrink-0 text-primary" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-8">
-                <Button asChild>
-                  <Link href={`/produkter/${product.slug}`}>
-                    Se detaljer <ArrowRight size={14} className="ml-1" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </Container>
-    </Section>
+      <ProductShowcase />
+      <Section id="sammenligning">
+        <Container>
+          <SectionHeader className="text-center mx-auto">
+            <SectionTitle className="text-center">
+              Detaljert sammenligning av <br /> våre terrassemarkiser
+            </SectionTitle>
+            <SectionDescription className="text-center">
+              Alle forskjeller mellom våre modeller samlet på ett sted. Fra
+              kassettbeskyttelse og vindautomasjon til app-styring og
+              smarthjem-integrasjon.
+            </SectionDescription>
+          </SectionHeader>
+          <ComparisonTable
+            data={comparisonData}
+            footer={
+              <Stack direction={"row"} align="center" justify="between">
+                <Text size="sm">
+                  <span className="text-red-500">* </span>
+                  {productComparisonTableMetadata.footer.note}
+                </Text>
+                <Info className="text-accent" />
+              </Stack>
+            }
+          />
+        </Container>
+      </Section>
+      <FAQSection
+        className="pt-12! pb-0!"
+        title="Ofte stilte spørsmål"
+        description="Vi får mange spørsmål om våre produkter. Her finner du noen svar på
+          generelle spørsmål som omhandler flere eller alle produkter. Du kan
+          finne spørsmål tilknyttet spesifikke produkter ved å trykke deg inn på
+          den respektive produktsiden."
+        decriptionSize="sm"
+        faqs={[
+          {
+            question: "Tåler markisene det norske været?",
+            answer:
+              "Ja, disse markisene egner seg utmerket for norske forhold.",
+          },
+        ]}
+      />
+      <ContactCTA
+        title="Utfordrende å finne rett løsning?"
+        description="Vi har forståelse for at det kan være vanskelig å velge rett selv. Kontakt oss, så hjelper vi deg med å finne den beste løsningen for nettopp ditt behov."
+        formProps={{
+          serverAction: submitContactForm,
+          fields: [
+            {
+              label: "Navn",
+              name: "name",
+              type: "text",
+              placeholder: "Ditt navn",
+            },
+            {
+              label: "Telefon",
+              name: "phone",
+              type: "tel",
+              placeholder: "000 00 000",
+            },
+            {
+              label: "Epost",
+              name: "email",
+              type: "email",
+              placeholder: "ola@email.com",
+            },
+            {
+              label: "Sted",
+              name: "location",
+              type: "select",
+              placeholder: "Velg din region",
+              options: [
+                {
+                  label: "Fredrikstad",
+                  value: "fredrikstad",
+                },
+                {
+                  label: "Oslo",
+                  value: "oslo",
+                },
+                {
+                  label: "Akershus",
+                  value: "akershus",
+                },
+                {
+                  label: "Vestfold",
+                  value: "vestfold",
+                },
+                {
+                  label: "Annet",
+                  value: "annet",
+                },
+              ],
+            },
+            {
+              label: "Melding",
+              type: "textarea",
+              name: "message",
+              placeholder: "Skriv din melding her",
+              rows: 6,
+            },
+          ],
+          submitLabel: "Send forespørsel",
+        }}
+      >
+        <div
+          className={cn(
+            "mt-4 text-xs absolute bottom-12 shadow-md shadow-black/5 p-6 rounded-xl bg-accent/10 text-foreground font-medium",
+          )}
+        >
+          Visste du at vi tilbyr gratis befaring i Østfold, Oslo, Akershus og
+          Vestfold
+        </div>
+      </ContactCTA>
+    </>
   );
 }
