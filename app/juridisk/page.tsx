@@ -28,7 +28,7 @@ export default async function JuridiskIndexPage() {
           {totalCount === 0 ? (
             <div className="text-center py-12">
               <p className="text-muted-foreground mb-2">
-                Ingen juridiske dokumenter funnet.
+                Ingen dokumenter funnet.
               </p>
               <p className="text-sm text-muted-foreground/60">
                 Sjekk tilbake senere for oppdatert informasjon.

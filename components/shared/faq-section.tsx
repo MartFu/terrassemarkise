@@ -42,7 +42,7 @@ export function FAQSection({
   children,
 }: React.PropsWithChildren<FAQSectionProps>) {
   return (
-    <Section className={cn("pt-0!", className)}>
+    <Section className={className}>
       <Container className="space-y-3">
         <Grid gap={8} cols={{ sm: 1, lg: 2 }}>
           <Stack space={4} className="relative">

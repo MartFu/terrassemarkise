@@ -74,7 +74,7 @@ export const products: Product[] = [
     sensors: ["eolis3d", "eolisWire", "eolisRTS"],
 
     // Exclusions - which colors/fabrics are NOT available
-    excludedColors: ["RAL 9005", "RAL 9005"],
+    excludedColors: ["RAL 9005"],
     // excludedFabrics omitted (all fabrics available)
 
     highlights: [

@@ -8,6 +8,7 @@ import { Section } from "@/components/ui/section";
 import { Stack } from "@/components/ui/stack";
 
 import { REVIEWS } from "@/innhold/reviews";
+import { SITE_URLS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
@@ -145,7 +146,7 @@ export default function Page() {
               </p>
 
               <Button asChild>
-                <Link href="/">
+                <Link href={SITE_URLS.AWNING_OPTIONS}>
                   Se duk- og fargealternativer <ArrowUpRight />
                 </Link>
               </Button>
@@ -224,6 +225,11 @@ export default function Page() {
               backgroundRepeat: "no-repeat",
             }}
           />
+          <Button asChild variant="secondary">
+            <Link href={SITE_URLS.WIND_SENSORS}>
+              Les mer om våre vindsensorer <ArrowUpRight />
+            </Link>
+          </Button>
         </Container>
       </Section>
 
@@ -245,7 +251,7 @@ export default function Page() {
             </p>
 
             <Button asChild variant="secondary">
-              <Link href="/">
+              <Link href={SITE_URLS.MOTORS}>
                 Se motoralternativer og automatisering <ArrowUpRight />
               </Link>
             </Button>
@@ -279,7 +285,7 @@ export default function Page() {
               />
             </div>
             <Button asChild variant="secondary" className="ml-auto">
-              <Link href="/">
+              <Link href={SITE_URLS.RESOURCES}>
                 Utforsk vårt ressursbibliotek <ArrowUpRight />
               </Link>
             </Button>
@@ -307,7 +313,7 @@ export default function Page() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <Button asChild variant="default" size="lg">
-                <Link href="/">Se våre modeller</Link>
+                <Link href={SITE_URLS.AWNINGS}>Se våre modeller</Link>
               </Button>
               <Button
                 asChild
@@ -315,7 +321,7 @@ export default function Page() {
                 className="hover:bg-secondary-foreground hover:text-secondary"
                 size="lg"
               >
-                <Link href="/">Kontakt oss</Link>
+                <Link href={SITE_URLS.CONTACT}>Kontakt oss</Link>
               </Button>
             </div>
             <p className="text-sm text-secondary-foreground/60 pt-4">

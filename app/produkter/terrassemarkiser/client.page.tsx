@@ -22,6 +22,7 @@ import { Stack } from "@/components/ui/stack";
 import { Text } from "@/components/ui/typography";
 import { Info } from "lucide-react";
 import { StaticComparisonData } from "@/lib/comparison";
+import { SITE_URLS } from "@/lib/constants";
 import {
   GENERAL_PRODUCT_FAQS,
   GENERAL_PRODUCT_FAQS_SECTION_CONTENT,
@@ -45,7 +46,11 @@ export function ClientPage({
           objectPosition: "center",
         }}
         overlay="xl"
-        breadcrumbs={[{ label: "Hjem", href: "/" }, { label: "Produkter" }]}
+        breadcrumbs={[
+          { label: "Hjem", href: "/" },
+          { label: "Produkter", href: SITE_URLS.PRODUCTS },
+          { label: "Terrassemarkiser" },
+        ]}
       />
 
       <ProductShowcase />
