@@ -48,7 +48,7 @@ export function Frontmatter({
       <Container>
         {breadcrumbs && <Breadcrumbs breadcrumbs={breadcrumbs} />}
 
-        <div className={cn("not-prose", className)}>
+        <div className={cn("not-prose mt-4 md:mt-12", className)}>
           {/* Tags */}
           {tags && (
             <div

@@ -3,7 +3,7 @@
 import { PageHeader } from "@/components/shared/page-header";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Container } from "@/components/ui/container";
-import { Crease, CreaseBox } from "@/components/ui/crease";
+import { CreaseBox } from "@/components/ui/crease";
 import {
   Field,
   FieldDescription,
@@ -25,7 +25,6 @@ import {
 } from "@/components/ui/select";
 import { Stack } from "@/components/ui/stack";
 import { Textarea } from "@/components/ui/textarea";
-import { Heading, Text } from "@/components/ui/typography";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { EXTERNAL_URLS, SITE_URLS } from "@/lib/constants";
 import { cn } from "@/lib/utils";

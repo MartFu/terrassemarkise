@@ -62,7 +62,7 @@ export default function Page() {
                 <h2 className="text-xl md:text-3xl">
                   Gi fasaden rett uttrykk med <br /> riktig terrassemarkise
                 </h2>
-                <p className="md:text-lg opacity-80 max-w-prose">
+                <p className="md:text-lg max-w-prose">
                   Alle terrassemarkiser gir skygge. Forskjellen ligger i hva de
                   gjør med boligen din når solen har gått ned og duken er rullet
                   inn. Valget handler om du vil at markisen skal være en del av
@@ -71,13 +71,13 @@ export default function Page() {
               </Stack>
 
               <Grid
-                preset="two-col"
+                preset="one-col"
                 gap={{ base: 20, md: 16 }}
                 className="min-h-80"
               >
-                <Stack preset="card">
+                <Stack preset="row-between-collapse">
                   <div
-                    className={cn("h-80 w-full")}
+                    className={cn("h-80 aspect-video w-full")}
                     style={{
                       backgroundImage: "url('/mock/product-window.png')",
                       backgroundSize: "cover",
@@ -85,7 +85,7 @@ export default function Page() {
                       backgroundRepeat: "no-repeat",
                     }}
                   />
-                  <p className="text-lg opacity-80 max-w-prose">
+                  <p className="max-w-prose md:ml-12">
                     Den åpne markisen er et klassisk arkitektonisk element. Den
                     setter preg på fasaden og kan monteres mot både vegg og tak.
                     For ekstra beskyttelse kan den utstyres med toppdeksel mot
@@ -95,9 +95,9 @@ export default function Page() {
                   </p>
                 </Stack>
 
-                <Stack preset="card">
+                <Stack preset="row-between-collapse">
                   <div
-                    className={cn("h-80 w-full")}
+                    className={cn("h-80 aspect-video w-full")}
                     style={{
                       backgroundImage: "url('/mock/product-folding.png')",
                       backgroundSize: "cover",
@@ -105,7 +105,7 @@ export default function Page() {
                       backgroundRepeat: "no-repeat",
                     }}
                   />
-                  <p className="text-lg opacity-80 max-w-prose">
+                  <p className="max-w-prose md:ml-12">
                     Kassettmarkisen er den diskré perfeksjonisten. Når den ikke
                     er i bruk, forsvinner duken helt inn i en lukket profil.
                     Ingenting er eksponert for vær, støv eller fugler, og
@@ -127,7 +127,7 @@ export default function Page() {
         className="bg-secondary text-secondary-foreground"
       >
         <Container>
-          <Grid preset="two-col" gap={{ base: 8, md: 20 }}>
+          <Grid preset="two-col" gap={{ base: 8, md: 20 }} className="md:px-12">
             <Stack preset="card" align={"start"}>
               <h2 className="text-3xl">Gjør markisen din</h2>
               <p className="max-w-prose">
@@ -293,30 +293,35 @@ export default function Page() {
         </Container>
       </Section>
 
-      <Section className="bg-secondary">
+      <Section className="bg-secondary text-secondary-foreground py-24">
         <Container>
-          <Grid preset="two-col">
-            <Stack preset="card" align={"start"}>
-              <h2 className="text-3xl">
-                Forleng sommeren med våre terrassemarkiser
-              </h2>
-              <p className="max-w-prose">
-                Se hele utvalget vårt, eller ta kontakt med oss direkte. Vi
-                svarer raskt og hjelper deg å finne riktig løsning - enten du er
-                privatperson eller driver en virksomhet med krav til holdbarhet
-                og driftssikkerhet.
-              </p>
-
-              <Stack preset="row">
-                <Button asChild variant="secondary">
-                  <Link href="/">Se våre modeller</Link>
-                </Button>
-                <Button asChild variant="secondary">
-                  <Link href="/">Se våre modeller</Link>
-                </Button>
-              </Stack>
-            </Stack>
-          </Grid>
+          <div className="max-w-3xl mx-auto text-center space-y-8">
+            <h2 className="text-5xl text-balance">
+              Forleng sommeren med våre terrassemarkiser
+            </h2>
+            <p className="text-xl leading-relaxed max-w-2xl mx-auto">
+              Se hele utvalget vårt, eller ta kontakt med oss direkte. Vi svarer
+              raskt og hjelper deg å finne riktig løsning - enten du er
+              privatperson eller driver en virksomhet med krav til holdbarhet og
+              driftssikkerhet.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <Button asChild variant="default" size="lg">
+                <Link href="/">Se våre modeller</Link>
+              </Button>
+              <Button
+                asChild
+                variant="ghost"
+                className="hover:bg-secondary-foreground hover:text-secondary"
+                size="lg"
+              >
+                <Link href="/">Kontakt oss</Link>
+              </Button>
+            </div>
+            <p className="text-sm text-secondary-foreground/60 pt-4">
+              Gratis veiledning • Rask respons
+            </p>
+          </div>
         </Container>
       </Section>
     </div>

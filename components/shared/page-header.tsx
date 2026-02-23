@@ -15,7 +15,7 @@ export interface PageHeaderProps {
   };
   sectionSpacing?: SectionProps["spacing"];
   contentStackOptions?: Omit<StackProps<"div">, "children">;
-
+  minHeight?: string;
   layout?: "default" | "compact" | "centered" | "split";
   actions?: React.ReactNode;
   backgroundImage?: string;
@@ -86,6 +86,7 @@ export function PageHeader({
   contentStackOptions,
   layout = "default",
   actions,
+  minHeight = "min-h-80",
   backgroundImage,
   backgroundImageAlt,
   backgroundImageOptions = {
@@ -130,10 +131,7 @@ export function PageHeader({
   return (
     <Section
       spacing={sectionSpacing ? sectionSpacing : currentLayout.section}
-      className={cn(
-        className,
-        "relative w-full overflow-hidden grid text-white",
-      )}
+      className={cn(className, "relative w-full overflow-hidden grid")}
     >
       {/* Background Image Layer */}
       {backgroundImage && (
@@ -170,12 +168,12 @@ export function PageHeader({
         </div>
       )}
 
-      <Container className={cn("relative z-10 min-h-80 h-full w-full")}>
+      <Container className={cn(minHeight, "relative z-10 h-full w-full")}>
         <Stack justify={"between"} preset="card" className="h-full w-full">
           {/* Breadcrumbs */}
           {breadcrumbs && breadcrumbs.length > 0 && (
             <Breadcrumbs
-              className={cn("text-white", breadcrumbsOptions?.className)}
+              className={cn("text-inherit", breadcrumbsOptions?.className)}
               breadcrumbs={breadcrumbs}
               centered={layout === "centered"}
             />

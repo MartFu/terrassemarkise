@@ -59,31 +59,26 @@ export default async function Page() {
       </Section>
 
       {/* 6. CTA / CONTACT */}
-      <Container>
-        <CreaseBox sides={["left", "right"]} className="h-20" />
-      </Container>
-      <GridSection />
-      <Container>
-        <CreaseBox sides={["left", "right"]} className="h-20" />
-      </Container>
-      <Section className="bg-accent py-12!">
+
+      {/* <GridSection /> */}
+
+      <Section className="bg-secondary text-secondary-foreground">
         <Container>
-          <div className="text-center text-accent-foreground">
-            <Stack className="max-w-4xl mx-auto rounded-[2.5rem] p-10 md:p-20">
-              <h2 className="text-4xl font-light mb-6 tracking-tight">
+          <div className="text-center">
+            <Stack className="max-w-3xl mx-auto space-y-8">
+              <h2 className="text-5xl text-balance">
                 {aboutContent.contact.title}
               </h2>
-              <p className="text-xl font-light mb-10 leading-relaxed">
+              <p className="text-xl max-w-2xl mx-auto">
                 {aboutContent.contact.description}
               </p>
-              <div className="flex flex-col md:flex-row items-center justify-center gap-2">
-                <Button variant="secondary" asChild>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <Button variant="default" size="lg" asChild>
                   <Link href={SITE_URLS.CONTACT}>
                     {aboutContent.contact.buttonText}
-                    <Send className="w-4 h-4" />
                   </Link>
                 </Button>
-                <p className="text-sm md:ml-4 opacity-80">
+                <p className="text-sm text-secondary-foreground/90">
                   {aboutContent.contact.cta}
                 </p>
               </div>
