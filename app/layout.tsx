@@ -1,21 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
 
 import "./globals.css";
 import Layout from "@/components/layout";
 import StagingLock from "@/components/soft-staging-lock";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Terrassemarkise - Del av Solskjerming AS",
@@ -28,10 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning lang="en" className={inter.variable}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
-      >
+    <html suppressHydrationWarning lang="en">
+      <body className={`antialiased min-h-screen flex flex-col`}>
         <StagingLock>
           <Layout>{children}</Layout>
         </StagingLock>
