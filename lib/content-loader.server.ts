@@ -66,7 +66,7 @@ const FrontmatterSchema = z.object({
   order: z.number().default(0),
 
   // Authorship & taxonomy
-  author: z.union([z.string(), FrontmatterAuthorSchema]).optional(),
+  author: z.string().optional(),
   category: z.string().optional(),
   tags: z.array(z.string()).optional(),
   keywords: z.array(z.string()).optional(),
@@ -469,10 +469,10 @@ export async function searchContent(
       const tagMatch = frontmatter.tags?.some((t) =>
         t.toLowerCase().includes(lowerQuery),
       );
-      const authorMatch =
-        typeof frontmatter.author === "string"
-          ? frontmatter.author.toLowerCase().includes(lowerQuery)
-          : frontmatter.author?.name.toLowerCase().includes(lowerQuery);
+      const authorMatch = frontmatter?.author
+        ?.toLowerCase()
+        .includes(lowerQuery);
+
       return (
         titleMatch ||
         descMatch ||

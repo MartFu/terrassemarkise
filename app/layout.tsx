@@ -8,6 +8,7 @@ import CookieBanner from "@/components/cookie-banner";
 import { cookieConfig } from "@/innhold/cookie-config";
 import { Analytics } from "@/components/analytics";
 import { analyticsConfig } from "@/innhold/analytics";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -39,8 +40,10 @@ export default function RootLayout({
         <StagingLock>
           <Layout>{children}</Layout>
         </StagingLock>
-        <CookieBanner config={cookieConfig} />
-        <Analytics config={analyticsConfig} />
+        <Suspense fallback={null}>
+          <CookieBanner config={cookieConfig} />
+          <Analytics config={analyticsConfig} />
+        </Suspense>
       </body>
     </html>
   );

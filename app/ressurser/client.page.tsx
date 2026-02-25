@@ -5,8 +5,7 @@ import { BlogHero } from "@/components/resource-blog/blog-hero";
 import { CategoriesFilter } from "@/components/resource-blog/categories-filter";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
-import { useQueryParam } from "@/hooks/use-query-param";
-import { ContentItem, Frontmatter } from "@/lib/content-loader.types";
+import { ContentItem } from "@/lib/content-loader.types";
 import { useState } from "react";
 
 interface Props {
