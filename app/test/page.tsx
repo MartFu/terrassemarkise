@@ -1,3 +1,5 @@
 export default function Page() {
-  return <div>test</div>;
+  return null;
+
+  // return <div>test</div>;
 }

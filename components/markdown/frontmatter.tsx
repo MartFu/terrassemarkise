@@ -44,11 +44,11 @@ export function Frontmatter({
       : null;
 
   return (
-    <Section className="bg-secondary text-secondary-foreground border-b py-4 md:py-12">
+    <Section className="bg-secondary text-secondary-foreground border-b py-8 md:py-12">
       <Container>
         {breadcrumbs && <Breadcrumbs breadcrumbs={breadcrumbs} />}
 
-        <div className={cn("not-prose mt-4 md:mt-12", className)}>
+        <div className={cn("not-prose mt-8 md:mt-12", className)}>
           {/* Tags */}
           {tags && (
             <div
@@ -99,7 +99,7 @@ export function Frontmatter({
           {/* Metadata */}
           {hasMetadata && (
             <div
-              className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground"
+              className="mt-4 md:mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground"
               style={{
                 animation:
                   "fade-up 0.55s cubic-bezier(0.22,1,0.36,1) 240ms both",

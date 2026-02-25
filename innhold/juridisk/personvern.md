@@ -1,88 +1,38 @@
-# Personvern
+---
+type: "legal"
+key: "personvern"
+title: "Datasikkerhet og personvern"
+subtitle: "Sist oppdatert: 2. februar 2026"
+---
 
-Write a prompt to have an ai create the entire website in typesafe nextjs. The purpose of the website is to:
+## 1. Om personopplysninger
 
-1. present 3 terrace awnings (see attached files)
-2. funnel traffic to our shop (a constant should be used for the href)
-3. build trust with customers and potential customers
-4. lead
+Denne erklæringen redegjør for hvordan Solskjerming AS samler inn, behandler og lagrer dine personopplysninger i tråd med personvernforordningen (GDPR). Med personopplysninger mener vi informasjon som kan knyttes til deg som enkeltperson, slik som navn, adresse, telefonnummer og IP-adresse.
 
-pages:
-juridisk/page.tsx
-juridisk/[slug]/page.tsx
-veiledning/page.tsx
-veiledning/[slug]/page.tsx
-produkter/page.tsx
-produkter/[slug]/page.tsx
-kontakt/page.tsx
-om-oss/page.tsx
-/page.tsx
+Viktig: Vi behandler kun opplysninger som er nødvendige for å levere våre tjenester eller for å oppfylle lovpålagte krav.
 
-The website and layout should feel very modern (think award winning websites). No excessive hover effects. It should feel modern and thought out.
+## 2. Når samler vi inn informasjon?
 
-Reqs:
-Display language: Norwegian Bokmål
-Shadcn is available to you
-Use tailwindcss (you may only use colors associated with shadcn, e.g. bg-background - no hardcoded colors such as bg-blue-500)
-All sections should be in our custom <Section> and <Container> (do not create these - simply reference them)
-Text content should be configurable from an object such as in the following example for the business' conveinience:
+- Når du sender en henvendelse via kontaktskjema, e-post eller telefon.
+- Ved avtale om befaring, prosjektering eller montering.
+- Ved besøk på våre nettsider (gjennom informasjonskapsler du har samtykket til).
 
-export const FOOTER_CONTENT: FooterProps = {
-brandSection: {
-title: "Solskjerming AS",
-description:
-"Din komplette guide til terrassemarkiser. Vi hjelper deg med å finne den perfekte løsningen for ditt uterom.",
+## 3. Bruk av informasjon
 
-    /*
+Informasjonen brukes til å administrere kundeforholdet, gjennomføre monteringer, og til lovpålagt regnskapsføring. Vi lagrer primærdokumentasjon i 5 år i henhold til bokføringsloven.
 
-    Brand kan defineres med følgende props
-     - logo (src) - string
-     - href - string
-     - ariaLabel - string
-    */
-    brand: undefined,
+Merk: IP-adresser som brukes til statistikk lagres avidentifisert (f.eks. 192.168.xxx.xxx) for å ivareta ditt personvern.
 
-},
-navigation: {
-products: [
-{
-title: "Corsica",
-href: "https://www.solskjerming-as.no/nettbutikk/utvendig-solskjerming/markiser/terrassemarkiser/corsica",
-},
-{
-title: "Palladio",
-href: "https://www.solskjerming-as.no/nettbutikk/utvendig-solskjerming/markiser/terrassemarkiser/palladio",
-},
-{
-title: "Jamaica",
-href: "https://www.solskjerming-as.no/nettbutikk/utvendig-solskjerming/markiser/terrassemarkiser/jamaica",
-},
-],
-resources: [
-{ title: "Monteringsveiledning", href: "/veiledning" },
-{ title: "Inspirasjon", href: "/inspirasjon" },
-{ title: "Ofte stilte spørsmål", href: "/veiledning#faq" },
-],
-contact: [
-{
-title: "Kundeservice",
-href: "https://www.solskjerming-as.no/kundeservice/kontaktoss",
-},
-{
-title: "Om oss",
-href: "https://www.solskjerming-as.no/kundeservice/om-solskjerming-as",
-},
-],
-},
+## 4. Dine rettigheter
 
-legal: [
-{
-title: "Personvern",
-href: "juridisk/personvern",
-},
-{
-title: "Betingelser",
-href: "juridisk/betingelser",
-},
-],
-};
+Du har rett til innsyn i egne opplysninger, retting av feil, og sletting av data vi ikke lenger har lovmessig grunnlag for å oppbevare. Du har også rett til å klage til Datatilsynet dersom du mener vår behandling bryter med regelverket.
+
+## 5. Kontaktinformasjon
+
+For spørsmål om personvern, kontakt oss på:
+
+|             |                                |
+| ----------- | ------------------------------ |
+| **E-post**  | kundeservice@solskjermingas.no |
+| **Telefon** | 69 10 98 88                    |
+| **Adresse** | Måkeveien 6, 1679 Kråkerøy     |

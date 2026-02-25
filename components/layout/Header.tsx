@@ -304,6 +304,12 @@ export function Header({
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
+                  <NavigationMenuLink asChild className={navLinkClassName}>
+                    <Link href={SITE_URLS.RESOURCES}>Ressurser</Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                {/*  <NavigationMenuItem>
                   <NavigationMenuTrigger className={navLinkClassName}>
                     <Link href={SITE_URLS.RESOURCES}>Ressurser</Link>
                   </NavigationMenuTrigger>
@@ -320,7 +326,7 @@ export function Header({
                       ))}
                     </ul>
                   </NavigationMenuContent>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
 
                 <NavigationMenuItem>
                   <NavigationMenuLink

@@ -17,7 +17,7 @@ interface LayoutProps {
 const Layout = ({ children, debug = false }: LayoutProps) => {
   const pathname = usePathname();
 
-  const isResources = pathname.startsWith("/ressurser");
+  const isResourcesDashboard = pathname.startsWith("/ressurser-dashboard");
   const isTest = pathname.startsWith("/test");
 
   return (
@@ -25,21 +25,21 @@ const Layout = ({ children, debug = false }: LayoutProps) => {
       <TooltipProvider>
         <div
           className={cn(
-            "flex flex-col",
-            isResources ? "h-screen" : "min-h-screen",
+            "flex flex-col w-full",
+            isResourcesDashboard ? "h-screen" : "min-h-screen",
           )}
         >
-          <Header debug={debug} sticky={!isResources} />
+          <Header debug={debug} sticky={!isResourcesDashboard} />
           <main
             className={cn(
               "flex-1",
-              isResources && "min-h-0 overflow-hidden",
+              isResourcesDashboard && "min-h-0 overflow-hidden",
               debug && "border border-red-500! bg-red-500/20!",
             )}
           >
             {children}
           </main>
-          <Footer debug={debug} compact={isResources || isTest} />
+          <Footer debug={debug} compact={isResourcesDashboard || isTest} />
         </div>
       </TooltipProvider>
     </ThemeProvider>

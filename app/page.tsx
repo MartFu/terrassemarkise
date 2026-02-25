@@ -299,19 +299,22 @@ export default function Page() {
         </Container>
       </Section>
 
-      <Section className="bg-secondary text-secondary-foreground py-24">
+      <Section
+        spacing={"md"}
+        className="bg-secondary text-secondary-foreground"
+      >
         <Container>
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-            <h2 className="text-5xl text-balance">
+          <div className="max-w-3xl mx-auto text-center space-y-4 md:space-y-8">
+            <h2 className="text-2xl lg:text-4xl text-balance">
               Forleng sommeren med våre terrassemarkiser
             </h2>
-            <p className="text-xl leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base lg:text-xl leading-relaxed max-w-2xl mx-auto">
               Se hele utvalget vårt, eller ta kontakt med oss direkte. Vi svarer
               raskt og hjelper deg å finne riktig løsning - enten du er
               privatperson eller driver en virksomhet med krav til holdbarhet og
               driftssikkerhet.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-4 pt-4">
               <Button asChild variant="default" size="lg">
                 <Link href={SITE_URLS.AWNINGS}>Se våre modeller</Link>
               </Button>
@@ -324,9 +327,6 @@ export default function Page() {
                 <Link href={SITE_URLS.CONTACT}>Kontakt oss</Link>
               </Button>
             </div>
-            <p className="text-sm text-secondary-foreground/60 pt-4">
-              Gratis veiledning • Rask respons
-            </p>
           </div>
         </Container>
       </Section>

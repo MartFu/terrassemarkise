@@ -4,6 +4,10 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/layout";
 import StagingLock from "@/components/soft-staging-lock";
+import CookieBanner from "@/components/cookie-banner";
+import { cookieConfig } from "@/innhold/cookie-config";
+import { Analytics } from "@/components/analytics";
+import { analyticsConfig } from "@/innhold/analytics";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -35,6 +39,8 @@ export default function RootLayout({
         <StagingLock>
           <Layout>{children}</Layout>
         </StagingLock>
+        <CookieBanner config={cookieConfig} />
+        <Analytics config={analyticsConfig} />
       </body>
     </html>
   );

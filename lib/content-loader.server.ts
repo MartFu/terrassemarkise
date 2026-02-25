@@ -48,14 +48,41 @@ const CONTENT_ROOT = path.join(process.cwd(), "innhold");
 // ZOD SCHEMAS
 // ============================================================================
 
+const FrontmatterAuthorSchema = z.object({
+  name: z.string(),
+  role: z.string().optional(),
+});
+
 const FrontmatterSchema = z.object({
+  // Core
   title: z.string().optional(),
+  subtitle: z.string().optional(),
   description: z.string().optional(),
-  date: z.iso.datetime().optional(),
-  author: z.string().optional(),
-  keywords: z.array(z.string()).optional(),
+  excerpt: z.string().optional(),
+  // Accept both "YYYY-MM-DD" date strings and full ISO datetimes
+  date: z.string().optional(),
+  lastUpdated: z.string().optional(),
   draft: z.boolean().default(false),
   order: z.number().default(0),
+
+  // Authorship & taxonomy
+  author: z.union([z.string(), FrontmatterAuthorSchema]).optional(),
+  category: z.string().optional(),
+  tags: z.array(z.string()).optional(),
+  keywords: z.array(z.string()).optional(),
+
+  // Display
+  imageUrl: z.string().optional(),
+  readTime: z.string().optional(),
+  featured: z.boolean().optional(),
+
+  // Call-to-action
+  ctaText: z.string().optional(),
+  ctaLink: z.string().optional(),
+
+  // Legal / typed documents
+  type: z.string().optional(),
+  key: z.string().optional(),
 });
 
 const SlugSchema = z
@@ -257,7 +284,7 @@ export async function getAllContent(
   contentType: ContentType,
   options: {
     includeDrafts?: boolean;
-    sortBy?: "date" | "order" | "title";
+    sortBy?: "date" | "order" | "title" | "featured";
     sortOrder?: "asc" | "desc";
   } = {},
 ): Promise<ContentIndex> {
@@ -318,6 +345,11 @@ export async function getAllContent(
           comparison = (a.frontmatter.title || "").localeCompare(
             b.frontmatter.title || "",
           );
+          break;
+        case "featured":
+          // Featured items sort before non-featured
+          comparison =
+            (b.frontmatter.featured ? 1 : 0) - (a.frontmatter.featured ? 1 : 0);
           break;
       }
 
@@ -423,16 +455,32 @@ export async function searchContent(
     const lowerQuery = query.toLowerCase();
 
     return items.filter((item) => {
-      const titleMatch = item.frontmatter.title
+      const { frontmatter } = item;
+      const titleMatch = frontmatter.title?.toLowerCase().includes(lowerQuery);
+      const descMatch = frontmatter.description
         ?.toLowerCase()
         .includes(lowerQuery);
-      const descMatch = item.frontmatter.description
+      const excerptMatch = frontmatter.excerpt
         ?.toLowerCase()
         .includes(lowerQuery);
-      const keywordMatch = item.frontmatter.keywords?.some((k) =>
+      const keywordMatch = frontmatter.keywords?.some((k) =>
         k.toLowerCase().includes(lowerQuery),
       );
-      return titleMatch || descMatch || keywordMatch;
+      const tagMatch = frontmatter.tags?.some((t) =>
+        t.toLowerCase().includes(lowerQuery),
+      );
+      const authorMatch =
+        typeof frontmatter.author === "string"
+          ? frontmatter.author.toLowerCase().includes(lowerQuery)
+          : frontmatter.author?.name.toLowerCase().includes(lowerQuery);
+      return (
+        titleMatch ||
+        descMatch ||
+        excerptMatch ||
+        keywordMatch ||
+        tagMatch ||
+        authorMatch
+      );
     });
   } catch {
     return [];

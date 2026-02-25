@@ -1,75 +1,200 @@
 ---
-title: "Velge riktig markise - Komplett guide"
-description: "En omfattende guide til å velge den perfekte markisen for ditt hjem. Lær om størrelser, materialer og smarte løsninger."
-author: "Markise Eksperten"
-date: "2024-02-04"
-keywords: ["markise", "solskjerming", "terrasse", "uteplass"]
-category: "veiledning"
+id: "1"
+title: "Sånn velger du rett terrassemarkise"
+slug: "saann-velger-du-rett-terrassemarkise"
+excerpt: "Planlegger du ny terrassemarkise? For å sikre trygg montering og optimal funksjon må du vurdere både innfesting, fall og forholdet mellom bredde og utfall. Her finner du våre viktigste råd om mål og plassering."
+author:
+  name: "Håkon Renskoug"
+  role: "Innehaver og produksjonsansvarlig"
+publishedAt: "2013-05-04"
+readTime: "2 min lesing"
+category: "Kjøpshjelp"
+imageUrl: "/slik-kjoper-du-terrassemarkise-thumbnail.webp"
+featured: true
+ctaText: "Se vårt utvalg i nettbutikken"
+ctaLink: "https://www.solskjerming-as.no/nettbutikk/utvendig-solskjerming/markiser"
+tags:
+  - Terrassemarkering
+  - Gjør-det-selv
+  - Monteringsveiledning
+  - Kjøpshjelp
+  - Solskjerming
 ---
 
-# Innledning
+## Bredde: Planlegging og begrensninger
 
-Å velge riktig markise kan være en utfordring med alle alternativene som finnes på markedet. I denne guiden tar vi deg gjennom de viktigste faktorene du bør vurdere.
+### Tommelfingerregler for brakettplassering
 
-## Størrelse og plassering
+De ytterste brakettene må ikke være mer enn 60 cm fra endene - dette er et krav fra produsent. Vi anbefaler imidlertid at denne avstanden er maksimalt 30-40 cm for optimal stabilitet.
 
-Det første du må vurdere er hvor stor markisen skal være og hvor den skal plasseres. Her er noen viktige punkter:
+**Viktig å vite**: Senteravstand mellom stenderverk på norske hus er vanligvis 60 cm, noe som passer godt med monteringskravene.
 
-- **Mål området**: Ta nøyaktige mål av området du ønsker å skjerme
-- **Solens retning**: Vurder hvor solen står til ulike tider på dagen
-- **Vindforhold**: Sjekk om området er spesielt utsatt for vind
-- **Festemuligheter**: Undersøk hvor markisen kan festes
+### Sikker innfesting
 
-### Utrekning av riktig størrelse
+Innfesting har to kritiske aspekter:
 
-For å finne riktig størrelse, bør markisen dekke hele det området du ønsker solskjerming på. Legg gjerne til 20-30 cm på hver side for optimal dekning.
+- **Anleggsflaten**: Brakettene krever solid støtte på baksiden
+- **Forankringsmateriale**: Der boltene skrues inn må være solid
 
-> **Tips:** Det er bedre å velge en markise som er litt for stor enn for liten. Du kan alltid rulle den ut mindre, men ikke større enn den er!
+### Vanlige utfordringer
 
-## Materialvalg
+Har du en skjør anleggsflate (eksempelvis panel med luft/isolasjon bak) eller begrenset forankring til festematerialet (som enkle lekter), kan det være nødvendig å forsterke konstruksjonen før terrassemarkisen monteres.
 
-Det finnes flere typer materialer å velge mellom:
+[Kontakt oss](/kontakt-oss) ved spørsmål om innfesting. Du kan også lese mer om sikker innfesting og montering av terrassemarkiser i vår utfyllende [guide](veiledning/sikker-montering-av-terrassemarkiser).
 
-1. **Akryl**: Mest populært, god fargefasthet og vannavvisende
-2. **Polyester**: Rimeligere alternativ, men kortere levetid
-3. **Vinyl**: Svært holdbart og lett å vedlikeholde
+### Produktbegrensninger
 
-### Fordeler med akryl
+Det ligger begrensninger i produktet når det gjelder plassering av veggbraketter:
 
-Akryl er det mest populære valget av gode grunner:
+- Der bærearmbrakettene er festet til bærebjelken er det ikke plass til en veggbrakett
+- Det samme gjelder for kassettbraketter
 
-- Utmerket fargefasthet
-- Naturlig vannavvisende
-- God pusteevne
-- Lang levetid (10-15 år)
+Dette er sjeldent et stort problem, da å flytte markisen noen centimeter til en av sidene oftest løser problemet. Dersom du planlegger en svært kompakt løsning, ta kontakt med oss for eksakt plassering av bærearmbraketter og eventuelle kassettbraketter for den gitte bredden.
 
-## Manuelle vs. motoriserte markiser
+**Vårt råd**: Gjør det enkelt - og ha margin. Dette sparer tid og sikrer en problemfri installasjon.
 
-| Type       | Fordeler                            | Ulemper               |
-| ---------- | ----------------------------------- | --------------------- |
-| Manuell    | Lavere pris, enkel                  | Krever fysisk innsats |
-| Motorisert | Enkelt å betjene, kan automatiseres | Dyrere, krever strøm  |
+### Krav til anleggsflate
 
-### Smarte løsninger
+Før du trekker opp målebåndet, husk: anleggsflaten må være plan. Dette gjelder uansett om du monterer på vegg eller tak. Utforing kan være nødvendig for å oppnå dette.
 
-Moderne motoriserte markiser kan kobles til værstasjoner og automatisk trekkes inn ved sterk vind eller trekkes ut når solen skinner.
+### Måling av bredde
 
-```javascript
-// Eksempel på integrasjon med smarthjem
-if (windSpeed > 20) {
-  markise.trekkInn();
-}
-```
+Med dette i minnet er det bare å måle opp ønsket bredde.
 
-## Vedlikehold
+![Illustrasjon av terrassemarkisens bredde på veggen (hvite markeringer)](/terrassemarkise-bredde.jpg)
 
-For å få lengst mulig levetid av markisen din:
+**Husk** å trekke fra noen centimeter ekstra der det kan være konflikt med vannbrett over vinduer, avhengig av høyde og vinkel på markisen.
 
-- Børst av markisen regelmessig
-- Trekk den inn ved dårlig vær
-- Vask den årlig med mildt såpevann
-- Reparer små skader umiddelbart
+### Sjekk plass i Z-planet
 
----
+Én ting er tilgjengelig plass på vegg (XY-planet), men ikke glem å sjekke rommet ut fra vegg der markisen går når den kjøres ut (Z-planet).
 
-Har du flere spørsmål? [Kontakt oss](/kontakt) så hjelper vi deg med å finne den perfekte løsningen!
+**Typiske hindringer**:
+
+- Dører som slår ut
+- Vannbrett
+- Levegger
+- Andre bygningselementer
+
+![Pass opp for hindringer rundt monteringsområdet](/terrassemarkise-hindringer.jpg)
+
+Før du har endelig bredde, bør du gjøre en grundig vurdering rundt monteringshøyden.
+
+## Høyde: Optimalisering av plassering
+
+### Viktige målsetninger
+
+Veggbrakettene er 20 cm høye. Utover dette ønsker du minimum 210 cm under markisen når den er kjørt helt ut. Om nevnte 210 cm er under frontskinne eller frontkappe er opp til deg, men det er viktig å ha klart for seg eksakt hvor høyt på veggen du tenker å montere markisen før du bestemmer endelig bredde og utfall.
+
+![Terrassemarkisens monteringshøyde](/terrassemarkise-monteringshoyde.jpg)
+
+### Krav til fall for drenering
+
+En terrassemarkise skal ha minst 15 graders fall for å drenere tilstrekkelig ved eventuell lett nedbør. Under følger tabeller som angir omtrentlige høyder målt i overkant av markisen når den er montert på vegg eller mot takstoler.
+
+**Merk**: Veggbrakettene er som indikert over 20 cm høye.
+
+### 15 graders fall (optimalt)
+
+Dette er den anbefalte vinkelen for best mulig drenering og sikkerhet:
+
+| Vinkel | Utfall | Monteringshøyde |
+| ------ | ------ | --------------- |
+| 15     | 210    | 282             |
+| 15     | 260    | 296             |
+| 15     | 310    | 308             |
+| 15     | 360    | 321             |
+
+### 10 graders fall
+
+Akseptabel vinkel for de fleste installasjoner:
+
+| Vinkel | Utfall | Monteringshøyde |
+| ------ | ------ | --------------- |
+| 10     | 210    | 265             |
+| 10     | 260    | 273             |
+| 10     | 310    | 282             |
+| 10     | 360    | 290             |
+
+### 5 graders fall (minimum)
+
+Minste anbefalte vinkel - kun ved spesielle forhold:
+
+| Vinkel | Utfall | Monteringshøyde |
+| ------ | ------ | --------------- |
+| 5      | 210    | 246             |
+| 5      | 260    | 251             |
+| 5      | 310    | 255             |
+| 5      | 360    | 260             |
+
+## Utfall: Begrensninger og muligheter
+
+### Hvorfor utfallet har begrensninger
+
+Det ligger alltid begrensninger i utfall. Dette har med bærearmene å gjøre - disse foldes mot hverandre når markisen kjøres inn, og dette tar plass. En markise har derfor mindre utfall enn bredde.
+
+### Vesentlige begrensninger
+
+Her er de mest vesentlige begrensningene du må være oppmerksom på:
+
+- **Utfall 310 cm**: Begynner ved bredde 360 cm
+- **Utfall 360 cm**: Begynner ved bredde 410 cm
+- **Utfall 410 cm**: Begynner ved bredde 460 cm (gjelder kun Jamaica), og har for øvrig maksimal bredde 590 cm
+
+### Planlegging av utfall
+
+Når du planlegger utfallet, vurder:
+
+1. Hvor mye skygge trenger du?
+2. Hvilke hindringer finnes i området?
+3. Hva er dine breddemuligheter?
+4. Hvilken modell passer best til dine behov?
+
+## Montering: Profesjonell hjelp
+
+### Våre monteringstjenester
+
+Vi tilbyr profesjonell montering av alle våre terrassemarkiser. Våre erfarne montører sikrer:
+
+- Korrekt innfesting i henhold til produsentkrav
+- Optimal plassering for best funksjon
+- Sikkerhet og langsiktig holdbarhet
+- Garanti på installasjonen
+
+### Har du spørsmål?
+
+Har du spørsmål vedrørende montering av terrassemarkiser, ikke nøl med å kontakte oss. Vårt team av eksperter står klar til å hjelpe deg med:
+
+- Befaring og rådgivning
+- Vurdering av anleggsflate
+- Beregning av optimal plassering
+- Planlegging av installasjon
+
+## Sjekkliste før montering
+
+Gjør dette før du bestiller montering:
+
+1. Mål opp tilgjengelig bredde med margin
+2. Kontroller at anleggsflaten er plan
+3. Sjekk for hindringer i Z-planet
+4. Vurder ønsket monteringshøyde
+5. Bestem ønsket utfall basert på bredde
+6. Kontroller at festematerialet er solid
+7. Ta bilder av monteringsområdet
+8. Kontakt oss for en befaring
+
+## Vanlige feil å unngå
+
+De mest vanlige monteringsfeilene:
+
+- **For liten margin**: Ikke planlegg helt ut til kanten
+- **For lite fall**: Minimum 5 grader, optimalt 15 grader
+- **Svak anleggsflate**: Forsterke før montering om nødvendig
+- **Glemme hindringer**: Sjekk både vegg og utfallsområde
+- **Feil brakettavstand**: Følg produsentens anbefalinger
+
+## Kontakt oss for ekspertveiledning
+
+Riktig planlegging er nøkkelen til en vellykket terrassemarkise-installasjon. Vårt team har mange års erfaring og kan hjelpe deg med alle aspekter av monteringen - fra første måling til ferdig resultat.
+
+**Ta kontakt i dag** for en uforpliktende befaring og få profesjonell rådgivning tilpasset ditt hjem.
