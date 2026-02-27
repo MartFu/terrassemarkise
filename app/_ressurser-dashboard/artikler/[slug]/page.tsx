@@ -4,7 +4,6 @@ import { Suspense } from "react";
 import { getContentBySlug, getAllContent } from "@/lib/content-loader.server";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { MarkdownRendererWithToc } from "@/components/markdown/md-renderer-with-toc";
-import { SITE_URLS } from "@/lib/constants";
 // import { SITE_URLS } from "@/lib/constants";
 
 interface PageProps {
@@ -115,13 +114,6 @@ async function ResourceContent({ slug }: { slug: string }) {
 
   return (
     <MarkdownRendererWithToc
-      breadcrumbs={[
-        { label: "Hjem", href: "/" },
-        { label: "Ressurser", href: SITE_URLS.RESOURCES },
-        {
-          label: `Artikler${document.frontmatter?.title ? ` | ${document.frontmatter.title}` : ""}`,
-        },
-      ]}
       showProgress
       frontmatter={document.frontmatter}
       content={document.rawContent}

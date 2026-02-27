@@ -41,7 +41,7 @@ export default function Breadcrumbs({
       )}
       aria-label="Brødsmulesti"
     >
-      <ol className="flex items-center gap-2">
+      <ol className="flex flex-wrap items-center gap-2">
         {breadcrumbs.map((crumb, index) => (
           <li key={index} className="flex items-center gap-2">
             {index > 0 && <span aria-hidden="true">/</span>}

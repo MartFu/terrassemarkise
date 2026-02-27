@@ -1,86 +1,64 @@
 ---
-title: Salgs- og leveringsbetingelser
-description: Solskjerming AS forventer at du har lest og forstått våre salgs- og leveringsbetingelser før du handler av oss.
-category: Juridisk
-lastUpdated: 01/24
+type: "legal"
+key: "salgsbetingelser"
+title: "Salgs- og leveringsbetingelser"
+subtitle: "Utgave 11-6/17 - Solskjerming AS"
 ---
 
-Disse betingelsene er en fast del av alle tilbud, salg og leveranser fra Solskjerming AS (heretter kalt Selger). Som kunde bekrefter du at du er over 18 år. Avtaleforholdet reguleres i tillegg av avtaleloven, forbrukerkjøpsloven og annen relevant norsk lov.
+## 1. Anvendelse
 
-## 1. Tilbud og bestilling
+Disse betingelser er en integrert del av alle tilbud, salg og leveranser fra Solskjerming AS (Selger) til Kunde.
 
-- **Kundens ansvar:** Dersom Selger har hjulpet til med å utforme et tilbud, er dette basert på Selgers forståelse av kundens spesifikasjoner. Kunden plikter selv å kontrollere at alle produkter og mål i tilbudet er korrekte før bestilling. Selger hefter ikke for feil i denne sammenheng.
+## 2. Tilbud og avtale
 
-- **Skriftlighet:** Eventuelle avtaler utover standardbetingelsene skal foreligge skriftlig per e-post.
+Tilbud er basert på Selgers forståelse av kundens beskrivelser. Selger hefter ikke for feil i denne sammenheng. Før bestilling skal partene i fellesskap kvalitetssikre leveringsomfanget.
 
-- **Gjennomføring:** Bestilling skjer i nettbutikken og forutsetter aksept av disse vilkårene. Produksjonen starter så snart betalingen er registrert.
+Viktig: Alle avtaler skal være skriftlige via e-post. Beskjeder på SMS, MMS eller telefonsvarer er ikke bindende med mindre de er bekreftet skriftlig av Selger.
 
-- **Kundeservice:** Henvendelser om faktiske kjøp besvares normalt innen 48 timer (gjelder hverdager).
+## 3. Levering og montasje
 
-## 2. Levering og transport
+Leveringstid er et estimat og kan variere. Spesialfarger forlenger normalt produksjonstiden med 1 uke. Selger hefter ikke for forsinkelser hos underleverandører eller transportør.
 
-- **Leveringstider:**
-- Utvendige produkter: 4–7 uker.
+### Varer uten montering
 
-- Innvendige produkter: 2–4 uker.
+- Varer kan hentes kostnadsfritt ved lager i Fredrikstad etter fullt oppgjør.
+- Ved sending via DB Schenker plikter Kunde å undersøke varen for skader før sjåføren forlater stedet.
+- Eventuelle skader må anmerkes på utleveringsseddel og attesteres av sjåfør.
+- Leveransen regnes som fullført idet varen ligger på kundes eiendom.
 
-- **Sommerstengt:** Vi holder stengt i uke 29 og 30. Varer som ankommer lageret i uke 28, sendes ut før ferien. Første varemottak etter ferien er i uke 31.
+### Varer med montering
 
-- **Frakt:** Transport utføres av Schenker. Levering skjer når varen er stilt til disposisjon på eller ved kundens adresse. Merk at sjåføren kun laster av bilen og ikke tilbyr bærehjelp videre.
+Varen pakkes ut og verifiseres av Selger. Dersom kunde ikke er tilstede under montering, kan man ikke påberope seg endringer i ettertid.
 
-- **Force Majeure:** Forsinkelser utenfor Selgers kontroll gir ikke rett til å heve kjøpet.
-
-## 3. Ved mottak av varer
-
-- **Kontrollplikt:** Kunden skal straks undersøke emballasjen for skader ved mottak.
-
-- **Skadebehandling:**
-- Synlige skader **må** noteres på utleveringsseddelen og signeres av sjåfør.
-
-- Ved skadet emballasje skal varen pakkes ut og kontrolleres umiddelbart etter at transportøren har dratt.
-
-- Skader på produktet må dokumenteres og meldes til Selger omgående.
-
-- **Viktig:** Skadede produkter skal **ikke** monteres eller brukes uten avtale. Montering av et skadet produkt anses som en aksept av varens tilstand, og reklamasjoner på monterte produkter vil normalt bli avvist.
-
-- **Tips:** Ta vare på all emballasje til alt er ferdig montert og testet.
+Merk: Fast tilkobling til el-nettet skal utføres av autorisert elektriker. Dette er et krav for at garantien på Somfy-motorer (5 år) skal gjelde.
 
 ## 4. Garanti og reklamasjon
 
-- **Frist:** Det er 5 års garanti og reklamasjonsrett på alle produkter (7 år for ZIP Screens).
+Reklamasjonstiden er 5 år på produkter og 2 år på slitasjedeler som snorer og elektronikk. Selger følger for øvrig norsk kjøpslov.
 
-- **Meldeplikt:** Feil må meldes innen rimelig tid. Vedlikehold og ettersyn er avgjørende; neglisjering av dette kan føre til at garantien bortfaller.
+Viktig: Ved nettsalg uten montering bærer kunde selv risiko for kostnader ved bytting eller demontering dersom feil inntreffer etter driftsettelse.
 
-- **Utbedring:** Selger har rett til å utbedre feilen eller erstatte varen. Selger dekker frakt, mens kunden selv må dekke kostnader til demontering, montering, elektrisk arbeid eller eventuelt stillas.
+## 5. Betaling og sikkerhet
 
-- **Selvhjelp:** Dersom det er praktisk mulig, kan kunden utbedre feilen selv etter instruks fra Selger uten at garantien påvirkes.
+Selger beholder eiendomsretten til varene inntil fullt oppgjør er registrert.
 
-- **Heving:** Ved samme feil eller mangel for tredje gang (oppstått 2 ganger tidligere), kan kjøper kreve pengene tilbake.
+| Bestillingstype | Krav til betaling                                         |
+| --------------- | --------------------------------------------------------- |
+| Nettbutikk      | 100% før produksjonsstart                                 |
+| Med montering   | 50% av produktsum før produksjon, resterende før montasje |
 
-## 5. Tekniske forutsetninger og forbehold
+Merk: Ved bruk av kredittkort påløper et gebyr på 4%.
 
-- **Montering:** Produktene må være korrekt montert og stoppgrenser programmert før bruk. Feil som skyldes feilmontering eller feil bruk er kundens eget ansvar.
+## 6. Kansellering og angrerett
 
-- **Elektrisitet:** Tilkobling til fastanlegg skal gjøres av autorisert elektriker. Utvendige motoriserte produkter leveres med avisolert ledning uten støpsel.
+Viktig å vite: Siden produktene er tilvirket etter spesifikke mål, er de unntatt angreretten i henhold til Angrerettloven. Kunde svarer for alle påløpte kostnader ved annullering etter produksjonsstart.
 
-- **Tredjepartssystemer:** Ved bruk av ekstern styring (f.eks. Smarthus) faktureres kunden for feilsøking dersom feilen ligger i styringssystemet og ikke i selve produktet.
+## 7. Viktig informasjon om produktene
 
-## 6. Betaling og sikkerhet
+### Markiseduker
 
-- **Betalingsmåte:** Skjer med kort i nettbutikken. Delbetaling kan avtales ved store bestillinger.
+Det er normalt med spenninger som skaper «bulker» eller «traktorspor» i duken pga. doble sømmer. Dette utgjør ikke grunnlag for reklamasjon. Våt duk må tørkes innen 48 timer.
 
-- **Eierskap:** Selger har salgspant i varene inntil full betaling er mottatt.
+### Terrassemarkiser
 
-- **Kredittvurdering:** Selger forbeholder seg retten til å foreta kredittsjekk eller kansellere ordrer uten begrunnelse (kunden vil da bli kreditert).
-
-## 7. Angrerett og avbestilling
-
-- **Tilvirkningskjøp:** Siden produktene lages etter spesifikke mål, er det **ingen angrerett** etter at produksjonen har startet, jf. angrerettloven §22e.
-
-- **Kansellering:** Ved avbestilling etter produksjonsstart må kunden dekke påløpte kostnader.
-
-## 8. Personopplysninger
-
-- Kunden kan når som helst be om innsyn i lagret informasjon ved å kontakte post@solskjerming-as.no.
-
-- Vi bruker ikke dine data til direkte markedsføring uten at du har gitt ditt samtykke.
+Markiser er for solskjerming. All bruk ved nedbør eller vind skjer på kundens risiko. Det anbefales sterkt at markiser ikke står ute uten tilsyn eller om natten.
