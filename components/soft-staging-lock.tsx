@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Lock, ArrowRight } from "lucide-react";
 import { Logo } from "./ui/logo";
-import { Section } from "./ui/section";
 import { Container } from "./ui/container";
 
 const STAGING_PASSWORD = "staging2025";
