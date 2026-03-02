@@ -50,8 +50,8 @@ export default function StagingLock({
     if (e.key === "Enter") attempt();
   };
 
-  if (!mounted || disabled) return null;
-  if (unlocked) return <>{children}</>;
+  if (!mounted) return null;
+  if (unlocked || disabled) return <>{children}</>;
 
   return (
     <div className="fixed inset-0 h-[100svh] z-50 flex items-center justify-center bg-background">
