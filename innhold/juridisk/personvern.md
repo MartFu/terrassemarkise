@@ -2,14 +2,18 @@
 type: "legal"
 key: "personvern"
 title: "Datasikkerhet og personvern"
-subtitle: "Sist oppdatert: 2. februar 2026"
+description: "Utgave 03. feb. 2026"
+publishedAt: "03.02.2026"
+author: "Solskjerming AS"
 ---
 
 ## 1. Om personopplysninger
 
 Denne erklæringen redegjør for hvordan Solskjerming AS samler inn, behandler og lagrer dine personopplysninger i tråd med personvernforordningen (GDPR). Med personopplysninger mener vi informasjon som kan knyttes til deg som enkeltperson, slik som navn, adresse, telefonnummer og IP-adresse.
 
-Viktig: Vi behandler kun opplysninger som er nødvendige for å levere våre tjenester eller for å oppfylle lovpålagte krav.
+:::callout[info]
+Vi behandler kun opplysninger som er nødvendige for å levere våre tjenester eller for å oppfylle lovpålagte krav.
+:::
 
 ## 2. Når samler vi inn informasjon?
 
@@ -31,8 +35,8 @@ Du har rett til innsyn i egne opplysninger, retting av feil, og sletting av data
 
 For spørsmål om personvern, kontakt oss på:
 
-|             |                                |
-| ----------- | ------------------------------ |
-| **E-post**  | kundeservice@solskjermingas.no |
-| **Telefon** | 69 10 98 88                    |
-| **Adresse** | Måkeveien 6, 1679 Kråkerøy     |
+|             |                            |
+| ----------- | -------------------------- |
+| **E-post**  | post@solskjerming-as.no    |
+| **Telefon** | 69 10 98 88                |
+| **Adresse** | Måkeveien 6, 1679 Kråkerøy |

@@ -21,7 +21,7 @@
  */
 
 import * as React from "react";
-import { Loader2, Send } from "lucide-react";
+import { Check, Loader2, Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -233,7 +233,7 @@ export function ComposableForm({
 
       {success && (
         <p className="col-span-full text-sm text-green-600 dark:text-green-400">
-          ✓ Sent successfully!
+          <Check className="w-4 h-4" /> Mottatt! Vi tar kontakt så snart vi kan.
         </p>
       )}
 

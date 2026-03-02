@@ -380,7 +380,7 @@ export default function Page() {
             label: "Kontakt",
           },
         ]}
-        backgroundImage="/mock/product-window.png"
+        backgroundImage="/mock/product-window.webp"
         backgroundImageOptions={{
           opacity: 1,
           objectFit: "cover",

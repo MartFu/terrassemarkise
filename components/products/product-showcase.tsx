@@ -14,7 +14,7 @@ import { products } from "@/innhold/produkter";
 
 export function ProductShowcase() {
   return (
-    <Section className="bg-primary/5">
+    <Section className="bg-secondary/50">
       <Container>
         {/* Section header */}
         <Stack
@@ -23,14 +23,10 @@ export function ProductShowcase() {
           justify="center"
           className="mx-auto max-w-2xl text-center"
         >
-          <Badge variant="outline" className="text-sm">
-            <Wind className="text-primary" />
-            Våre markiseløsninger
-          </Badge>
-          <Heading level="h2" className="text-3xl font-bold sm:text-4xl">
+          <Heading level="h2" className="text-3xl md:text-4xl">
             For enhver terrasse, ethvert behov
           </Heading>
-          <Text color={"muted"} size={"lg"}>
+          <Text size={"lg"}>
             Fra kompakte byterrasser til store åpne uteplasser - vi har
             løsningen
           </Text>
@@ -47,7 +43,7 @@ export function ProductShowcase() {
                 className={cn(
                   "h-full relative",
                   idx === 1 &&
-                    "p-px bg-linear-to-t from-primary/30 to-border rounded-xl overflow-hidden shadow-2xl shadow-primary/25",
+                    "p-px bg-linear-to-t from-primary/30 to-border overflow-hidden shadow-2xl shadow-primary/25",
                 )}
               >
                 {idx === 1 && (
@@ -59,7 +55,7 @@ export function ProductShowcase() {
                 <Link
                   href={`${SITE_URLS.AWNINGS}${product.slug}`}
                   className={cn(
-                    "h-full group relative flex flex-col transition-all overflow-hidden rounded-xl",
+                    "h-full group relative flex flex-col transition-all overflow-hidden",
                     idx === 1
                       ? "bg-linear-to-bl from-card to-card/70"
                       : "bg-card border",

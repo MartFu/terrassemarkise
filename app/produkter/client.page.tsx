@@ -38,7 +38,7 @@ export function ClientPage({
         className="min-h-[50vh] text-white"
         title={["Terrassemarkiser —", "skreddersydd på dine mål"]}
         description="Vi produserer din markise på bestilling, slik at den passer optimalt til ditt tilfelle."
-        backgroundImage="/mock/product-folding.png"
+        backgroundImage="/mock/product-folding.webp"
         backgroundImageOptions={{
           opacity: 1,
           objectFit: "cover",
@@ -141,16 +141,7 @@ export function ClientPage({
           ],
           submitLabel: "Send forespørsel",
         }}
-      >
-        <div
-          className={cn(
-            "mt-4 text-xs absolute bottom-12 shadow-md shadow-black/5 p-6 rounded-xl bg-accent/10 text-foreground font-medium",
-          )}
-        >
-          Visste du at vi tilbyr gratis befaring i Østfold, Oslo, Akershus og
-          Vestfold
-        </div>
-      </ContactCTA>
+      />
     </>
   );
 }

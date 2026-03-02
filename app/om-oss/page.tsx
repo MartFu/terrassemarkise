@@ -268,14 +268,14 @@ export function TeamSection() {
           {TEAM.map((member) => (
             <div
               key={member.name}
-              className="flex flex-col gap-2 group relative bg-card rounded-xl overflow-hidden border border-border"
+              className="flex flex-col gap-2 group relative bg-card overflow-hidden border border-border"
             >
               {/* Image */}
-              <div className="min-h-80 relative aspect-square overflow-hidden bg-muted">
+              <div className="min-h-80 relative aspect-square overflow-hidden bg-accent/5">
                 {member.image ? (
                   <img
                     src={member.image}
-                    alt={member.name}
+                    alt={"Portrett av " + member.name}
                     className="object-cover object-top h-full w-full"
                   />
                 ) : (
@@ -288,15 +288,15 @@ export function TeamSection() {
               </div>
 
               {/* Content */}
-              <div className="flex flex-col gap-1 px-5 pb-5 pt-2 h-full">
+              <div className="flex flex-col justify-between gap-1 px-5 pb-5 pt-2 h-full">
                 <div className="flex flex-col gap-1">
                   <h3 className="font-semibold text-lg mb-1">{member.name}</h3>
-                  <p className="text-sm text-primary/70 font-medium mb-2">
+                  <p className="text-sm text-primary font-medium mb-2">
                     {member.role}
                   </p>
 
                   {member.description && (
-                    <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
+                    <p className="text-sm line-clamp-2 mb-3">
                       {member.description}
                     </p>
                   )}

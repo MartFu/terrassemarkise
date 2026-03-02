@@ -28,12 +28,8 @@ export const FOOTER_CONTENT = {
       ],
     },
     {
-      title: "Veiledning",
-      links: [
-        { label: "Guider & tips", href: SITE_URLS.RESOURCES },
-        { label: "Prosjekter", href: SITE_URLS.CASE_STUDIES },
-        { label: "Kalkulator", href: SITE_URLS.TOOLS + "kalkulator" },
-      ],
+      title: "Ressurser",
+      links: [{ label: "Guider & tips", href: SITE_URLS.RESOURCES }],
     },
     {
       title: "Selskapet",

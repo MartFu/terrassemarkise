@@ -26,7 +26,7 @@ export function DesktopTable({ data, highlightedColumn, footer }: Props) {
   }));
 
   return (
-    <div className="hidden md:block rounded-xl border border-border/40 bg-card">
+    <div className="hidden md:block border border-border/40 bg-card">
       <table className="w-full min-w-[700px]">
         <thead
           style={{ transform: "translateY(var(--push-up, 0px))" }}

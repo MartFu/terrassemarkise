@@ -38,10 +38,10 @@ export default function Page({ posts, categories }: Props) {
   return (
     <>
       <PageHeader
-        className="min-h-[50vh] text-white"
+        className="min-h-[45vh] text-white"
         title={["Utforsk våre gudier,", "videoer og artikler"]}
         description="Vi gjør en innsats for at nesten hvem som helst skal kunne montere våre produkter."
-        backgroundImage="/mock/product-folding.png"
+        backgroundImage="/mock/product-folding.webp"
         backgroundImageOptions={{
           opacity: 1,
           objectFit: "cover",

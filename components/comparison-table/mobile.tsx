@@ -31,18 +31,18 @@ export function MobileTable({
   return (
     <div className="md:hidden">
       {/* Sticky Product Switcher */}
-      <div className="relative rounded-2xl">
+      <div className="relative">
         <div
           ref={stickyMobileRef}
           className="sticky-el group transition-transform bg-background/95 backdrop-blur-sm border-b border-border/50"
         >
-          <div className="flex gap-1 p-4 bg-card rounded-t-xl transition-[margin,colors] group-stuck:rounded-t-none group-stuck:-mx-6 group-stuck:bg-accent/40">
+          <div className="flex gap-1 p-4 bg-card transition-[margin,colors] group-stuck:rounded-t-none group-stuck:-mx-6 group-stuck:bg-accent/40">
             {columns.map((col, index) => (
               <button
                 key={col.id}
                 onClick={() => onColumnChange(index)}
                 className={cn(
-                  "flex-1 rounded-md px-3 py-2 text-sm font-medium transition-all",
+                  "flex-1 px-3 py-2 text-sm font-medium transition-all",
                   "flex items-center justify-center gap-2",
                   activeColumn === index
                     ? "bg-secondary text-secondary-foreground shadow-sm"
@@ -65,7 +65,6 @@ export function MobileTable({
         <div
           className={cn(
             "divide-y divide-border/30 border-x border-b border-border/40 bg-card/40",
-            !footer && "rounded-b-xl",
           )}
         >
           {grouped.map(({ category, rows: categoryRows }) => (
@@ -109,7 +108,7 @@ export function MobileTable({
           ))}
         </div>
       </div>
-      {footer && <div className="p-6 bg-card rounded-b-xl">{footer}</div>}
+      {footer && <div className="p-6 bg-card">{footer}</div>}
     </div>
   );
 }

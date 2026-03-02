@@ -10,7 +10,7 @@ interface MarkdownTableProps {
 
 export function MarkdownTable({ children, className }: MarkdownTableProps) {
   return (
-    <div className="my-6 w-full overflow-x-auto rounded-lg border border-border">
+    <div className="my-6 w-full overflow-x-auto border border-border">
       <div className="inline-block min-w-full align-middle">
         <table className={cn("w-full border-collapse", className)}>
           {children}

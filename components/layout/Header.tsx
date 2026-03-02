@@ -230,7 +230,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
             rel="noopener noreferrer"
             target="_blank"
             onClick={onClose}
-            className="flex items-center justify-center gap-2 w-full rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+            className="flex items-center justify-center gap-2 w-full bg-primary px-5 py-3 text-sm text-primary-foreground hover:bg-primary/90 transition-colors"
           >
             Besøk nettbutikken
             <ExternalLink className="h-4 w-4" />

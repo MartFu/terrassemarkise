@@ -23,12 +23,12 @@ export function ContactCTA({
   return (
     <Section>
       <Container>
-        <div className="rounded-xl bg-linear-to-br from-primary/5 to-accent/5 border p-8 lg:p-12 relative">
+        <div className="bg-linear-to-br from-primary/5 to-accent/5 border p-8 lg:p-12 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column */}
             <div className="space-y-6">
               <div className="space-y-6">
-                <Heading className="max-w-[20ch]!">{title}</Heading>
+                <Heading className="md:max-w-[20ch]!">{title}</Heading>
                 <Text className="max-w-[40ch]!" size="base" color="muted">
                   {description}
                 </Text>
@@ -50,7 +50,7 @@ export function ContactCTA({
             </div>
 
             {/* Right Column - Contact Form */}
-            <div className="bg-background rounded-lg border p-6 space-y-4">
+            <div className="bg-background border p-6 space-y-4">
               <ComposableForm {...formProps} />
             </div>
           </div>

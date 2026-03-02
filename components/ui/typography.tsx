@@ -11,7 +11,6 @@ const headingVariants = cva("tracking-tight", {
       h1: [
         "text-[2.027rem] md:text-[2.566rem] lg:text-[3.247rem] xl:text-[4.11rem] 2xl:text-[5.202rem]",
         "leading-[1.1] lg:leading-[1.05]",
-        "font-extrabold",
         "text-foreground",
         "max-w-[20ch]",
         "tracking-[-0.02em]",
@@ -20,7 +19,6 @@ const headingVariants = cva("tracking-tight", {
       h2: [
         "text-[1.802rem] md:text-[2.027rem] lg:text-[2.566rem] xl:text-[3.247rem]",
         "leading-[1.15] lg:leading-[1.1]",
-        "font-bold",
         "text-foreground",
         "max-w-[25ch]",
         "tracking-[-0.015em]",
@@ -29,7 +27,6 @@ const headingVariants = cva("tracking-tight", {
       h3: [
         "text-[1.602rem] md:text-[1.802rem] lg:text-[2.027rem] xl:text-[2.566rem]",
         "leading-[1.2] lg:leading-[1.15]",
-        "font-bold",
         "text-foreground",
         "max-w-[30ch]",
         "tracking-[-0.01em]",
@@ -38,7 +35,6 @@ const headingVariants = cva("tracking-tight", {
       h4: [
         "text-[1.424rem] md:text-[1.602rem] lg:text-[1.802rem]",
         "leading-[1.25] lg:leading-[1.2]",
-        "font-semibold",
         "text-foreground",
         "max-w-[35ch]",
         "tracking-[-0.005em]",
@@ -47,7 +43,6 @@ const headingVariants = cva("tracking-tight", {
       h5: [
         "text-[1.266rem] md:text-[1.424rem]",
         "leading-[1.3] lg:leading-[1.25]",
-        "font-semibold",
         "text-foreground/90",
         "max-w-[40ch]",
         "tracking-[0]",

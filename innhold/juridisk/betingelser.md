@@ -2,63 +2,81 @@
 type: "legal"
 key: "salgsbetingelser"
 title: "Salgs- og leveringsbetingelser"
-subtitle: "Utgave 11-6/17 - Solskjerming AS"
+description: "Utgave 03. feb. 2026"
+publishedAt: "03.02.2026"
+author: "Solskjerming AS"
 ---
 
 ## 1. Anvendelse
 
-Disse betingelser er en integrert del av alle tilbud, salg og leveranser fra Solskjerming AS (Selger) til Kunde.
+Disse betingelser er en integrert del av alle tilbud, salg og leveranser fra Solskjerming AS, heretter kalt Selger. Kjøper/interessent er heretter kalt Kunde.
 
-## 2. Tilbud og avtale
+## 2. Tilbud og Avtale
 
-Tilbud er basert på Selgers forståelse av kundens beskrivelser. Selger hefter ikke for feil i denne sammenheng. Før bestilling skal partene i fellesskap kvalitetssikre leveringsomfanget.
+Tilbud er basert på Selgers forståelse av beskrivelser og spesifikasjoner i mottatt forespørsel fra Kunde, og Selger hefter ikke for feil og mangler i så henseende. Før bindende bestilling skal Kunde og Selger i fellesskap evaluere og kvalitetssikre samsvar mellom partenes oppfatning av, og alle betingelser for, det aktuelle leveringsomfanget.
 
-Viktig: Alle avtaler skal være skriftlige via e-post. Beskjeder på SMS, MMS eller telefonsvarer er ikke bindende med mindre de er bekreftet skriftlig av Selger.
+:::callout[info]
+Alle avtaler mellom partene skal være skriftlig (epost). Beskjeder, instrukser eller avtaler fra Kunde sendt over sms/mms eller lagt igjen på telefonsvarer gjelder ikke med mindre de er bekreftet skriftlig av Selger.
+:::
 
-## 3. Levering og montasje
+## 3. Levering, Mottak og Montasje
 
-Leveringstid er et estimat og kan variere. Spesialfarger forlenger normalt produksjonstiden med 1 uke. Selger hefter ikke for forsinkelser hos underleverandører eller transportør.
+Leveringstid angitt i tilbudet er et estimat basert på erfaring, men kan variere gjennom sesongen. Ved valg av konstruksjonsfarger utenom produsentenes standardfarger forlenges normalt produksjonstiden med 1 uke. Selger hefter ikke for inntrufne leveranseforsinkelser hos produsent, underleverandører eller transportør. Forsinket leveranse gir ikke grunnlag for krav om kompensasjon for følgekostnader (stillasleie, øvrige håndverkere o.l.), prisreduksjon eller heving av kjøp.
 
-### Varer uten montering
+### For varer bestilt uten montering
 
-- Varer kan hentes kostnadsfritt ved lager i Fredrikstad etter fullt oppgjør.
-- Ved sending via DB Schenker plikter Kunde å undersøke varen for skader før sjåføren forlater stedet.
-- Eventuelle skader må anmerkes på utleveringsseddel og attesteres av sjåfør.
-- Leveransen regnes som fullført idet varen ligger på kundes eiendom.
+Alle bestillinger kan hentes ut fra Selgers lager i Fredrikstad kostnadsfritt, men fullt oppgjør må være innbetalt før utlevering. Dersom kunde ønsker bestillingen tilsendt, kan Selger organisere frakt via DB Schenker. Kunde plikter å undersøke forsendelser for utvendige og innvendige skader ved mottak, og før transportselskapet forlater Kunde. Eventuelle skader må bemerkes på utleveringsseddel som attesteres av DB Schenker sin sjåfør.
 
-### Varer med montering
+:::callout[note]
+Ved privatlevering skjer utkjøring ofte kveldstid, og kunde blir som regel kontaktet av DB Schenker i forkant. Kunde plikter å være hjemme ved varemottaket og bistå i forbindelse med utlasting fra DB Schenker sin bil. Merk at sjåfør ikke har anledning til å hjelpe til med bæring av produkt(er) utover selve utlastingen fra bil. Reklamasjon på transportskader må gjøres gjeldende før transportør har forlatt kundes adresse.
+:::
 
-Varen pakkes ut og verifiseres av Selger. Dersom kunde ikke er tilstede under montering, kan man ikke påberope seg endringer i ettertid.
+### For varer bestilt med montering
 
-Merk: Fast tilkobling til el-nettet skal utføres av autorisert elektriker. Dette er et krav for at garantien på Somfy-motorer (5 år) skal gjelde.
+Produkter bestilt med montering bringes til avtalt sted av Selger eller eget transportfirma. Varen pakkes ut og verifiseres av Selger, eventuelt sammen med Kunde, og eventuelle skader noteres og avklares. Dersom Kunde ikke er tilstede under og etter montering, kan Kunde i ettertid ikke påberope seg ønsker eller endringer som avviker fra inngått avtale.
 
-## 4. Garanti og reklamasjon
+:::callout[warning]
+**El-tilkopling:** Opplegg og fast tilkopling til el-nettet skal utføres av autorisert elektriker (lovpålagt). Dette er et krav for at garanti på Somfy-motorer (5 år) skal gjelde. Feil som måtte stamme fra feil oppkobling dekkes ikke av Selgers garanti.
+:::
 
-Reklamasjonstiden er 5 år på produkter og 2 år på slitasjedeler som snorer og elektronikk. Selger følger for øvrig norsk kjøpslov.
+## 4. Garanti og Reklamasjon
 
-Viktig: Ved nettsalg uten montering bærer kunde selv risiko for kostnader ved bytting eller demontering dersom feil inntreffer etter driftsettelse.
+Reklamasjonstid på solskjermingsprodukter er 5 år, mens slitasjedeler som snorer og elektronikk har 2 år. Selger forholder seg til norsk kjøpslov og videreformidler produsentenes garantier. Selger hefter ikke for følgekostnader ved feil/mangler dersom disse i vesentlig grad overstiger kostnadene selger har ved å tilby et nytt produkt. Ved nettsalg der selger ikke står for montering, forutsettes det at kunde selv bærer noe av risikoen for kostnader tilknyttet bytting og montering/demontering dersom feil inntrer.
 
-## 5. Betaling og sikkerhet
+## 5. Forbehold
 
-Selger beholder eiendomsretten til varene inntil fullt oppgjør er registrert.
+Dersom Selger under montering støter på uforutsette hulrom eller svakheter i konstruksjonen, stanses arbeidet inntil nødvendige tilpasninger og eventuelle tilleggskostnader er avtalt. Selger hefter ikke for skader som følge av at konstruksjonen ikke tåler belastningen på grunn av bygningsmessige feil som ikke kunne oppdages under befaring.
 
-| Bestillingstype | Krav til betaling                                         |
-| --------------- | --------------------------------------------------------- |
-| Nettbutikk      | 100% før produksjonsstart                                 |
-| Med montering   | 50% av produktsum før produksjon, resterende før montasje |
+:::callout[danger]
+Det foreligger ingen mangel dersom en terrassemarkise svikter eller blir ødelagt som følge av at produktet har stått ute/nede uten tilsyn ved nedbør eller sterk vind. Screensystemer må ikke utsettes for vindstyrker over makstoleransene.
+:::
 
-Merk: Ved bruk av kredittkort påløper et gebyr på 4%.
+## 6. Betaling og Sikkerhet
 
-## 6. Kansellering og angrerett
+Bestillinger oversendes produsent idet totalsum (for nettbutikk) eller avtalt depositum er mottatt.
 
-Viktig å vite: Siden produktene er tilvirket etter spesifikke mål, er de unntatt angreretten i henhold til Angrerettloven. Kunde svarer for alle påløpte kostnader ved annullering etter produksjonsstart.
+| Bestillingstype        | Første innbetaling (ved bestilling) | Andre innbetaling (før utlevering/montasje) |
+| ---------------------- | ----------------------------------- | ------------------------------------------- |
+| **Nettbutikk**         | 100% av totalsum                    | -                                           |
+| **Nettbutikk (50/50)** | 50% ved bestilling                  | Resterende 50% når varen er på lager        |
+| **Med montering**      | 50% av produktsum                   | Resterende 50% av produktsum før montasje   |
+| **Monteringstjeneste** | -                                   | Etterfaktureres etter utført arbeid         |
 
-## 7. Viktig informasjon om produktene
+Selger beholder eiendomsretten til de leverte varer inntil fullt oppgjør er registrert på konto. Kredittkort aksepteres mot et _påslag på 4% i pris_.
 
-### Markiseduker
+## 7. Kansellering
 
-Det er normalt med spenninger som skaper «bulker» eller «traktorspor» i duken pga. doble sømmer. Dette utgjør ikke grunnlag for reklamasjon. Våt duk må tørkes innen 48 timer.
+Alle produkter er tilvirket etter spesifikke mål fra Kunde. I henhold til Angrerettloven er tilvirkningskjøp unntatt angreretten. Skulle Kunde annullere bestillingen etter produksjonsstart, svarer Kunde for alle påløpte kostnader.
 
-### Terrassemarkiser
+## 8. Tvister og Rettigheter
 
-Markiser er for solskjerming. All bruk ved nedbør eller vind skjer på kundens risiko. Det anbefales sterkt at markiser ikke står ute uten tilsyn eller om natten.
+Enhver tvist skal søkes løst i minnelighet, eventuelt i Forliksrådet. Kunden aksepterer at rettsbehandling skjer i Selgers rettsdistrikt. Innhold i dokumenter og på nettsider tilhører Selger og må ikke kopieres uten tillatelse.
+
+---
+
+:::callout[danger]
+
+**Viktig å vite om markiseduker**<br />Markiseduken er laget av 100% akryl og er teflonbehandlet. Den er sterkt vannavvisende, men vann kan slippe gjennom sømmer (skjøt for hver ~120cm). Det er helt normalt at det oppstår "bulker" eller "traktorspor" i duken pga. ulik diameter mellom søm og duk ved rulling; dette utgjør ikke grunnlag for reklamasjon. Våt markiseduk må tørkes innen 48 timer før den etterlates innrullet.
+
+**Viktig å vite om terrassemarkiser**<br/>All bruk under lett nedbør skjer for Kundes risiko og krever tilsyn så vann ikke samler seg i duken. Anbefalt minste fall er 15 grader. Vi anbefaler på det sterkeste at markiser ikke blir stående ute om natten, eller når boligen forlates.
+:::

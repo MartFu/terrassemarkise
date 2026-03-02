@@ -17,13 +17,13 @@ export default async function JuridiskIndexPage() {
     <>
       <PageHeader
         breadcrumbs={[{ label: "Hjem", href: "/" }, { label: "Juridisk" }]}
-        className="bg-secondary text-secondary-foreground!"
+        className="bg-card"
         title="Juridisk dokumentasjon"
-        minHeight="min-h-45 md:min-h-50"
+        minHeight="min-h-40"
         description="Lær om hvordan vi håndterer personvern, cookies og andre juridiske aspekter knyttet til våre tjenester."
       />
 
-      <Section className="min-h-[calc(100svh-var(--header-height))]">
+      <Section className="min-h-80vh">
         <Container>
           {totalCount === 0 ? (
             <div className="text-center py-12">
@@ -35,7 +35,7 @@ export default async function JuridiskIndexPage() {
               </p>
             </div>
           ) : (
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col">
               {documents
                 .filter((doc) => doc.frontmatter.title)
                 .map((doc) => (
@@ -43,7 +43,7 @@ export default async function JuridiskIndexPage() {
                     key={doc.slug}
                     href={SITE_URLS.LEGAL + doc.slug}
                     className={cn(
-                      "group w-full px-6 md:px-12 flex flex-wrap items-center border-b justify-between py-6 transition-all hover:bg-muted/15",
+                      "group w-full px-6 md:px-12 flex flex-wrap items-center border-b justify-between py-6 transition-all hover:bg-card/50",
                     )}
                   >
                     <div className="flex flex-col gap-1 min-w-0">

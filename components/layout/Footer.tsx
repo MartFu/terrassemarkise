@@ -76,7 +76,7 @@ export function Footer({
             {/* Navigation sections */}
 
             <div className="lg:col-span-7">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:h-full lg:flex lg:items-end lg:justify-around">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:h-full lg:flex lg:items-start lg:mt-4 lg:justify-around">
                 {FOOTER_CONTENT.sections.map((section) => (
                   <div key={section.title} className="text-center lg:text-left">
                     <h4 className="mb-3 md:mb-4 text-sm md:text-base font-semibold text-muted-foreground uppercase tracking-wider">
@@ -112,7 +112,7 @@ export function Footer({
               <img
                 className="object-contain h-14 w-auto"
                 alt="Våre betalingsløsninger"
-                src="/payment-option-logos.png"
+                src="/payment-option-logos.webp"
               />
             </div>
           </div>

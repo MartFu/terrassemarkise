@@ -76,7 +76,7 @@ export const aboutContent: AboutContent = {
       "Vi er her for å utfordre en ugjennomsiktig bransje med faglig tyngde, transparente priser og kundeservicen du fortjener.",
     companyBadge: "En del av Solskjerming AS",
     image: {
-      src: "/mock/hero-awning.png",
+      src: "/mock/hero-awning.webp",
       alt: "Solskjerming AS",
     },
   },
@@ -167,7 +167,7 @@ export const aboutContent: AboutContent = {
         social: { email: "hakon@solskjerming.no" },
         image: {
           alt: "Håkon Renskoug",
-          src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop",
+          src: "/assets/team/h-renskoug.jpg",
         },
       },
       {
@@ -178,7 +178,7 @@ export const aboutContent: AboutContent = {
         social: { email: "morten@solskjerming.no" },
         image: {
           alt: "Morten Øhrn",
-          src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&auto=format&fit=crop",
+          src: "/assets/team/m-ohrn.jpg",
         },
       },
       {
@@ -190,7 +190,7 @@ export const aboutContent: AboutContent = {
         social: { email: "stale@solskjerming.no" },
         image: {
           alt: "Ståle Krabset",
-          src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&h=200&auto=format&fit=crop",
+          src: "/assets/team/s-krabset.jpg",
         },
       },
     ],

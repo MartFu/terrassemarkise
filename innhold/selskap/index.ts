@@ -25,7 +25,7 @@ export const TEAM: TeamMember[] = [
     name: "Håkon Renskoug",
     role: "Eier og produktansvarlig",
     description: "Maskiningeniør",
-    image: "assets/team/h-renskoug.jpg",
+    image: "/assets/team/h-renskoug.jpg",
     imageAlt: "Portrett av Håkon Renskoug",
     isOwner: true,
     social: {
@@ -36,7 +36,7 @@ export const TEAM: TeamMember[] = [
   {
     name: "Morten Øhrn",
     role: "Daglig leder",
-    image: "assets/team/m-ohrn.jpg",
+    image: "/assets/team/m-ohrn.jpg",
     imageAlt: "Portrett av Morten Øhrn",
     social: {
       facebook: "www.facebook.com/StåleKrabset",
@@ -48,7 +48,7 @@ export const TEAM: TeamMember[] = [
     role: "Økonomiansvarlig",
     description: "Bygningsingeniør",
     imageAlt: "Portrett av Ståle Krabset",
-    image: "assets/team/s-krabset.jpg",
+    image: "/assets/team/s-krabset.jpg",
     social: {
       facebook: "www.facebook.com/StåleKrabset",
       linkedin: "www.linkedin.com/in/st%C3%A5le-krabset",

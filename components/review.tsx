@@ -65,7 +65,7 @@ export function ReviewList({ reviews }: ReviewListProps): React.ReactElement {
       <Button
         variant="outline"
         size="icon"
-        className="h-8 w-8 md:h-9 md:w-9 rounded-full transition-opacity disabled:opacity-0"
+        className="h-8 w-8 md:h-9 md:w-9 transition-opacity disabled:opacity-0"
         onClick={scrollToStart}
         disabled={!isPastSecondScrollStep}
         aria-label="Gå til start"
@@ -75,7 +75,7 @@ export function ReviewList({ reviews }: ReviewListProps): React.ReactElement {
       <Button
         variant="outline"
         size="icon"
-        className="h-8 w-8 md:h-9 md:w-9 rounded-full transition-opacity disabled:opacity-30"
+        className="h-8 w-8 md:h-9 md:w-9 transition-opacity disabled:opacity-30"
         onClick={scrollLeft}
         disabled={isAtStart}
         aria-label="Forrige"
@@ -85,7 +85,7 @@ export function ReviewList({ reviews }: ReviewListProps): React.ReactElement {
       <Button
         variant="outline"
         size="icon"
-        className="h-8 w-8 md:h-9 md:w-9 rounded-full transition-opacity disabled:opacity-30"
+        className="h-8 w-8 md:h-9 md:w-9 transition-opacity disabled:opacity-30"
         onClick={scrollRight}
         disabled={isAtEnd}
         aria-label="Neste"
@@ -98,7 +98,9 @@ export function ReviewList({ reviews }: ReviewListProps): React.ReactElement {
   return (
     <div className="w-full md:overflow-hidden">
       <div className="flex items-end justify-start md:justify-between mb-8 md:mb-10">
-        <Heading>Dette sier våre kunder</Heading>
+        <Heading as="h3" level="h4">
+          Dette sier våre kunder
+        </Heading>
         <div className="hidden md:flex items-center gap-2">{scrollButtons}</div>
       </div>
 
@@ -260,7 +262,7 @@ function ReviewCard({ review }: { review: Review }): React.ReactElement {
             )}
           >
             <div className="overflow-hidden">
-              <div className="rounded-md bg-secondary/30 p-3 border-l-3 border-secondary">
+              <div className="bg-primary/5 p-3 border-l-3 border-primary">
                 <p className="text-sm text-foreground leading-snug">{reply}</p>
               </div>
             </div>

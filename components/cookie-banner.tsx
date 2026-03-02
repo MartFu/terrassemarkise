@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import {
   setConsentCookie,
@@ -11,6 +10,8 @@ import {
 } from "@/lib/consent";
 import { CookieBannerProps } from "@/lib/types";
 import { Switch } from "./ui/switch";
+import Link from "next/link";
+import { SITE_URLS } from "@/lib/constants";
 
 export default function CookieBanner({
   config,
@@ -82,7 +83,16 @@ export default function CookieBanner({
       <div className="max-w-xl w-full bg-card text-foreground/80 border shadow-2xl p-6">
         <div className="space-y-2 border-b pb-2 mb-4">
           <h2 className="text-xl font-bold text-foreground">{config.title}</h2>
-          <p className="text-sm">{config.description}</p>
+          <p className="text-sm max-w-prose">
+            {config.description}{" "}
+            <Link
+              href={SITE_URLS.LEGAL + "personvern"}
+              className="text-sm underline hover:text-primary"
+            >
+              Lær mer
+            </Link>{" "}
+            om hvordan vi behandler data og beskytter personvernet ditt.
+          </p>
         </div>
 
         <div className="space-y-6 mb-6">
@@ -104,7 +114,7 @@ export default function CookieBanner({
                 />
               </div>
 
-              <p className="text-xs">{cat.description}</p>
+              <p className="text-xs max-w-sm">{cat.description}</p>
             </div>
           ))}
         </div>
