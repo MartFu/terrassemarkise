@@ -180,7 +180,7 @@ function ReviewCard({ review }: { review: Review }): React.ReactElement {
   const isLongComment = comment.length > 150;
 
   return (
-    <article className="review-card group/card hover:opacity-100 relative rounded-2xl border border-border bg-linear-to-b from-card to-muted/20 p-6 transition-all duration-300 flex flex-col">
+    <article className="review-card group/card hover:opacity-100 relative border border-border bg-linear-to-b from-card to-muted/20 p-6 transition-all duration-300 flex flex-col">
       <Quote className="absolute top-4 right-4 h-8 w-8 text-primary/15 group-hover/card:text-primary/40 transition-colors" />
 
       <div className="flex flex-col gap-2">

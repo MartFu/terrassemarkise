@@ -20,7 +20,7 @@ const sectionVariants = cva(
         gradient: "bg-gradient-to-br from-background via-muted to-background",
         dotPattern:
           "bg-background [&::before]:absolute [&::before]:inset-0 [&::before]:opacity-[0.03] [&::before]:bg-[radial-gradient(circle_at_center,_var(--foreground)_1px,_transparent_1px)] [&::before]:bg-[size:24px_24px] [&::before]:pointer-events-none",
-        grid: "bg-background [&::before]:absolute [&::before]:inset-0 [&::before]:opacity-[0.02] [&::before]:bg-[linear-gradient(to_right,_var(--foreground)_1px,_transparent_1px),linear-gradient(to_bottom,_var(--foreground)_1px,_transparent_1px)] [&::before]:bg-[size:4rem_4rem] [&::before]:pointer-events-none",
+        grid: "bg-background [&::before]:absolute [&::before]:inset-0 [&::before]:opacity-[0.02] [&::before]:bg-[linear-gradient(to_right,_#00000_1px,_transparent_1px),linear-gradient(to_bottom,_#00000_1px,_transparent_1px)] [&::before]:bg-[size:4rem_4rem] [&::before]:pointer-events-none",
       },
 
       // Spacing variations

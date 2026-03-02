@@ -377,6 +377,27 @@ export const homePageContent = {
 
 export type HomePageContent = typeof homePageContent;
 
+export const metadata = {
+  title: "Terrassemarkise Nettbutikk - Solskjerming AS",
+  description:
+    "Terrassemarkiser i pulverlakkert aluminium. Maks 7m bredde og 3,6m utfall. Skreddersy din egen terrassemarkise - få pris levert hjem omgående.",
+  keywords: ["terrassemarkiser"],
+  // Theme color for mobile browsers
+  themeColor: "#f0af09",
+  // Open Graph (Social Media) settings
+  openGraph: {
+    images: [
+      {
+        url: "/upload/26/palladio-terrassemarkise-01.jpg",
+      },
+    ],
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
+};
+
 export default function Page() {
   return (
     <div className="overflow-x-hidden">

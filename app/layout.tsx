@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <body className={`antialiased min-h-screen flex flex-col`}>
-        <StagingLock>
+        <StagingLock disabled>
           <Layout>{children}</Layout>
         </StagingLock>
         <Suspense fallback={null}>

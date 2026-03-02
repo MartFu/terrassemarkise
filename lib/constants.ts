@@ -1,6 +1,6 @@
 export const SITE_URLS = {
   ABOUT: "/om-oss/",
-  CONTACT: "/kontakt/",
+  CONTACT: "/kontaktoss/",
   LEGAL: "/juridisk/",
   PRODUCTS: "/produkter/",
   AWNING_OPTIONS: "/produkter/terrassemarkiser/duk-og-farger",

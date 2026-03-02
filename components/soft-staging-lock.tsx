@@ -11,9 +11,13 @@ const STORAGE_KEY = "staging_unlocked";
 
 interface StagingLockProps {
   children: React.ReactNode;
+  disabled?: boolean;
 }
 
-export default function StagingLock({ children }: StagingLockProps) {
+export default function StagingLock({
+  children,
+  disabled = false,
+}: StagingLockProps) {
   const [unlocked, setUnlocked] = useState(false);
   const [input, setInput] = useState("");
   const [error, setError] = useState(false);
@@ -46,7 +50,7 @@ export default function StagingLock({ children }: StagingLockProps) {
     if (e.key === "Enter") attempt();
   };
 
-  if (!mounted) return null;
+  if (!mounted || disabled) return null;
   if (unlocked) return <>{children}</>;
 
   return (

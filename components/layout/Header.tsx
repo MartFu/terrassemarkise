@@ -15,6 +15,7 @@ import { EXTERNAL_URLS, SITE_URLS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "../theme-toggle";
 import { Menu, X, ChevronDown, ExternalLink } from "lucide-react";
+import { Button } from "../ui/button";
 
 const produktKategorier: {
   title: string;
@@ -278,25 +279,6 @@ export function Header({
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
-                {/* <NavigationMenuItem>
-                  <NavigationMenuTrigger className={navLinkClassName}>
-                    <Link href={SITE_URLS.PRODUCTS}>Produkter</Link>
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      {produktKategorier.map((kategori) => (
-                        <NavigationMenuListItem
-                          key={kategori.title}
-                          title={kategori.title}
-                          href={kategori.href}
-                        >
-                          {kategori.description}
-                        </NavigationMenuListItem>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem> */}
-
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild className={navLinkClassName}>
                     <Link href={SITE_URLS.ABOUT}>Om oss</Link>
@@ -315,37 +297,20 @@ export function Header({
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
-                {/*  <NavigationMenuItem>
-                  <NavigationMenuTrigger className={navLinkClassName}>
-                    <Link href={SITE_URLS.RESOURCES}>Ressurser</Link>
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      {resourceCategories.map((kategori) => (
-                        <NavigationMenuListItem
-                          key={kategori.title}
-                          title={kategori.title}
-                          href={kategori.href}
-                        >
-                          {kategori.description}
-                        </NavigationMenuListItem>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem> */}
-
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     asChild
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 ml-4 rounded-full"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 ml-4 rounded-none"
                   >
-                    <Link
-                      href={EXTERNAL_URLS.MAIN_DOMAIN_STORE_AWNINGS}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      Besøk nettbutikken
-                    </Link>
+                    <Button asChild>
+                      <Link
+                        href={EXTERNAL_URLS.MAIN_DOMAIN_STORE_AWNINGS}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Besøk nettbutikken
+                      </Link>
+                    </Button>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
