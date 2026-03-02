@@ -33,6 +33,7 @@ import {
 import {
   ContentIndex,
   ContentItem,
+  ContentSiblings,
   ContentType,
   Frontmatter,
   RenderedContent,
@@ -47,11 +48,6 @@ const CONTENT_ROOT = path.join(process.cwd(), "innhold");
 // ============================================================================
 // ZOD SCHEMAS
 // ============================================================================
-
-const FrontmatterAuthorSchema = z.object({
-  name: z.string(),
-  role: z.string().optional(),
-});
 
 const FrontmatterSchema = z.object({
   // Core
@@ -76,9 +72,31 @@ const FrontmatterSchema = z.object({
   readTime: z.string().optional(),
   featured: z.boolean().optional(),
 
+  // Thumbnail
+  thumbnailSrc: z.string().optional(),
+  thumbnailAlt: z.string().optional(),
+  thumbnailWidth: z.number().optional(),
+  thumbnailHeight: z.number().optional(),
+  thumbnailObjectFit: z
+    .enum(["contain", "cover", "fill", "none", "scale-down"])
+    .optional(),
+  thumbnailObjectPosition: z
+    .enum(["left", "right", "top", "bottom"])
+    .optional(),
+  thumbnailOpacity: z.number().min(0).max(1).optional(),
+  thumbnailOverlayHidden: z.boolean().optional(),
+
   // Call-to-action
   ctaText: z.string().optional(),
   ctaLink: z.string().optional(),
+  ctaSecondaryText: z.string().optional(),
+  ctaSecondaryLink: z.string().optional(),
+  ctaAlign: z.enum(["left", "center", "right"]).optional(),
+  ctaDescription: z.string().optional(),
+  ctaIcon: z
+    .enum(["arrow", "external", "download", "document", "none"])
+    .optional(),
+  ctaVariant: z.enum(["default", "compact", "banner", "card"]).optional(),
 
   // Legal / typed documents
   type: z.string().optional(),
@@ -484,6 +502,70 @@ export async function searchContent(
     });
   } catch {
     return [];
+  }
+}
+
+/**
+ * Get previous and next siblings for navigation
+ * Uses order field primarily, falls back to date
+ */
+export async function getContentSiblings(
+  contentType: ContentType,
+  currentSlug: string,
+  options: {
+    sortBy?: "order" | "date";
+    sortOrder?: "asc" | "desc";
+    filterByCategory?: string;
+  } = {},
+): Promise<ContentSiblings> {
+  const { sortBy = "order", sortOrder = "asc", filterByCategory } = options;
+
+  try {
+    const validatedSlug = safeValidateSlug(currentSlug);
+    const { items } = await getAllContent(contentType, {
+      includeDrafts: false,
+      sortBy: sortBy === "date" ? "date" : "order",
+      sortOrder,
+    });
+
+    // Filter by category if specified
+    const filteredItems = filterByCategory
+      ? items.filter((item) => item.frontmatter.category === filterByCategory)
+      : items;
+
+    const currentIndex = filteredItems.findIndex(
+      (item) => item.slug === validatedSlug,
+    );
+
+    if (currentIndex === -1) {
+      throw new NotFoundError(`Content not found: ${validatedSlug}`, {
+        slug: validatedSlug,
+        contentType,
+      });
+    }
+
+    return {
+      previous: currentIndex > 0 ? filteredItems[currentIndex - 1] : null,
+      next:
+        currentIndex < filteredItems.length - 1
+          ? filteredItems[currentIndex + 1]
+          : null,
+      currentIndex,
+      total: filteredItems.length,
+    };
+  } catch (error) {
+    if (error instanceof ContentServiceError) throw error;
+
+    throw new ContentServiceError(
+      `Failed to get content siblings: ${error instanceof Error ? error.message : "Unknown error"}`,
+      "UNKNOWN_ERROR",
+      500,
+      {
+        contentType,
+        slug: currentSlug,
+        originalError: error instanceof Error ? error.message : undefined,
+      },
+    );
   }
 }
 

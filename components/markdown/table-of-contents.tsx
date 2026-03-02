@@ -93,7 +93,7 @@ export function TableOfContents({
                 Ingen treff for {`"${searchQuery}"`}
               </div>
             ) : (
-              <ul className="space-y-2.5 text-sm" role="list">
+              <ul className="space-y-2.5 overflow-x-auto text-sm" role="list">
                 {filteredHeadings.map((heading, idx) => (
                   <TocItem
                     key={`toc-item-${heading.id}-${idx}`}
@@ -161,7 +161,7 @@ function TocItem({
         href={`#${headingId}`}
         onClick={(e) => onHeadingClick?.(headingId, e)}
         className={cn(
-          "block truncate py-1 px-2 rounded-md transition-all duration-150",
+          "block text-wrap py-1 px-2 rounded-md transition-all duration-150",
           isActive
             ? "font-semibold text-foreground"
             : "text-muted-foreground hover:text-foreground hover:bg-muted/50",

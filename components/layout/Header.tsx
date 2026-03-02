@@ -273,6 +273,12 @@ export function Header({
             >
               <NavigationMenuList className="gap-2">
                 <NavigationMenuItem>
+                  <NavigationMenuLink asChild className={navLinkClassName}>
+                    <Link href={SITE_URLS.PRODUCTS}>Produkter</Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                {/* <NavigationMenuItem>
                   <NavigationMenuTrigger className={navLinkClassName}>
                     <Link href={SITE_URLS.PRODUCTS}>Produkter</Link>
                   </NavigationMenuTrigger>
@@ -289,7 +295,7 @@ export function Header({
                       ))}
                     </ul>
                   </NavigationMenuContent>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
 
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild className={navLinkClassName}>
@@ -299,13 +305,13 @@ export function Header({
 
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild className={navLinkClassName}>
-                    <Link href={SITE_URLS.CONTACT}>Kontakt</Link>
+                    <Link href={SITE_URLS.RESOURCES}>Ressurser</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild className={navLinkClassName}>
-                    <Link href={SITE_URLS.RESOURCES}>Ressurser</Link>
+                    <Link href={SITE_URLS.CONTACT}>Kontakt</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 

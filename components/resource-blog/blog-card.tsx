@@ -9,19 +9,23 @@ interface BlogCardProps {
 }
 
 export function BlogCard({ data, slug }: BlogCardProps) {
+  console.log(data);
+
   return (
     <Link href={`/ressurser/${slug}`} className="group block">
-      <Card className="h-full pt-0 overflow-hidden border shadow-sm">
-        <CardContent className="px-6 pt-6">
+      <Card className="h-full pt-0 overflow-hidden bg-background hover:bg-card/40 shadow-sm rounded-none">
+        <CardContent className="px-6 pt-6 group">
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              {data.category && (
-                <Badge variant="secondary" className="rounded-full">
-                  {data.category}
-                </Badge>
-              )}
+            <div className="min-h-40 relative overflow-hidden">
+              <div
+                className="absolute inset-0 w-full aspect-video"
+                style={{
+                  backgroundImage: `url('${data.thumbnailSrc}')`,
+                  backgroundPosition: data?.thumbnailObjectPosition ?? "center",
+                  backgroundSize: "cover",
+                }}
+              />
             </div>
-
             <div className="space-y-2">
               <h3 className="text-xl line-clamp-2 group-hover:text-primary transition-colors">
                 {data.title}

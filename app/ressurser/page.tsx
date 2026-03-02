@@ -1,5 +1,5 @@
 import { getAllContent } from "@/lib/content-loader.server";
-import ClientPage from "./client.page";
+import ClientPage from "./page.client";
 
 export default async function Page() {
   const { items: posts } = await getAllContent("ressurser");

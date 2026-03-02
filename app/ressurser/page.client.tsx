@@ -3,6 +3,7 @@
 import { BlogCard } from "@/components/resource-blog/blog-card";
 import { BlogHero } from "@/components/resource-blog/blog-hero";
 import { CategoriesFilter } from "@/components/resource-blog/categories-filter";
+import { PageHeader } from "@/components/shared/page-header";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { ContentItem } from "@/lib/content-loader.types";
@@ -13,7 +14,7 @@ interface Props {
   categories: string[];
 }
 
-export default function ClientPage({ posts, categories }: Props) {
+export default function Page({ posts, categories }: Props) {
   const [category, setCategory] = useState("all");
   const [query, setQuery] = useState("");
 
@@ -23,7 +24,10 @@ export default function ClientPage({ posts, categories }: Props) {
       category && category !== "all" ? metadata?.category === category : true;
     const matchesQuery = query
       ? metadata?.title?.toLowerCase().includes(query.toLowerCase()) ||
-        metadata?.excerpt?.toLowerCase().includes(query.toLowerCase())
+        metadata?.excerpt?.toLowerCase().includes(query.toLowerCase()) ||
+        metadata?.tags?.map((t) =>
+          t.toLowerCase().includes(query.toLowerCase()),
+        )
       : true;
 
     return matchesCategory && matchesQuery;
@@ -33,8 +37,21 @@ export default function ClientPage({ posts, categories }: Props) {
 
   return (
     <>
+      <PageHeader
+        className="min-h-[50vh] text-white"
+        title={["Utforsk våre gudier,", "videoer og artikler"]}
+        description="Vi gjør en innsats for at nesten hvem som helst skal kunne montere våre produkter."
+        backgroundImage="/mock/product-folding.png"
+        backgroundImageOptions={{
+          opacity: 1,
+          objectFit: "cover",
+          objectPosition: "center",
+        }}
+        overlay="xl"
+        breadcrumbs={[{ label: "Hjem", href: "/" }, { label: "Ressurser" }]}
+      />
       <Section className="pb-0!">
-        <Container className="border-b pb-20">
+        <Container className="border-b pb-12">
           <BlogHero query={query} onSetQuery={(query) => setQuery(query)} />
         </Container>
       </Section>
@@ -61,7 +78,7 @@ export default function ClientPage({ posts, categories }: Props) {
               )}
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-16">
               {filteredPosts.map((post, idx) => (
                 <BlogCard
                   key={`post-card-${idx}`}

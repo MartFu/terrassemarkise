@@ -13,13 +13,17 @@ import { MarkdownRenderer } from "./md-renderer";
 import { TableOfContents } from "./table-of-contents";
 import { Heading, MarkdownRendererProps, TableOfContentsProps } from "./types";
 import { Container } from "@/components/ui/container";
-import { Section } from "@/components/ui/section";
-import { Frontmatter } from "./frontmatter";
+import { MarkdownHeader } from "./md-header";
 import readingTime from "reading-time";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { BreadcrumbItem } from "../breadcrumbs";
 import { useScrollContainer } from "@/context/scroll-container-provider";
 import { usePathname, useRouter } from "next/navigation";
+import { MarkdownCTA } from "./md-cta";
+import { Section } from "../ui/section";
+import { EXTERNAL_URLS, SITE_URLS } from "@/lib/constants";
+import { MarkdownNavigation } from "./md-navigation";
+import { ContentSiblings } from "@/lib/content-loader.types";
 
 export interface MarkdownRendererWithTocProps
   extends
@@ -35,6 +39,7 @@ export interface MarkdownRendererWithTocProps
   footerSlot?: React.ReactNode;
   showProgress?: boolean;
   scrollOffset?: number;
+  siblings?: ContentSiblings;
 }
 
 export function MarkdownRendererWithToc({
@@ -61,6 +66,7 @@ export function MarkdownRendererWithToc({
   tocClassName,
   footerSlot,
   scrollOffset = 120,
+  siblings,
 }: MarkdownRendererWithTocProps) {
   const [headings, setHeadings] = useState<Heading[]>([]);
 
@@ -145,7 +151,7 @@ export function MarkdownRendererWithToc({
 
       {/* Frontmatter display */}
       {frontmatter && (
-        <Frontmatter
+        <MarkdownHeader
           breadcrumbs={breadcrumbs}
           frontmatter={frontmatter}
           readingTime={readingStats?.minutes}
@@ -158,7 +164,7 @@ export function MarkdownRendererWithToc({
         </div>
       )}
 
-      <section className="pt-8 md:py-10">
+      <Section>
         <Container className="h-full">
           <div
             className={cn(
@@ -207,7 +213,62 @@ export function MarkdownRendererWithToc({
             />
           </div>
         </Container>
-      </section>
+      </Section>
+
+      {(frontmatter?.ctaText || footerSlot) && (
+        <Section spacing={"sm"}>
+          <Container>
+            {footerSlot && footerSlot}
+
+            {frontmatter?.ctaText && (
+              <MarkdownCTA
+                text={frontmatter?.ctaText ?? "Se vårt utvalg i nettbutikken"}
+                link={
+                  frontmatter?.ctaLink ??
+                  EXTERNAL_URLS.MAIN_DOMAIN_STORE_AWNINGS_TERRACE_AWNINGS
+                }
+                secondaryText={
+                  frontmatter?.ctaSecondary ?? "Lær mer om være produkter"
+                }
+                secondaryLink={
+                  frontmatter?.ctaSecondaryLink ?? SITE_URLS.ARTICLES
+                }
+                variant={frontmatter?.ctaVariant ?? "banner"}
+                heading={
+                  frontmatter?.ctaHeading ??
+                  "Gjør terrassen til det perfekte stedet å tilbringe sommeren!"
+                }
+                description={frontmatter?.ctaDescription}
+                icon={frontmatter?.ctaIcon || "external"}
+                align={frontmatter?.ctaAlign || "center"}
+              />
+            )}
+            <MarkdownNavigation
+              previous={
+                siblings?.previous
+                  ? {
+                      slug: siblings.previous.slug,
+                      title: siblings.previous?.frontmatter?.title,
+                      excerpt: siblings.previous?.frontmatter?.excerpt,
+                      imageSrc: siblings.previous?.frontmatter?.thumbnailSrc,
+                    }
+                  : null
+              }
+              next={
+                siblings?.next
+                  ? {
+                      slug: siblings.next.slug,
+                      title: siblings.next?.frontmatter?.title,
+                      excerpt: siblings.next?.frontmatter?.excerpt,
+                      imageSrc: siblings.next?.frontmatter?.thumbnailSrc,
+                    }
+                  : null
+              }
+              basePath="/ressurser/artikler"
+            />
+          </Container>
+        </Section>
+      )}
     </div>
   );
 }

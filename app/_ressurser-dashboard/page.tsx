@@ -1,4 +1,5 @@
 import { getAllContent } from "@/lib/content-loader.server";
+import { redirect } from "next/navigation";
 // import ClientPage from "./client.page";
 
 export default async function Page() {
@@ -12,6 +13,6 @@ export default async function Page() {
     ),
   );
 
-  return null;
+  redirect("/");
   // return <ClientPage posts={posts} categories={categories} />;
 }

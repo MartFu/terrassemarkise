@@ -2,6 +2,7 @@
 
 import { Search } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { Kbd, KbdGroup } from "../ui/kbd";
 
 interface Props {
   initialQuery?: string;
@@ -32,8 +33,8 @@ export function BlogHero({ onSetQuery, query }: Props) {
     <>
       <div className="max-w-3xl mx-auto text-center space-y-8">
         <div className="space-y-4">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl">
-            Alt du trenger å vite om å velge og ta vare på din nye
+          <h1 className="text-2xl md:text-3xl">
+            Alt du trenger å vite om å velge og ta vare <br /> på din nye
             terrassemarkise
           </h1>
         </div>
@@ -49,9 +50,12 @@ export function BlogHero({ onSetQuery, query }: Props) {
               placeholder="Søk i artikler..."
               className="w-full pl-12 pr-4 py-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none transition-all"
             />
-            <span className="hidden sm:block bg-secondary border text-xs px-2 py-1 rounded-md absolute top-1/2 -translate-y-1/2 right-4">
-              Alt + s
-            </span>
+
+            <KbdGroup className="hidden md:block space-x-1 absolute top-1/2 -translate-y-1/2 right-4">
+              <Kbd>Alt</Kbd>
+              <Kbd>+</Kbd>
+              <Kbd>s</Kbd>
+            </KbdGroup>
           </div>
         </div>
       </div>

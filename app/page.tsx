@@ -1,3 +1,7 @@
+import GalleryGrid from "@/components/gallery/gallery";
+import HeroSection from "@/components/pages/index/hero";
+import SolutionsSection from "@/components/pages/index/solutions";
+import SolutionsSectionV2 from "@/components/pages/index/solutions.v1";
 import { ReviewList } from "@/components/review";
 
 import { Button } from "@/components/ui/button";
@@ -6,197 +10,455 @@ import { CreaseBox } from "@/components/ui/crease";
 import { Grid } from "@/components/ui/grid";
 import { Section } from "@/components/ui/section";
 import { Stack } from "@/components/ui/stack";
+import { TrustBadge } from "@/components/ui/trust-badge";
 
 import { REVIEWS } from "@/innhold/reviews";
 import { SITE_URLS } from "@/lib/constants";
+import { GalleryImage } from "@/lib/types";
 import { cn } from "@/lib/utils";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronRight, Shield } from "lucide-react";
 import Link from "next/link";
+
+const trustBadges = [
+  {
+    label: "5000+ kunder",
+  },
+  {
+    label: "10 års erfaring",
+  },
+  {
+    label: "5 års garanti",
+  },
+  {
+    label: "Gassellebedrift",
+  },
+];
+
+// ─── Types ────────────────────────────────────────────────────────────────────
+
+type Hotspot = {
+  x: number; // % from left
+  y: number; // % from top
+  label: string;
+  body: string;
+};
+
+type Variant = {
+  tag: string;
+  image: string;
+  hotspots: Hotspot[];
+};
+
+export type Slide = {
+  index: number;
+  model: string;
+  title: string;
+  type: string;
+  description: string;
+  price: string;
+  priceNote?: string;
+  variants: Variant[];
+  images?: GalleryImage[];
+};
+
+// ─── Content ──────────────────────────────────────────────────────────────────
+
+const slides: Slide[] = [
+  {
+    index: 0,
+    model: "Jamaica",
+    type: "Åpen markise",
+    title: "Vår mest fleksible løsning",
+    description:
+      "Den åpne markisen er arkitektur i seg selv. Monteres mot vegg eller tak - også i trange nisjer og under takutspring der en kassett ikke ville passet. Enkel, effektiv og synlig. En markise du legger merke til.",
+    price: "fra kr 8\u202f152,-",
+    priceNote: "+ kr 2\u202f972,- med toppdeksel",
+    variants: [
+      {
+        tag: "Uten toppdeksel",
+        image: "/assets/product-images/jamaica-illustrasjon-2.webp",
+        hotspots: [
+          {
+            x: 84,
+            y: 18,
+            label: "Åpen rulleprofil",
+            body: "Duken rulles rundt en synlig profil. Gir en ren, klassisk silhuett og enkel tilgang for service.",
+          },
+          {
+            x: 60,
+            y: 60,
+            label: "Artikulerte armer",
+            body: "Saksearmer med konstant fjærspenning holder duken stram i alle posisjoner.",
+          },
+          {
+            x: 20,
+            y: 84,
+            label: "Frontprofil",
+            body: "Nedsenkbar front kan monteres for å blokkere lav kveldssol og gi le mot vind.",
+          },
+        ],
+      },
+      {
+        tag: "Med toppdeksel",
+        image: "/assets/product-images/jamaica-illustrasjon-toppdeksel.webp",
+        hotspots: [
+          {
+            x: 70,
+            y: 12,
+            label: "Toppdeksel",
+            body: "Et presist tilpasset aluminiumdeksel beskytter rullemekanismen mot nedbør og fugler - uten å endre markisens rene uttrykk.",
+          },
+          {
+            x: 60,
+            y: 60,
+            label: "Artikulerte armer",
+            body: "Saksearmer med konstant fjærspenning holder duken stram i alle posisjoner.",
+          },
+          {
+            x: 20,
+            y: 84,
+            label: "Frontprofil",
+            body: "Nedsenkbar front kan monteres for å blokkere lav kveldssol og gi le mot vind.",
+          },
+        ],
+      },
+    ],
+    images: [
+      {
+        id: "jamaica-img-1",
+        src: "/assets/references/jamaica/2x-jamaica-montert-utrullet-hvit-fasade.webp",
+        alt: "2 stk Jamaica terrassemarkise på hvit fasade",
+        width: 300,
+        height: 169,
+        title: "Jamaica",
+      },
+      {
+        id: "jamaica-img-2",
+        src: "/assets/references/jamaica/jamaica-toppdeksel-montert-hvit-fasade.webp",
+        alt: "Jamaica med toppdeksel på hvit fasade",
+        width: 300,
+        height: 169,
+        title: "Jamaica",
+      },
+      {
+        id: "jamaica-img-3",
+        src: "/assets/references/jamaica/jamaica-toppdeksel-profil.webp",
+        alt: "Jamaica med toppdeksel i profil",
+        width: 300,
+        height: 169,
+        title: "Jamaica",
+      },
+    ],
+  },
+  {
+    index: 1,
+    model: "Palladio",
+    type: "Halvkassett",
+    title: "Perfekt balanse mellom stil, funksjon og pris",
+    description:
+      "Duken trekkes inn i en lukket kassett. Armene forblir eksponert, men mekanismen er alltid beskyttet.",
+    price: "fra kr 11\u202f164,–",
+    variants: [
+      {
+        tag: "",
+        image: "/assets/product-images/palladio-illustrasjon.webp",
+        hotspots: [
+          {
+            x: 84,
+            y: 8,
+            label: "Halvkassett",
+            body: "Duk og rulleaksel er innkapslet i en lukket aluminiumkassett. Beskyttet mot vær, støv og UV - alltid klar til bruk.",
+          },
+          {
+            x: 28,
+            y: 72,
+            label: "Eksponerte armer",
+            body: "Armene foldes langs fasaden men er ikke innkapslet. Robuste nok for norsk klima og enkle å vedlikeholde.",
+          },
+          {
+            x: 74,
+            y: 64,
+            label: "Frontliste",
+            body: "Slank aluminiumprofil holder dukkanten stram og gir et arkitektonisk avsluttet uttrykk.",
+          },
+        ],
+      },
+    ],
+    images: [
+      {
+        id: "palladio-img-1",
+        src: "/assets/references/palladio/palladio-3.webp",
+        alt: "Palladio i hyggelig utekrok",
+        width: 300,
+        height: 169,
+        title: "Palladio",
+      },
+      {
+        id: "palladio-img-2",
+        src: "/assets/references/palladio/palladio-4.webp",
+        alt: "Palladio med norsk flagg i bakgrunnen",
+        width: 300,
+        height: 169,
+        title: "Palladio",
+      },
+      {
+        id: "palladio-img-3",
+        src: "/assets/references/palladio/palladio-montert-utrullet-sort-fasade.webp",
+        alt: "Palladio på sort fasade",
+        width: 300,
+        height: 169,
+        title: "Palladio",
+      },
+    ],
+  },
+  {
+    index: 2,
+    model: "Corsica",
+    type: "Helkassett",
+    title: "Kompromissløs eleganse for den mest kresne",
+    description:
+      "Alt forsvinner. Duk, armer og mekanisme trekkes inn i én forseglet kassett. Fasaden forblir urørt. Corsica er vår mest komplette markise, og den eneste med integrert LED-belysning.",
+    price: "fra kr 14\u202f845,-",
+    variants: [
+      {
+        tag: "",
+        image: "/assets/product-images/corsica-illustrasjon.webp",
+        hotspots: [
+          {
+            x: 90,
+            y: 14,
+            label: "Forseglet kassett",
+            body: "Duk og armer er fullstendig innkapslet. Kassetten børster støv og lett smuss av duken automatisk ved innrulling.",
+          },
+          {
+            x: 25,
+            y: 58,
+            label: "Innkapslete armer",
+            body: "Armene foldes inn i kassetten. Ledd og fjærsystem er alltid beskyttet - lenger levetid, mindre vedlikehold.",
+          },
+          {
+            x: 83,
+            y: 58,
+            label: "Integrert LED",
+            body: "Diskret LED-belysning er bygget inn i markisens profil. Terrassebelysning uten ekstra installasjoner.",
+          },
+        ],
+      },
+    ],
+    images: [
+      {
+        id: "corsica-img-1",
+        src: "/assets/references/corsica/corsica-1.webp",
+        alt: "Corsica fra undersiden på hvit fasade",
+        width: 300,
+        height: 169,
+        title: "Palladio",
+      },
+      {
+        id: "corsica-img-2",
+        src: "/assets/references/corsica/corsica-2.webp",
+        alt: "Corsica på skjermet terrasse",
+        width: 300,
+        height: 169,
+        title: "Palladio",
+      },
+      {
+        id: "corsica-img-3",
+        src: "/assets/references/corsica/corsica-utrullet-underside-hvit-fasade.webp",
+        alt: "Utrullet Corsica på hvite fasade",
+        width: 300,
+        height: 169,
+        title: "Palladio",
+      },
+    ],
+  },
+];
+
+const galleryImages = [
+  {
+    id: "corsica-img-1",
+    src: "/assets/references/corsica/corsica-1.webp",
+    alt: "Corsica fra undersiden på hvit fasade",
+    width: 300,
+    height: 169,
+    title: "Palladio",
+  },
+  {
+    id: "corsica-img-2",
+    src: "/assets/references/corsica/corsica-2.webp",
+    alt: "Corsica på skjermet terrasse",
+    width: 300,
+    height: 169,
+    title: "Palladio",
+  },
+  {
+    id: "corsica-img-3",
+    src: "/assets/references/corsica/corsica-utrullet-underside-hvit-fasade.webp",
+    alt: "Utrullet Corsica på hvite fasade",
+    width: 300,
+    height: 169,
+    title: "Palladio",
+  },
+  {
+    id: "palladio-img-1",
+    src: "/assets/references/palladio/palladio-3.webp",
+    alt: "Palladio i hyggelig utekrok",
+    width: 300,
+    height: 169,
+    title: "Palladio",
+  },
+  {
+    id: "palladio-img-2",
+    src: "/assets/references/palladio/palladio-4.webp",
+    alt: "Palladio med norsk flagg i bakgrunnen",
+    width: 300,
+    height: 169,
+    title: "Palladio",
+  },
+  {
+    id: "palladio-img-3",
+    src: "/assets/references/palladio/palladio-montert-utrullet-sort-fasade.webp",
+    alt: "Palladio på sort fasade",
+    width: 300,
+    height: 169,
+    title: "Palladio",
+  },
+  {
+    id: "jamaica-img-1",
+    src: "/assets/references/jamaica/2x-jamaica-montert-utrullet-hvit-fasade.webp",
+    alt: "2 stk Jamaica terrassemarkise på hvit fasade",
+    width: 300,
+    height: 169,
+    title: "Jamaica",
+  },
+  {
+    id: "jamaica-img-2",
+    src: "/assets/references/jamaica/jamaica-toppdeksel-montert-hvit-fasade.webp",
+    alt: "Jamaica med toppdeksel på hvit fasade",
+    width: 300,
+    height: 169,
+    title: "Jamaica",
+  },
+  {
+    id: "jamaica-img-3",
+    src: "/assets/references/jamaica/jamaica-toppdeksel-profil.webp",
+    alt: "Jamaica med toppdeksel i profil",
+    width: 300,
+    height: 169,
+    title: "Jamaica",
+  },
+];
+
+export const homePageContent = {
+  hero: {
+    title: ["Flytt stua ut.", "Hele sommeren."],
+    description:
+      "De beste sommerkveldene krever ikke mye, bare litt ly for solen og dekke mot kveldsyren. En god terrassemarkise forlenger uteselskapene fra de første vårdagene til langt ut i september.",
+    imageSrc: "/mock/hero-awning.png",
+    imageSize: "cover",
+    imagePosition: "center",
+    imageRepeat: "no-repeat",
+  },
+  trustBadges,
+  solutions: {
+    title: "Gi fasaden rett uttrykk med riktig terrassemarkise",
+    slides,
+  },
+  customization: {
+    title: "Gjør markisen din",
+    description:
+      "Våre terrassemarkiser leveres i fem konstruksjonsfarger, fra klassisk hvit til antrasitt. Duken velger du blant 31 alternativer — nøytrale toner som smelter inn i fasaden, dristigere farger som setter preg, og strukturvevde stoffer som gir tekstur og karakter.",
+    imageSrc: "/mock/fabrics.png",
+    imageSize: "cover",
+    imagePosition: "top",
+    imageRepeat: "no-repeat",
+    badge: {
+      title: "Alle duker er av teflonbehandlet akryl",
+      icon: Shield,
+    },
+    ctaText: "Se duk- og fargealternativer",
+    ctaLink: SITE_URLS.AWNING_OPTIONS,
+  },
+} as const;
+
+export type HomePageContent = typeof homePageContent;
 
 export default function Page() {
   return (
     <div className="overflow-x-hidden">
-      <section
-        id="hero"
-        className="relative h-[calc(100svh-var(--header-height))] bg-secondary"
-      >
-        <div
-          className={cn("absolute inset-0 z-1")}
-          style={{
-            backgroundImage: "url('/mock/hero-awning.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
-        <div className="absolute top-0 inset-x-0 h-[24vh] bg-linear-to-b from-black/80 to-transparent z-2" />
-        <div className="absolute bottom-0 inset-x-0 h-[60vh] md:h-[40vh] bg-linear-to-t from-black/90 to-transparent z-2" />
-
-        <Container className="relative z-3 h-full pb-8 text-neutral-50">
-          <Stack
-            className="h-full pb-4"
-            direction={{ base: "col", md: "row" }}
-            align={{ base: "start", md: "end" }}
-            justify={{ base: "end", md: "between" }}
-          >
-            <h1 className="text-3xl md:text-5xl">
-              Flytt stua ut. <br />
-              Hele sommeren.
-            </h1>
-            <p className="text-lg max-w-[48ch] text-neutral-100">
-              De beste sommerkveldene krever ikke mye, bare litt ly for solen og
-              dekke mot kveldsyren. En god terrassemarkise forlenger
-              uteselskapene fra de første vårdagene til langt ut i september.
-            </p>
-          </Stack>
+      <HeroSection content={homePageContent.hero} />
+      <section>
+        <Container className="grid grid-cols md:grid-cols-2 lg:grid-cols-4 py-12">
+          {trustBadges.map((item, idx) => (
+            <div
+              key={item.label}
+              className={cn(
+                "border-border p-6 flex items-center justify-center font-medium text-lg",
+                idx < trustBadges.length - 1 ? "border-r" : "",
+              )}
+            >
+              {item.label}
+            </div>
+          ))}
         </Container>
       </section>
 
-      <Section spacing={"none"} className="bg-card">
-        <Container>
-          <CreaseBox sides={["left", "right"]} className="h-20" />
-        </Container>
-        <Container>
-          <CreaseBox pad="xl" overflow={["top", "bottom"]}>
-            <Stack space={{ base: 8, md: 16 }}>
-              <Stack preset="card">
-                <h2 className="text-xl md:text-3xl">
-                  Gi fasaden rett uttrykk med <br /> riktig terrassemarkise
-                </h2>
-                <p className="md:text-lg max-w-prose">
-                  Alle terrassemarkiser gir skygge. Forskjellen ligger i hva de
-                  gjør med boligen din når solen har gått ned og duken er rullet
-                  inn. Valget handler om du vil at markisen skal være en del av
-                  arkitekturen, eller om den skal være helt usynlig.
-                </p>
-              </Stack>
+      {/* <SolutionsSection /> */}
 
-              <Grid
-                preset="one-col"
-                gap={{ base: 20, md: 16 }}
-                className="min-h-80"
-              >
-                <Stack preset="row-between-collapse">
-                  <div
-                    className={cn("h-80 aspect-video w-full")}
-                    style={{
-                      backgroundImage: "url('/mock/product-window.png')",
-                      backgroundSize: "cover",
-                      backgroundPosition: "top",
-                      backgroundRepeat: "no-repeat",
-                    }}
-                  />
-                  <p className="max-w-prose md:ml-12">
-                    Den åpne markisen er et klassisk arkitektonisk element. Den
-                    setter preg på fasaden og kan monteres mot både vegg og tak.
-                    For ekstra beskyttelse kan den utstyres med toppdeksel mot
-                    nedbør, og en nedsenkbar front som gir le for lav kveldssol.
-                    Dette er markisen for deg som ønsker et uttrykk du både ser
-                    og merker.
-                  </p>
-                </Stack>
+      <SolutionsSectionV2
+        title={homePageContent.solutions.title}
+        slides={homePageContent.solutions.slides}
+      />
 
-                <Stack preset="row-between-collapse">
-                  <div
-                    className={cn("h-80 aspect-video w-full")}
-                    style={{
-                      backgroundImage: "url('/mock/product-folding.png')",
-                      backgroundSize: "cover",
-                      backgroundPosition: "top",
-                      backgroundRepeat: "no-repeat",
-                    }}
-                  />
-                  <p className="max-w-prose md:ml-12">
-                    Kassettmarkisen er den diskré perfeksjonisten. Når den ikke
-                    er i bruk, forsvinner duken helt inn i en lukket profil.
-                    Ingenting er eksponert for vær, støv eller fugler, og
-                    fasaden forblir urørt. En markise du bare legger merke til
-                    når du trenger den.
-                  </p>
-                </Stack>
-              </Grid>
-            </Stack>
-          </CreaseBox>
-        </Container>
+      {/* ── Section 2: Customisation ──────────────────────────────────────── */}
+      <Section spacing="lg" className="bg-secondary text-secondary-foreground">
         <Container>
-          <CreaseBox sides={["left", "right"]} className="h-20" />
-        </Container>
-      </Section>
+          <p className="text-4xl max-w-4xl mx-auto text-center font-light leading-relaxed mb-32">
+            Det finnes ingen standardmarkise her. Hvert eksemplar produseres
+            etter nøyaktig dine mål, ønske om uttrykk og montasjesituasjon.
+          </p>
 
-      <Section
-        spacing={"xl"}
-        className="bg-secondary text-secondary-foreground"
-      >
-        <Container>
-          <Grid preset="two-col" gap={{ base: 8, md: 20 }} className="md:px-12">
-            <Stack preset="card" align={"start"}>
-              <h2 className="text-3xl">Gjør markisen din</h2>
-              <p className="max-w-prose">
-                Terrassemarkisene leveres i fem konstruksjonsfarger, fra
-                klassisk hvit til antrasitt. Duken velger du blant 31
-                alternativer - nøytrale toner som smelter inn i fasaden,
-                dristigere farger som setter preg, og strukturvevde stoffer som
-                gir tekstur og karakter. Alle dukene er teflonbehandlet akryl
-                utviklet for nordisk klima.
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
+            {/* Copy */}
+            <div>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-snug mb-5">
+                {homePageContent.customization.title}
+              </h2>
+
+              <hr className="border-secondary-foreground/20 mb-5" />
+
+              <p className="text-base font-light leading-relaxed opacity-80 mb-4">
+                {homePageContent.customization.description}
               </p>
 
-              <p className="max-w-prose">
-                Det finnes ingen standardmarkise her. Hvert eksemplar produseres
-                etter nøyaktig dine mål, ønske om uttrykk og montasjesituasjon.
-              </p>
-
-              <Button asChild>
-                <Link href={SITE_URLS.AWNING_OPTIONS}>
-                  Se duk- og fargealternativer <ArrowUpRight />
+              {/* Text-link arrow — matches the prev/next nav pattern */}
+              <Button asChild variant="ghost">
+                <Link href={homePageContent.customization.ctaLink}>
+                  {homePageContent.customization.ctaText}
+                  <ChevronRight />
                 </Link>
               </Button>
-            </Stack>
-            <div
-              className={cn("h-80 w-full")}
-              style={{
-                backgroundImage: "url('/mock/fabrics.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "top",
-                backgroundRepeat: "no-repeat",
-              }}
-            />
-          </Grid>
-        </Container>
-      </Section>
+            </div>
 
-      <Section spacing={"xl"}>
-        <Container>
-          <Stack
-            className="flex-col-reverse"
-            direction={{ base: "col", md: "row" }}
-            align={{ base: "start", md: "center" }}
-            justify={{ base: "start", md: "center" }}
-            space={0}
-          >
+            {/* Image */}
             <div className="relative">
-              <div className="absolute z-1 left-0 h-full w-20 bg-linear-to-r from-background to-transparent" />
+              <div className="absolute text-foreground font-medium top-2 left-2 inline-flex items-center px-2 py-1 text-xs gap-2 bg-card/70 backdrop-blur-2xl shadow-sm rounded-full">
+                {
+                  <homePageContent.customization.badge.icon className="w-3.5 h-3.5" />
+                }
+                {homePageContent.customization.badge.title}
+              </div>
               <div
-                className={cn("h-80 w-120 -translate-x-8")}
+                className="h-80 w-full"
                 style={{
-                  backgroundImage: "url('/mock/protected-fabric.png')",
-                  backgroundSize: "contain",
+                  backgroundImage: "url('/mock/fabrics.png')",
+                  backgroundSize: "cover",
                   backgroundPosition: "top",
                   backgroundRepeat: "no-repeat",
                 }}
               />
             </div>
-
-            <Stack preset="card" space={{ base: 2, md: 6 }} className="">
-              <h2 className="text-3xl md:text-4xl">
-                Beskyttelse lønner seg nesten alltid
-              </h2>
-              <p className="max-w-prose mb-4">
-                En lukket kassett er ikke bare estetikk - det er også fornuftig
-                vedlikehold. Duken beskyttes året rundt. Mindre slitasje, mindre
-                rengjøring, lengre levetid.
-              </p>
-            </Stack>
-          </Stack>
+          </div>
         </Container>
       </Section>
 

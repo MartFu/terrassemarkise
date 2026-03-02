@@ -3,6 +3,7 @@ import Link from "next/link";
 
 export interface BreadcrumbItem {
   label: string;
+  title?: string;
   href?: string;
   className?: string;
 }
@@ -36,7 +37,7 @@ export default function Breadcrumbs({
     <nav
       className={cn(
         className,
-        "flex items-center gap-2 text-sm overflow-x-auto scrollbar-hide",
+        "flex items-center gap-2 text-sm overflow-x-auto scrollbar-hide relative z-5",
         centered && "justify-center",
       )}
       aria-label="Brødsmulesti"
@@ -47,11 +48,12 @@ export default function Breadcrumbs({
             {index > 0 && <span aria-hidden="true">/</span>}
             {crumb.href ? (
               <Link
+                title={crumb?.title || crumb.label}
                 href={crumb.href}
                 className={cn(
                   crumb.className,
                   index < breadcrumbs.length &&
-                    "opacity-60 text-nowrap hover:opacity-100",
+                    "opacity-80 text-nowrap hover:opacity-100",
                   "transition-[colors,opacity] duration-200",
                 )}
               >
@@ -59,6 +61,7 @@ export default function Breadcrumbs({
               </Link>
             ) : (
               <span
+                title={crumb?.title || crumb.label}
                 className={cn(crumb.className, "font-medium text-nowrap")}
                 aria-current="page"
               >

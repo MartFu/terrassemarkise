@@ -2,21 +2,22 @@
 id: "1"
 title: "Sånn velger du rett terrassemarkise"
 slug: "saann-velger-du-rett-terrassemarkise"
+description: "Planlegger du ny terrassemarkise? For å sikre trygg montering og optimal funksjon må du vurdere både innfesting, fall og forholdet mellom bredde og utfall. Her finner du våre viktigste råd om mål og plassering."
 excerpt: "Planlegger du ny terrassemarkise? For å sikre trygg montering og optimal funksjon må du vurdere både innfesting, fall og forholdet mellom bredde og utfall. Her finner du våre viktigste råd om mål og plassering."
 author: "Håkon Renskoug"
 publishedAt: "2013-05-04"
 readTime: "2 min lesing"
 category: "Kjøpshjelp"
-imageUrl: "/slik-kjoper-du-terrassemarkise-thumbnail.webp"
+thumbnailSrc: "/assets/articles/thumbnails/slik-kjoper-du-terrassemarkise-thumbnail.webp"
 featured: true
 ctaText: "Se vårt utvalg i nettbutikken"
 ctaLink: "https://www.solskjerming-as.no/nettbutikk/utvendig-solskjerming/markiser"
-tags:
-  - Terrassemarkering
-  - Gjør-det-selv
-  - Monteringsveiledning
-  - Kjøpshjelp
-  - Solskjerming
+keywords:
+  - terrassemarkering
+  - gjør-det-selv
+  - monteringsveiledning
+  - kjøpshjelp
+  - solskjerming
 ---
 
 ## Bredde: Planlegging og begrensninger
@@ -25,7 +26,9 @@ tags:
 
 De ytterste brakettene må ikke være mer enn 60 cm fra endene - dette er et krav fra produsent. Vi anbefaler imidlertid at denne avstanden er maksimalt 30-40 cm for optimal stabilitet.
 
-**Viktig å vite**: Senteravstand mellom stenderverk på norske hus er vanligvis 60 cm, noe som passer godt med monteringskravene.
+:::callout[info]
+Senteravstand mellom stenderverk på norske hus er vanligvis 60 cm, noe som passer godt med monteringskravene.
+:::
 
 ### Sikker innfesting
 
@@ -49,7 +52,9 @@ Det ligger begrensninger i produktet når det gjelder plassering av veggbrakette
 
 Dette er sjeldent et stort problem, da å flytte markisen noen centimeter til en av sidene oftest løser problemet. Dersom du planlegger en svært kompakt løsning, ta kontakt med oss for eksakt plassering av bærearmbraketter og eventuelle kassettbraketter for den gitte bredden.
 
-**Vårt råd**: Gjør det enkelt - og ha margin. Dette sparer tid og sikrer en problemfri installasjon.
+:::callout[tip]
+Gjør det enkelt - og ha margin. Dette sparer tid og sikrer en problemfri installasjon.
+:::
 
 ### Krav til anleggsflate
 
@@ -61,7 +66,9 @@ Med dette i minnet er det bare å måle opp ønsket bredde.
 
 ![Illustrasjon av terrassemarkisens bredde på veggen (hvite markeringer)](/terrassemarkise-bredde.jpg)
 
+:::callout[warning]
 **Husk** å trekke fra noen centimeter ekstra der det kan være konflikt med vannbrett over vinduer, avhengig av høyde og vinkel på markisen.
+:::
 
 ### Sjekk plass i Z-planet
 
@@ -90,7 +97,9 @@ Veggbrakettene er 20 cm høye. Utover dette ønsker du minimum 210 cm under mark
 
 En terrassemarkise skal ha minst 15 graders fall for å drenere tilstrekkelig ved eventuell lett nedbør. Under følger tabeller som angir omtrentlige høyder målt i overkant av markisen når den er montert på vegg eller mot takstoler.
 
-**Merk**: Veggbrakettene er som indikert over 20 cm høye.
+:::callout[note]
+Veggbrakettene er som indikert over 20 cm høye.
+:::
 
 ### 15 graders fall (optimalt)
 
@@ -161,7 +170,7 @@ Vi tilbyr profesjonell montering av alle våre terrassemarkiser. Våre erfarne m
 
 ### Har du spørsmål?
 
-Har du spørsmål vedrørende montering av terrassemarkiser, ikke nøl med å kontakte oss. Vårt team av eksperter står klar til å hjelpe deg med:
+Har du spørsmål vedrørende montering av terrassemarkiser, ikke nøl med å [kontakte](/kontakt) oss. Vårt team av eksperter står klar til å hjelpe deg med:
 
 - Befaring og rådgivning
 - Vurdering av anleggsflate
@@ -195,4 +204,4 @@ De mest vanlige monteringsfeilene:
 
 Riktig planlegging er nøkkelen til en vellykket terrassemarkise-installasjon. Vårt team har mange års erfaring og kan hjelpe deg med alle aspekter av monteringen - fra første måling til ferdig resultat.
 
-**Ta kontakt i dag** for en uforpliktende befaring og få profesjonell rådgivning tilpasset ditt hjem.
+[**Ta kontakt i dag**](/kontakt) for en uforpliktende befaring og få profesjonell rådgivning tilpasset ditt hjem.

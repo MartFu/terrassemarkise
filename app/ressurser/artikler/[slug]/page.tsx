@@ -1,7 +1,11 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { Suspense } from "react";
-import { getContentBySlug, getAllContent } from "@/lib/content-loader.server";
+import {
+  getContentBySlug,
+  getAllContent,
+  getContentSiblings,
+} from "@/lib/content-loader.server";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { MarkdownRendererWithToc } from "@/components/markdown/md-renderer-with-toc";
 import { SITE_URLS } from "@/lib/constants";
@@ -101,6 +105,7 @@ export default async function Page({ params }: PageProps) {
 // Separate async component for data fetching
 async function ResourceContent({ slug }: { slug: string }) {
   let document;
+  let siblings;
 
   try {
     document = await getContentBySlug("ressurser/artikler", slug);
@@ -113,16 +118,36 @@ async function ResourceContent({ slug }: { slug: string }) {
     notFound();
   }
 
+  try {
+    siblings = await getContentSiblings("ressurser/artikler", slug, {
+      sortBy: "order",
+    });
+  } catch (error) {
+    // Log but don't crash - navigation is non-critical
+    console.warn(
+      `[ResourceContent] Could not load siblings for ${slug}:`,
+      error,
+    );
+    siblings = { previous: null, next: null, currentIndex: 0, total: 0 };
+  }
+
+  console.log("SIBLINGS: ", siblings);
+
   return (
     <MarkdownRendererWithToc
       breadcrumbs={[
         { label: "Hjem", href: "/" },
         { label: "Ressurser", href: SITE_URLS.RESOURCES },
         {
-          label: `Artikler${document.frontmatter?.title ? ` | ${document.frontmatter.title}` : ""}`,
+          label: document.frontmatter?.title
+            ? document.frontmatter.title.split(" ").slice(0, 8).join(" ") +
+              "..."
+            : "Artikkel",
+          title: document.frontmatter?.title,
         },
       ]}
       showProgress
+      siblings={siblings}
       frontmatter={document.frontmatter}
       content={document.rawContent}
     />

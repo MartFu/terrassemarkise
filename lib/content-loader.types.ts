@@ -19,16 +19,40 @@ export interface Frontmatter {
 
   // Display
   imageUrl?: string;
+  imageAlt?: string;
   readTime?: string;
   featured?: boolean;
 
+  // Thumbnail settings
+  thumbnailSrc?: string;
+  thumbnailAlt?: string;
+  thumbnailWidth?: number;
+  thumbnailHeight?: number;
+  thumbnailObjectFit?: "contain" | "cover" | "fill" | "none" | "scale-down";
+  thumbnailObjectPosition?: "left" | "right" | "top" | "bottom";
+  thumbnailOpacity?: number;
+  thumbnailOverlayHidden?: boolean;
+
   // Call-to-action
+  ctaHeading?: string;
+  ctaDescription?: string;
   ctaText?: string;
   ctaLink?: string;
+  ctaSecondary?: string;
+  ctaSecondaryLink?: string;
+  ctaAlign?: "left" | "center" | "right";
+  ctaIcon?: "arrow" | "external" | "download" | "document" | "none";
+  ctaVariant?: "default" | "compact" | "banner" | "card";
 
   // Legal / typed documents
   type?: string;
   key?: string;
+}
+
+export interface RenderedContent extends ContentItem {
+  contentHtml: string;
+  rawContent: string;
+  readingTime: number;
 }
 
 export interface ContentItem {
@@ -38,16 +62,24 @@ export interface ContentItem {
   modifiedAt: Date;
 }
 
-export interface RenderedContent extends ContentItem {
-  contentHtml: string;
-  rawContent: string;
-  readingTime: number;
-}
-
 export interface ContentIndex {
   items: ContentItem[];
   totalCount: number;
   lastUpdated: Date;
+}
+
+export interface ContentNavItem {
+  slug: string;
+  title?: string;
+  excerpt?: string;
+  imageSrc?: string;
+}
+
+export interface ContentSiblings {
+  previous: ContentItem | null;
+  next: ContentItem | null;
+  currentIndex: number;
+  total: number;
 }
 
 // Error codes only - no server imports
