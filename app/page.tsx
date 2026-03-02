@@ -1,16 +1,10 @@
-import GalleryGrid from "@/components/gallery/gallery";
 import HeroSection from "@/components/pages/index/hero";
-import SolutionsSection from "@/components/pages/index/solutions";
-import SolutionsSectionV2 from "@/components/pages/index/solutions.v1";
+import { SolutionsSection } from "@/components/pages/index/solutions";
 import { ReviewList } from "@/components/review";
-
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { CreaseBox } from "@/components/ui/crease";
-import { Grid } from "@/components/ui/grid";
 import { Section } from "@/components/ui/section";
 import { Stack } from "@/components/ui/stack";
-import { TrustBadge } from "@/components/ui/trust-badge";
 
 import { REVIEWS } from "@/innhold/reviews";
 import { SITE_URLS } from "@/lib/constants";
@@ -361,7 +355,7 @@ export const homePageContent = {
   },
   trustBadges,
   solutions: {
-    title: "Gi fasaden rett uttrykk med riktig terrassemarkise",
+    title: ["Gi fasaden rett uttrykk med", "riktig terrassemarkise"],
     slides,
   },
   customization: {
@@ -405,7 +399,7 @@ export default function Page() {
 
       {/* <SolutionsSection /> */}
 
-      <SolutionsSectionV2
+      <SolutionsSection
         title={homePageContent.solutions.title}
         slides={homePageContent.solutions.slides}
       />
