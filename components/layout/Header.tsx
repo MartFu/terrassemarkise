@@ -223,7 +223,6 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
           />
         </nav>
 
-        {/* Drawer footer CTA */}
         <div className="border-t border-border p-5">
           <Link
             href={EXTERNAL_URLS.MAIN_DOMAIN_STORE_AWNINGS}
