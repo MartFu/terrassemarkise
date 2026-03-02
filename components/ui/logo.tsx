@@ -14,13 +14,13 @@ export function Logo({
     <Link href="/" className={cn(className)}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/assets/logo.png"
+        src="/assets/logo.webp"
         alt="Solkjerming AS"
         className={cn("block dark:hidden", imageClassName)}
       />
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/assets/logo-white.png"
+        src="/assets/logo-white.webp"
         alt="Solkjerming AS"
         className={cn("hidden dark:block", imageClassName)}
       />

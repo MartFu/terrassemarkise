@@ -79,7 +79,7 @@ export default function CookieBanner({
 
   return (
     <div className="fixed bottom-6 inset-x-4 md:inset-x-6 z-50 flex justify-center md:justify-end">
-      <div className="max-w-xl w-full bg-card text-foreground/80 border shadow-2xl rounded-2xl p-6">
+      <div className="max-w-xl w-full bg-card text-foreground/80 border shadow-2xl p-6">
         <div className="space-y-2 border-b pb-2 mb-4">
           <h2 className="text-xl font-bold text-foreground">{config.title}</h2>
           <p className="text-sm">{config.description}</p>

@@ -348,7 +348,9 @@ export const homePageContent = {
     title: ["Flytt stua ut.", "Hele sommeren."],
     description:
       "De beste sommerkveldene krever ikke mye, bare litt ly for solen og dekke mot kveldsyren. En god terrassemarkise forlenger uteselskapene fra de første vårdagene til langt ut i september.",
-    imageSrc: "/mock/hero-awning.png",
+    imageSrc:
+      "/assets/references/jamaica/2x-jamaica-montert-utrullet-hvit-fasade.webp",
+    imageAlt: "2 stk Jamaica terrassemarkise på hvit fasade",
     imageSize: "cover",
     imagePosition: "center",
     imageRepeat: "no-repeat",
@@ -362,7 +364,7 @@ export const homePageContent = {
     title: "Gjør markisen din",
     description:
       "Våre terrassemarkiser leveres i fem konstruksjonsfarger, fra klassisk hvit til antrasitt. Duken velger du blant 31 alternativer — nøytrale toner som smelter inn i fasaden, dristigere farger som setter preg, og strukturvevde stoffer som gir tekstur og karakter.",
-    imageSrc: "/mock/fabrics.png",
+    imageSrc: "/mock/fabrics.webp",
     imageSize: "cover",
     imagePosition: "top",
     imageRepeat: "no-repeat",
@@ -466,7 +468,7 @@ export default function Page() {
               <div
                 className="h-80 w-full"
                 style={{
-                  backgroundImage: "url('/mock/fabrics.png')",
+                  backgroundImage: "url('/mock/fabrics.webp')",
                   backgroundSize: "cover",
                   backgroundPosition: "top",
                   backgroundRepeat: "no-repeat",
@@ -496,7 +498,7 @@ export default function Page() {
           <div
             className={cn("h-120 w-full")}
             style={{
-              backgroundImage: "url('/mock/product-window.png')",
+              backgroundImage: "url('/mock/product-window.webp')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -554,7 +556,7 @@ export default function Page() {
                   "h-100 w-full -translate-x-px -translate-y-[2px]",
                 )}
                 style={{
-                  backgroundImage: "url('/mock/resources.png')",
+                  backgroundImage: "url('/mock/resources.webp')",
                   backgroundSize: "cover",
                   backgroundPosition: "top",
                   backgroundRepeat: "no-repeat",

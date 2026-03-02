@@ -1,7 +1,7 @@
 import { HomePageContent } from "@/app/page";
 import { Container } from "@/components/ui/container";
 import { Stack } from "@/components/ui/stack";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { Fragment } from "react/jsx-runtime";
 
 export default function HeroSection({
@@ -14,15 +14,14 @@ export default function HeroSection({
       id="hero"
       className="relative h-[calc(100svh-var(--header-height))] bg-secondary"
     >
-      <div
-        className={cn("absolute inset-0 z-1")}
-        style={{
-          backgroundImage: `url(${content.imageSrc})`,
-          backgroundSize: content.imageSize,
-          backgroundPosition: content.imagePosition,
-          backgroundRepeat: content.imageRepeat,
-        }}
+      <Image
+        className="absolute inset-0 object-cover object-center"
+        src={content.imageSrc}
+        loading="eager"
+        alt={content.imageAlt}
+        fill
       />
+
       <div className="absolute top-0 inset-x-0 h-[24vh] bg-linear-to-b from-black/80 to-transparent z-2" />
       <div className="absolute bottom-0 inset-x-0 h-[40vh] bg-linear-to-t from-black dark:from-background to-transparent z-2" />
 
