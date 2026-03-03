@@ -15,7 +15,30 @@ import { aboutContent } from "@/innhold/sider/om-oss";
 import { SITE_URLS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { Facebook, Linkedin, Mail, Send, ShieldCheck } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: `${aboutContent.hero.title} | Solskjerming AS`,
+  description: aboutContent.hero.subtitle,
+  openGraph: {
+    title: `Om oss | Solskjerming AS`,
+    description: aboutContent.hero.subtitle,
+    images: [
+      {
+        url: aboutContent.hero.image.src,
+        alt: aboutContent.hero.image.alt,
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Om oss | Solskjerming AS`,
+    description: aboutContent.hero.subtitle,
+    images: [aboutContent.hero.image.src],
+  },
+};
 
 export default async function Page() {
   return (
@@ -62,19 +85,16 @@ export default async function Page() {
 
       {/* <GridSection /> */}
 
-      <Section
-        spacing={"md"}
-        className="bg-secondary text-secondary-foreground"
-      >
+      <Section spacing={"md"} className="bg-card text-card-foreground">
         <Container>
-          <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="text-left md:text-center max-w-3xl mx-auto space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl text-balance">
               {aboutContent.contact.title}
             </h2>
             <p className="text-base lg:text-lg max-w-2xl mx-auto">
               {aboutContent.contact.description}
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-center gap-4 pt-4">
               <Button variant="default" size="lg" asChild>
                 <Link href={SITE_URLS.CONTACT}>
                   {aboutContent.contact.buttonText}

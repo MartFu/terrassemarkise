@@ -58,9 +58,10 @@ export function ClientPage({
         <Container>
           <SectionHeader className="text-center mx-auto">
             <SectionTitle className="text-center">
-              Detaljert sammenligning av <br /> våre terrassemarkiser
+              Utforsk forskjellene mellom
+              <br /> våre terrassemarkiser
             </SectionTitle>
-            <SectionDescription className="text-center">
+            <SectionDescription className="text-center text-foreground">
               Alle forskjeller mellom våre modeller samlet på ett sted. Fra
               kassettbeskyttelse og vindautomasjon til app-styring og
               smarthjem-integrasjon.
@@ -74,7 +75,7 @@ export function ClientPage({
                   <span className="text-red-500">* </span>
                   {productComparisonTableMetadata.footer.note}
                 </Text>
-                <Info className="text-accent" />
+                <Info className="text-accent w-6 h-6 shrink-0" />
               </Stack>
             }
           />
@@ -146,16 +147,7 @@ export function ClientPage({
           ],
           submitLabel: "Send forespørsel",
         }}
-      >
-        <div
-          className={cn(
-            "mt-4 text-xs absolute bottom-12 shadow-md shadow-black/5 p-6 rounded-xl bg-accent/10 text-foreground font-medium",
-          )}
-        >
-          Visste du at vi tilbyr gratis befaring i Østfold, Oslo, Akershus og
-          Vestfold
-        </div>
-      </ContactCTA>
+      />
     </>
   );
 }

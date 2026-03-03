@@ -430,12 +430,12 @@ export default function Page() {
       {/* ── Section 2: Customisation ──────────────────────────────────────── */}
       <Section spacing="lg" className="bg-secondary text-secondary-foreground">
         <Container>
-          <p className="text-4xl max-w-4xl mx-auto text-center font-light leading-relaxed mb-32">
+          <p className="text-lg md:text-4xl max-w-4xl mx-auto text-center font-light leading-relaxed mb-12 md:mb-32">
             Det finnes ingen standardmarkise her. Hvert eksemplar produseres
             etter nøyaktig dine mål, ønske om uttrykk og montasjesituasjon.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 lg:gap-20 items-start">
             {/* Copy */}
             <div>
               <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-snug mb-5">

@@ -241,14 +241,14 @@ function ContactForm() {
                         <FieldLegend className="text-center text-xl!">
                           Send oss en melding!
                         </FieldLegend>
-                        <FieldDescription className="max-w-[80ch] text-center mx-auto mb-10">
+                        <FieldDescription className="max-w-[80ch] text-center mx-auto mb-6 md:mb-10">
                           Fortell oss hva du lurer på. Typisk trenger vi gjerne
                           mål, fasadetype og informasjon om hvorvidt du
                           planlegger å montere selv. Del så konkret som mulig om
                           prosjektet - det hjelper oss å svare deg bedre.
                         </FieldDescription>
                         <FieldGroup>
-                          <div className="grid md:grid-cols-2 gap-4">
+                          <div className="grid md:grid-cols-2 gap-8 md:gap-4">
                             <Field>
                               <FieldLabel>
                                 Navn<span>*</span>
@@ -345,7 +345,7 @@ function ContactForm() {
                           </Field>
                           <button
                             type="submit"
-                            className="shrink-0 bg-card w-full cursor-pointer px-7 py-3 flex items-center justify-center gap-2 border text-foreground text-xs font-mono tracking-[0.18em] uppercase hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                            className="shrink-0 bg-card w-full cursor-pointer px-7 py-3 flex items-center justify-center gap-2 border text-foreground text-xs tracking-[0.18em] uppercase hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
                           >
                             Send melding
                             <Send className="w-4 h-4 shrink-0" />

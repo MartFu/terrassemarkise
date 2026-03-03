@@ -40,7 +40,7 @@ export function SolutionsSection({ title, slides }: Props) {
       <Container>
         {/* Section heading */}
 
-        <h2 className="text-center text-3xl md:text-4xl lg:text-6xl font-light tracking-tight leading-tight mb-16">
+        <h2 className="text-center text-2xl md:text-4xl lg:text-6xl font-light tracking-tight leading-tight mb-8 md:mb-16">
           {typeof title === "string"
             ? title
             : title.map((t, idx) => (
@@ -52,8 +52,8 @@ export function SolutionsSection({ title, slides }: Props) {
         </h2>
 
         {/* Model nav */}
-        <nav className="flex justify-between border-b border-border mb-12">
-          <div className="flex gap-8 -mb-px">
+        <nav className="flex justify-between border-b border-border mb-4 md:mb-12">
+          <div className="flex justify-center gap-8 -mb-px">
             {slides.map((s) => (
               <button
                 key={s.index}
@@ -72,7 +72,7 @@ export function SolutionsSection({ title, slides }: Props) {
           </div>
 
           {/* Prev / Next */}
-          <div className="flex gap-2 -mb-px">
+          <div className="hidden md:flex gap-2 -mb-px">
             <button
               onClick={() =>
                 goTo((activeSlide - 1 + slides.length) % slides.length)
@@ -245,7 +245,7 @@ export function SolutionsSection({ title, slides }: Props) {
             </p>
 
             {/* Hotspot list — synced with image dots */}
-            <div className="mb-8">
+            <div className="hidden md:block mb-8">
               {variant.hotspots.map((h, hi) => {
                 const isOn = activeHotspot === hi;
                 return (

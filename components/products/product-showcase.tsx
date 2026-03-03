@@ -23,7 +23,7 @@ export function ProductShowcase() {
           justify="center"
           className="mx-auto max-w-2xl text-center"
         >
-          <Heading level="h2" className="text-3xl md:text-4xl">
+          <Heading level="h2" as="h2" className="text-left md:text-center">
             For enhver terrasse, ethvert behov
           </Heading>
           <Text size={"lg"}>

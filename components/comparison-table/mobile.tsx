@@ -36,7 +36,7 @@ export function MobileTable({
           ref={stickyMobileRef}
           className="sticky-el group transition-transform bg-background/95 backdrop-blur-sm border-b border-border/50"
         >
-          <div className="flex gap-1 p-4 bg-card transition-[margin,colors] group-stuck:rounded-t-none group-stuck:-mx-6 group-stuck:bg-accent/40">
+          <div className="flex gap-1 p-4 bg-card transition-[margin,colors] group-stuck:rounded-t-none group-stuck:-mx-6 group-stuck:bg-card group-stuck:shadow-sm">
             {columns.map((col, index) => (
               <button
                 key={col.id}

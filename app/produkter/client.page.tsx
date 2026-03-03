@@ -69,7 +69,7 @@ export function ClientPage({
                   <span className="text-red-500">* </span>
                   {productComparisonTableMetadata.footer.note}
                 </Text>
-                <Info className="text-accent" />
+                <Info className="text-accent w-4 h-4 shrink-0" />
               </Stack>
             }
           />

@@ -128,7 +128,7 @@ export default async function ProductDetails({
               </div>
 
               {/* Content Grid */}
-              <div className="grid gap-20 lg:grid-cols-[2fr_1fr] border-t pt-8">
+              <div className="grid gap-8 md:gap-12 lg:gap-20 lg:grid-cols-[2fr_1fr] border-t pt-8">
                 {/* Main Content - Description & Actions */}
                 <Stack
                   align={"start"}
@@ -206,16 +206,16 @@ export default async function ProductDetails({
         <Container>
           <Card className="text-center bg-card/50 border border-border/30 rounded-none py-8">
             <CardHeader>
-              <CardTitle className="text-xl">
+              <CardTitle className="text-left md:text-center text-lg md:text-xl">
                 Fant du ikke det du lette etter?
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription className="text-lg">
+              <CardDescription className="text-left md:text-center text-base md:text-lg text-balance">
                 Send oss en melding, så hjelper vi deg med å finne <br /> den
                 beste løsningen for akkurat ditt tilfelle!
               </CardDescription>
-              <div className="space-x-2 mt-8">
+              <div className="flex flex-col items-start gap-2 md:block space-x-2 space-y-2 mt-8">
                 <Button asChild variant={"outline"}>
                   <Link
                     target="_blank"
