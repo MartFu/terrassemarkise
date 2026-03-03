@@ -14,7 +14,7 @@ import { products } from "@/innhold/produkter";
 
 export function ProductShowcase() {
   return (
-    <Section className="bg-secondary/50">
+    <Section className="bg-card/50">
       <Container>
         {/* Section header */}
         <Stack
@@ -120,7 +120,7 @@ export function ProductShowcase() {
         <div className="flex justify-center mt-12">
           <Button variant="secondary" asChild>
             <Link href="#sammenligning">
-              Se sammenligning <ArrowDown />
+              Se detaljert sammenligning <ArrowDown />
             </Link>
           </Button>
         </div>

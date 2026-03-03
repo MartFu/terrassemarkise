@@ -65,6 +65,7 @@ export function FAQSection({
             {children}
           </Stack>
           <Accordion
+            className="bg-card/50 px-4 py-2"
             type="single"
             defaultValue={defaultFaq ?? faqs[0]?.question}
             collapsible

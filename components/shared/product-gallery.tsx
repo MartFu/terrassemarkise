@@ -211,7 +211,7 @@ export function ImageGallery({ images, className = "" }: ImageGalleryProps) {
               <div
                 key={`grid-item-${image.id}-${idx}`}
                 className={cn(
-                  "relative group cursor-pointer rounded-md overflow-hidden bg-secondary/35",
+                  "relative group cursor-pointer overflow-hidden bg-card/50",
                   gridClass,
                 )}
                 onClick={() => setSelectedImage(image)}

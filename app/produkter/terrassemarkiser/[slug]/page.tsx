@@ -16,11 +16,12 @@ import { Section } from "@/components/ui/section";
 import { Stack } from "@/components/ui/stack";
 import { Heading } from "@/components/ui/typography";
 import { products } from "@/innhold/produkter";
-import { Check, ExternalLink, Send } from "lucide-react";
+import { ExternalLink, Send } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { EXTERNAL_URLS, SITE_URLS } from "@/lib/constants";
 import { formatPrice } from "@/lib/utils";
+import { Metadata } from "next";
 
 export function generateStaticParams() {
   try {
@@ -31,6 +32,34 @@ export function generateStaticParams() {
     console.error("Error generating static params for juridisk:", error);
     return [];
   }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const product = products.find((p) => p.slug === slug);
+
+  if (!product) {
+    return {
+      title: "Produkt ikke funnet",
+    };
+  }
+
+  return {
+    title: `${product.name} | Solskjerming AS`,
+    description: product.tagline || product.description,
+    openGraph: {
+      title: product.name,
+      description: product.description,
+      images: product.images.map((img) => ({
+        url: img.src,
+        alt: product.name,
+      })),
+    },
+  };
 }
 
 export default async function ProductDetails({
@@ -175,16 +204,18 @@ export default async function ProductDetails({
 
       <Section>
         <Container>
-          <Card className="text-center bg-secondary/80 border border-secondary">
+          <Card className="text-center bg-card/50 border border-border/30 rounded-none py-8">
             <CardHeader>
-              <CardTitle>Fant du ikke det du lette etter?</CardTitle>
+              <CardTitle className="text-xl">
+                Fant du ikke det du lette etter?
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription>
+              <CardDescription className="text-lg">
                 Send oss en melding, så hjelper vi deg med å finne <br /> den
                 beste løsningen for akkurat ditt tilfelle!
               </CardDescription>
-              <div className="space-x-2 mt-4">
+              <div className="space-x-2 mt-8">
                 <Button asChild variant={"outline"}>
                   <Link
                     target="_blank"

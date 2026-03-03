@@ -53,7 +53,7 @@ export function MarkdownImage({
     return (
       <span
         className={cn(
-          "bg-muted/30 rounded-lg border border-dashed border-border p-8 flex flex-col items-center gap-2",
+          "bg-muted/30 border border-dashed border-border p-8 flex flex-col items-center gap-2",
           !compact && "my-6",
         )}
       >
@@ -70,7 +70,7 @@ export function MarkdownImage({
     <span className={cn("group block", !compact && "my-6")}>
       <span
         className={cn(
-          "relative overflow-hidden rounded-lg border border-border bg-muted/30 block",
+          "relative overflow-hidden border border-border bg-muted/30 block",
           "transition-all duration-200",
           onClick &&
             "cursor-pointer hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10",

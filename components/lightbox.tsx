@@ -72,7 +72,7 @@ export function Lightbox({
       <img
         src={images[currentIndex]}
         alt={alt}
-        className="max-h-[90vh] max-w-[90vw] rounded-lg object-contain shadow-2xl"
+        className="max-h-[90vh] max-w-[90vw] object-contain shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       />
 

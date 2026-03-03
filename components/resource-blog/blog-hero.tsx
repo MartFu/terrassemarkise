@@ -48,7 +48,7 @@ export function BlogHero({ onSetQuery, query }: Props) {
               value={query}
               onChange={(e) => onSetQuery(e.target.value)}
               placeholder="Søk i artikler..."
-              className="w-full pl-12 pr-4 py-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+              className="w-full pl-12 pr-4 py-3 border bg-background focus:ring-2 focus:ring-primary/20 outline-none transition-all"
             />
 
             <KbdGroup className="hidden md:block space-x-1 absolute top-1/2 -translate-y-1/2 right-4">

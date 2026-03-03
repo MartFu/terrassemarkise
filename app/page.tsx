@@ -593,7 +593,7 @@ export default function Page() {
               privatperson eller driver en virksomhet med krav til holdbarhet og
               driftssikkerhet.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 pt-4">
               <Button asChild variant="default" size="lg">
                 <Link href={SITE_URLS.AWNINGS}>Se våre modeller</Link>
               </Button>

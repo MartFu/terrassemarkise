@@ -55,7 +55,7 @@ export function DesktopTable({ data, highlightedColumn, footer }: Props) {
                   </span>
                   <Link
                     href={`/produkter/${col.slug}`}
-                    className="flex items-center hover:underline text-xs font-normal text-muted-foreground"
+                    className="flex items-center hover:underline text-xs font-normal text-primary hover:text-primary/80"
                   >
                     Se produkt <ArrowRight className="w-3.5 h-3.5 ml-1" />
                   </Link>
