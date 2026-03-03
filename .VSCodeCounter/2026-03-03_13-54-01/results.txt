@@ -1,0 +1,161 @@
+Date : 2026-03-03 13:54:01
+Directory : c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components
+Total : 117 files,  15529 codes, 918 comments, 1572 blanks, all 18019 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| TypeScript JSX |        114 |     15,291 |        807 |      1,506 |     17,604 |
+| TypeScript     |          3 |        238 |        111 |         66 |        415 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                          | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                             |        117 |     15,529 |        918 |      1,572 |     18,019 |
+| . (Files)                                                                                                     |         14 |      2,234 |        132 |        242 |      2,608 |
+| __deprecated                                                                                                  |          1 |        141 |          6 |         11 |        158 |
+| articles                                                                                                      |          3 |        437 |         20 |         33 |        490 |
+| comparison-table                                                                                              |          4 |        318 |          7 |         34 |        359 |
+| gallery                                                                                                       |          7 |        468 |          5 |         59 |        532 |
+| home                                                                                                          |          3 |        269 |          9 |         21 |        299 |
+| layout                                                                                                        |          3 |        498 |         15 |         40 |        553 |
+| markdown                                                                                                      |         11 |      1,892 |        236 |        212 |      2,340 |
+| pages                                                                                                         |         14 |      2,416 |        198 |        239 |      2,853 |
+| pages\index                                                                                                   |          3 |        370 |         34 |         36 |        440 |
+| pages\resources                                                                                               |         11 |      2,046 |        164 |        203 |      2,413 |
+| pages\resources (Files)                                                                                       |          3 |        291 |         26 |         46 |        363 |
+| pages\resources\sidebar                                                                                       |          3 |        641 |         70 |         73 |        784 |
+| pages\resources\tools                                                                                         |          1 |        667 |         31 |         45 |        743 |
+| pages\resources\views                                                                                         |          4 |        447 |         37 |         39 |        523 |
+| products                                                                                                      |          2 |        433 |         13 |         29 |        475 |
+| resource-blog                                                                                                 |          3 |        153 |          2 |         18 |        173 |
+| shared                                                                                                        |          7 |      1,055 |        107 |         95 |      1,257 |
+| ui                                                                                                            |         45 |      5,215 |        168 |        539 |      5,922 |
++---------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                                      | language       | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\__deprecated\veiledning.page.tsx            | TypeScript JSX |        141 |          6 |         11 |        158 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\analytics.tsx                               | TypeScript JSX |        132 |          9 |         18 |        159 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\articles\article-card.tsx                   | TypeScript JSX |         48 |          0 |          4 |         52 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\articles\article-list.tsx                   | TypeScript JSX |        352 |         19 |         25 |        396 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\articles\articles-hero.tsx                  | TypeScript JSX |         37 |          1 |          4 |         42 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\breadcrumbs.tsx                             | TypeScript JSX |         59 |         14 |          4 |         77 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\comparison-table\cell-tooltip.tsx           | TypeScript JSX |         29 |          0 |          5 |         34 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\comparison-table\desktop.tsx                | TypeScript JSX |        146 |          3 |         12 |        161 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\comparison-table\mobile.tsx                 | TypeScript JSX |        114 |          3 |         12 |        129 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\comparison-table\table.tsx                  | TypeScript JSX |         29 |          1 |          5 |         35 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\composable-form.tsx                         | TypeScript JSX |        353 |         50 |         39 |        442 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\contact-form.tsx                            | TypeScript JSX |        178 |          1 |         18 |        197 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\cookie-banner.tsx                           | TypeScript JSX |        113 |          6 |         18 |        137 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\counter-animation.tsx                       | TypeScript JSX |         61 |         15 |         15 |         91 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\error-boundary.tsx                          | TypeScript JSX |         47 |          1 |         10 |         58 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\error-display.tsx                           | TypeScript JSX |        215 |          8 |         23 |        246 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\gallery\balanced.tsx                        | TypeScript JSX |        114 |          0 |         13 |        127 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\gallery\bento.tsx                           | TypeScript JSX |         59 |          0 |         10 |         69 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\gallery\compact.tsx                         | TypeScript JSX |         36 |          0 |          3 |         39 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\gallery\gallery.tsx                         | TypeScript JSX |         81 |          4 |         10 |         95 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\gallery\image-card.tsx                      | TypeScript JSX |         53 |          0 |          6 |         59 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\gallery\masonry.tsx                         | TypeScript JSX |         52 |          1 |          5 |         58 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\gallery\panorama.tsx                        | TypeScript JSX |         73 |          0 |         12 |         85 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\home\benefits-section.tsx                   | TypeScript JSX |         85 |          2 |          6 |         93 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\home\testimonials.tsx                       | TypeScript JSX |         66 |          7 |          8 |         81 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\home\trust-section.tsx                      | TypeScript JSX |        118 |          0 |          7 |        125 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\layout\Footer.tsx                           | TypeScript JSX |        130 |          5 |          7 |        142 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\layout\Header.tsx                           | TypeScript JSX |        325 |         10 |         26 |        361 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\layout\index.tsx                            | TypeScript JSX |         43 |          0 |          7 |         50 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\lightbox.tsx                                | TypeScript JSX |         85 |          6 |         11 |        102 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\markdown\md-cta.tsx                         | TypeScript JSX |        341 |         15 |         20 |        376 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\markdown\md-header.tsx                      | TypeScript JSX |        134 |         47 |         17 |        198 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\markdown\md-image.tsx                       | TypeScript JSX |        122 |          5 |         14 |        141 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\markdown\md-navigation.tsx                  | TypeScript JSX |        106 |          2 |          9 |        117 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\markdown\md-renderer-with-toc.tsx           | TypeScript JSX |        248 |          3 |         24 |        275 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\markdown\md-renderer.tsx                    | TypeScript JSX |        521 |         53 |         41 |        615 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\markdown\md-table.tsx                       | TypeScript JSX |         19 |          0 |          5 |         24 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\markdown\remark-directives.ts               | TypeScript     |         44 |         46 |          7 |         97 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\markdown\table-of-contents.tsx              | TypeScript JSX |        163 |          0 |         16 |        179 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\markdown\types.ts                           | TypeScript     |         45 |         23 |         21 |         89 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\markdown\utils.ts                           | TypeScript     |        149 |         42 |         38 |        229 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\pages\index\_protection.tsx                 | TypeScript JSX |         40 |          3 |          6 |         49 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\pages\index\hero.tsx                        | TypeScript JSX |         48 |          0 |          4 |         52 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\pages\index\solutions.tsx                   | TypeScript JSX |        282 |         31 |         26 |        339 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\pages\resources\layout-shell.tsx            | TypeScript JSX |         54 |          4 |          8 |         66 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\pages\resources\overview.tsx                | TypeScript JSX |          0 |          0 |          1 |          1 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\pages\resources\sidebar\groups.tsx          | TypeScript JSX |        365 |         23 |         39 |        427 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\pages\resources\sidebar\index.tsx           | TypeScript JSX |        169 |          8 |         15 |        192 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\pages\resources\sidebar\skeleton.tsx        | TypeScript JSX |        107 |         39 |         19 |        165 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\pages\resources\tools\befaringsveileder.tsx | TypeScript JSX |        667 |         31 |         45 |        743 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\pages\resources\top-bar.tsx                 | TypeScript JSX |        237 |         22 |         37 |        296 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\pages\resources\views\articles.tsx          | TypeScript JSX |          0 |          0 |          1 |          1 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\pages\resources\views\overview.tsx          | TypeScript JSX |        447 |         37 |         36 |        520 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\pages\resources\views\tools.tsx             | TypeScript JSX |          0 |          0 |          1 |          1 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\pages\resources\views\videos.tsx            | TypeScript JSX |          0 |          0 |          1 |          1 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\products\product-comparison.tsx             | TypeScript JSX |        314 |          8 |         22 |        344 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\products\product-showcase.tsx               | TypeScript JSX |        119 |          5 |          7 |        131 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\resource-blog\blog-card.tsx                 | TypeScript JSX |         54 |          0 |          5 |         59 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\resource-blog\blog-hero.tsx                 | TypeScript JSX |         56 |          1 |          8 |         65 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\resource-blog\categories-filter.tsx         | TypeScript JSX |         43 |          1 |          5 |         49 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\review.tsx                                  | TypeScript JSX |        252 |          1 |         22 |        275 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\shared\carousel.tsx                         | TypeScript JSX |        249 |         20 |         31 |        300 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\shared\contact-cta.tsx                      | TypeScript JSX |         54 |          2 |          6 |         62 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\shared\cta.tsx                              | TypeScript JSX |         88 |          4 |          7 |         99 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\shared\faq-section.tsx                      | TypeScript JSX |         84 |          0 |          3 |         87 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\shared\image-modal.tsx                      | TypeScript JSX |        127 |          9 |         13 |        149 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\shared\page-header.tsx                      | TypeScript JSX |        201 |         54 |         10 |        265 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\shared\product-gallery.tsx                  | TypeScript JSX |        252 |         18 |         25 |        295 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\soft-staging-lock.tsx                       | TypeScript JSX |         90 |          0 |         12 |        102 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\spec-list.tsx                               | TypeScript JSX |         54 |          0 |          4 |         58 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\step-by-step-guide.tsx                      | TypeScript JSX |        296 |         18 |         30 |        344 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\theme-toggle.tsx                            | TypeScript JSX |        299 |          3 |         18 |        320 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\accordion.tsx                            | TypeScript JSX |         80 |          0 |          8 |         88 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\alert-dialog.tsx                         | TypeScript JSX |        169 |          0 |         16 |        185 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\avatar.tsx                               | TypeScript JSX |        100 |          0 |         10 |        110 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\badge.tsx                                | TypeScript JSX |         40 |          0 |          6 |         46 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\breadcrumb.tsx                           | TypeScript JSX |         42 |          0 |          4 |         46 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\button.tsx                               | TypeScript JSX |         60 |          0 |          6 |         66 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\card.tsx                                 | TypeScript JSX |         85 |          0 |         10 |         95 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\checkbox.tsx                             | TypeScript JSX |         29 |          0 |          5 |         34 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\collapsible.tsx                          | TypeScript JSX |         28 |          0 |          6 |         34 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\combobox.tsx                             | TypeScript JSX |        274 |          0 |         21 |        295 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\container.tsx                            | TypeScript JSX |        257 |         72 |         38 |        367 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\content-lockup.tsx                       | TypeScript JSX |        207 |          1 |         16 |        224 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\crease.tsx                               | TypeScript JSX |        138 |         18 |         20 |        176 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\dialog.tsx                               | TypeScript JSX |        142 |          0 |         14 |        156 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\dropdown-menu.tsx                        | TypeScript JSX |        237 |          0 |         19 |        256 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\eyebrow.tsx                              | TypeScript JSX |         53 |          0 |          5 |         58 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\field.tsx                                | TypeScript JSX |        207 |          0 |         21 |        228 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\fire-icon.tsx                            | TypeScript JSX |         30 |          0 |          3 |         33 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\grid.tsx                                 | TypeScript JSX |        330 |         21 |         41 |        392 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\image-placeholder.tsx                    | TypeScript JSX |         23 |          0 |          2 |         25 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\input-group.tsx                          | TypeScript JSX |        136 |          0 |         12 |        148 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\input.tsx                                | TypeScript JSX |         16 |          0 |          4 |         20 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\kbd.tsx                                  | TypeScript JSX |         23 |          0 |          4 |         27 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\label.tsx                                | TypeScript JSX |         20 |          0 |          5 |         25 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\link.tsx                                 | TypeScript JSX |         28 |          0 |          3 |         31 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\logo.tsx                                 | TypeScript JSX |         25 |          2 |          3 |         30 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\marquee.tsx                              | TypeScript JSX |        102 |          1 |          3 |        106 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\navigation-menu.tsx                      | TypeScript JSX |        156 |          0 |         12 |        168 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\pagination.tsx                           | TypeScript JSX |        124 |          0 |         11 |        135 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\scroll-area.tsx                          | TypeScript JSX |         50 |          0 |          6 |         56 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\scroll-progress.tsx                      | TypeScript JSX |         61 |          3 |         17 |         81 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\section.tsx                              | TypeScript JSX |        168 |          9 |         14 |        191 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\select.tsx                               | TypeScript JSX |        182 |          0 |         14 |        196 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\separator.tsx                            | TypeScript JSX |         24 |          0 |          5 |         29 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\sheet.tsx                                | TypeScript JSX |        121 |          0 |         14 |        135 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\sidebar.tsx                              | TypeScript JSX |        641 |         10 |         55 |        706 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\skeleton.tsx                             | TypeScript JSX |         11 |          0 |          3 |         14 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\social-icon.tsx                          | TypeScript JSX |         37 |          0 |          4 |         41 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\stack.tsx                                | TypeScript JSX |        308 |         17 |         32 |        357 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\switch.tsx                               | TypeScript JSX |         29 |          0 |          5 |         34 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\tabs.tsx                                 | TypeScript JSX |         82 |          0 |          9 |         91 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\textarea.tsx                             | TypeScript JSX |         15 |          0 |          4 |         19 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\tooltip.tsx                              | TypeScript JSX |         50 |          0 |          8 |         58 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\trust-badge.tsx                          | TypeScript JSX |         38 |          0 |          5 |         43 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\components\ui\typography.tsx                           | TypeScript JSX |        237 |         14 |         16 |        267 |
+| Total                                                                                                         |                |     15,529 |        918 |      1,572 |     18,019 |
++---------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

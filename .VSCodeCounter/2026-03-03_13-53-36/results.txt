@@ -1,0 +1,105 @@
+Date : 2026-03-03 13:53:36
+Directory : c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app
+Total : 45 files,  4912 codes, 149 comments, 389 blanks, all 5450 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| TypeScript JSX |         44 |      4,663 |        136 |        365 |      5,164 |
+| PostCSS        |          1 |        249 |         13 |         24 |        286 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                 | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                    |         45 |      4,912 |        149 |        389 |      5,450 |
+| . (Files)                                                                                                            |          5 |        913 |         23 |         63 |        999 |
+| _ressurser-dashboard                                                                                                 |         12 |        906 |         51 |        101 |      1,058 |
+| _ressurser-dashboard (Files)                                                                                         |          4 |        254 |         12 |         27 |        293 |
+| _ressurser-dashboard\artikler                                                                                        |          3 |        283 |         15 |         32 |        330 |
+| _ressurser-dashboard\artikler (Files)                                                                                |          2 |        179 |         10 |         18 |        207 |
+| _ressurser-dashboard\artikler\[slug]                                                                                 |          1 |        104 |          5 |         14 |        123 |
+| _ressurser-dashboard\guider                                                                                          |          1 |         55 |          0 |          3 |         58 |
+| _ressurser-dashboard\verktoy                                                                                         |          2 |        142 |         14 |         21 |        177 |
+| _ressurser-dashboard\verktoy (Files)                                                                                 |          1 |        132 |         13 |         19 |        164 |
+| _ressurser-dashboard\verktoy\befaringsveileder                                                                       |          1 |         10 |          1 |          2 |         13 |
+| _ressurser-dashboard\videoer                                                                                         |          2 |        172 |         10 |         18 |        200 |
+| corsica                                                                                                              |          1 |          5 |          0 |          2 |          7 |
+| jamaica                                                                                                              |          1 |          5 |          0 |          2 |          7 |
+| juridisk                                                                                                             |          2 |        170 |          8 |         18 |        196 |
+| juridisk (Files)                                                                                                     |          1 |         67 |          2 |          4 |         73 |
+| juridisk\[slug]                                                                                                      |          1 |        103 |          6 |         14 |        123 |
+| kontaktoss                                                                                                           |          2 |        417 |          6 |         22 |        445 |
+| om-oss                                                                                                               |          2 |        442 |         11 |         24 |        477 |
+| palladio                                                                                                             |          1 |          5 |          0 |          2 |          7 |
+| produkter                                                                                                            |         10 |        957 |         17 |         72 |      1,046 |
+| produkter (Files)                                                                                                    |          2 |        146 |          1 |          9 |        156 |
+| produkter\[slug]                                                                                                     |          1 |         23 |          0 |          5 |         28 |
+| produkter\terrassemarkiser                                                                                           |          7 |        788 |         16 |         58 |        862 |
+| produkter\terrassemarkiser (Files)                                                                                   |          2 |        152 |          1 |          9 |        162 |
+| produkter\terrassemarkiser\[slug]                                                                                    |          1 |        215 |         11 |         16 |        242 |
+| produkter\terrassemarkiser\duk-og-farger                                                                             |          1 |        105 |          1 |          8 |        114 |
+| produkter\terrassemarkiser\tilbehor                                                                                  |          3 |        316 |          3 |         25 |        344 |
+| produkter\terrassemarkiser\tilbehor (Files)                                                                          |          1 |        106 |          1 |          9 |        116 |
+| produkter\terrassemarkiser\tilbehor\motorisering                                                                     |          1 |        105 |          1 |          8 |        114 |
+| produkter\terrassemarkiser\tilbehor\vindsensorer                                                                     |          1 |        105 |          1 |          8 |        114 |
+| ressurser                                                                                                            |          3 |        232 |          7 |         32 |        271 |
+| ressurser (Files)                                                                                                    |          2 |         98 |          1 |         16 |        115 |
+| ressurser\artikler                                                                                                   |          1 |        134 |          6 |         16 |        156 |
+| ressurser\artikler\[slug]                                                                                            |          1 |        134 |          6 |         16 |        156 |
+| test                                                                                                                 |          6 |        860 |         26 |         51 |        937 |
++----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                                             | language       | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\_ressurser-dashboard\__dash-page.tsx                      | TypeScript JSX |        155 |          9 |          8 |        172 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\_ressurser-dashboard\artikler\[slug]\page.tsx             | TypeScript JSX |        104 |          5 |         14 |        123 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\_ressurser-dashboard\artikler\client.page.tsx             | TypeScript JSX |        165 |         10 |         16 |        191 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\_ressurser-dashboard\artikler\page.tsx                    | TypeScript JSX |         14 |          0 |          2 |         16 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\_ressurser-dashboard\client.page.tsx                      | TypeScript JSX |         68 |          1 |         12 |         81 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\_ressurser-dashboard\guider\page.tsx                      | TypeScript JSX |         55 |          0 |          3 |         58 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\_ressurser-dashboard\layout.tsx                           | TypeScript JSX |         18 |          0 |          3 |         21 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\_ressurser-dashboard\page.tsx                             | TypeScript JSX |         13 |          2 |          4 |         19 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\_ressurser-dashboard\verktoy\befaringsveileder\page.tsx   | TypeScript JSX |         10 |          1 |          2 |         13 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\_ressurser-dashboard\verktoy\page.tsx                     | TypeScript JSX |        132 |         13 |         19 |        164 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\_ressurser-dashboard\videoer\client.page.tsx              | TypeScript JSX |        158 |         10 |         16 |        184 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\_ressurser-dashboard\videoer\page.tsx                     | TypeScript JSX |         14 |          0 |          2 |         16 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\corsica\page.tsx                                          | TypeScript JSX |          5 |          0 |          2 |          7 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\global-error.tsx                                          | TypeScript JSX |         40 |          1 |          3 |         44 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\globals.css                                               | PostCSS        |        249 |         13 |         24 |        286 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\jamaica\page.tsx                                          | TypeScript JSX |          5 |          0 |          2 |          7 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\juridisk\[slug]\page.tsx                                  | TypeScript JSX |        103 |          6 |         14 |        123 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\juridisk\page.tsx                                         | TypeScript JSX |         67 |          2 |          4 |         73 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\kontaktoss\layout.tsx                                     | TypeScript JSX |          3 |          0 |          1 |          4 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\kontaktoss\page.tsx                                       | TypeScript JSX |        414 |          6 |         21 |        441 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\layout.tsx                                                | TypeScript JSX |         32 |          0 |          4 |         36 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\not-found.tsx                                             | TypeScript JSX |         17 |          0 |          2 |         19 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\om-oss\layout.tsx                                         | TypeScript JSX |          3 |          0 |          1 |          4 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\om-oss\page.tsx                                           | TypeScript JSX |        439 |         11 |         23 |        473 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\page.tsx                                                  | TypeScript JSX |        575 |          9 |         30 |        614 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\palladio\page.tsx                                         | TypeScript JSX |          5 |          0 |          2 |          7 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\produkter\[slug]\page.tsx                                 | TypeScript JSX |         23 |          0 |          5 |         28 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\produkter\client.page.tsx                                 | TypeScript JSX |        140 |          1 |          7 |        148 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\produkter\page.tsx                                        | TypeScript JSX |          6 |          0 |          2 |          8 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\produkter\terrassemarkiser\[slug]\page.tsx                | TypeScript JSX |        215 |         11 |         16 |        242 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\produkter\terrassemarkiser\client.page.tsx                | TypeScript JSX |        146 |          1 |          7 |        154 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\produkter\terrassemarkiser\duk-og-farger\page.tsx         | TypeScript JSX |        105 |          1 |          8 |        114 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\produkter\terrassemarkiser\page.tsx                       | TypeScript JSX |          6 |          0 |          2 |          8 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\produkter\terrassemarkiser\tilbehor\motorisering\page.tsx | TypeScript JSX |        105 |          1 |          8 |        114 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\produkter\terrassemarkiser\tilbehor\page.tsx              | TypeScript JSX |        106 |          1 |          9 |        116 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\produkter\terrassemarkiser\tilbehor\vindsensorer\page.tsx | TypeScript JSX |        105 |          1 |          8 |        114 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\ressurser\artikler\[slug]\page.tsx                        | TypeScript JSX |        134 |          6 |         16 |        156 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\ressurser\page.client.tsx                                 | TypeScript JSX |         85 |          1 |         12 |         98 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\ressurser\page.tsx                                        | TypeScript JSX |         13 |          0 |          4 |         17 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\test\hero1.tsx                                            | TypeScript JSX |         66 |          6 |          7 |         79 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\test\installation.tsx                                     | TypeScript JSX |         89 |          2 |          5 |         96 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\test\page.tsx                                             | TypeScript JSX |         84 |          1 |          8 |         93 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\test\testimonials.tsx                                     | TypeScript JSX |         99 |          4 |          6 |        109 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\test\tst.tsx                                              | TypeScript JSX |        426 |         12 |         21 |        459 |
+| c:\Users\solsk\Desktop\Martin\Kode\terrassemarkise_ssg\app\test\vp.tsx                                               | TypeScript JSX |         96 |          1 |          4 |        101 |
+| Total                                                                                                                |                |      4,912 |        149 |        389 |      5,450 |
++----------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
