@@ -37,10 +37,10 @@ export function SolutionsSection({ title, slides }: Props) {
 
   return (
     <Section spacing="md">
-      <Container>
+      <Container className="relative">
         {/* Section heading */}
 
-        <h2 className="text-center text-2xl md:text-4xl lg:text-6xl font-light tracking-tight leading-tight mb-8 md:mb-16">
+        <h2 className="text-left md:text-center text-2xl md:text-4xl lg:text-6xl font-light tracking-tight leading-tight mb-4 md:mb-16">
           {typeof title === "string"
             ? title
             : title.map((t, idx) => (
@@ -52,18 +52,19 @@ export function SolutionsSection({ title, slides }: Props) {
         </h2>
 
         {/* Model nav */}
-        <nav className="flex justify-between border-b border-border mb-4 md:mb-12">
-          <div className="flex justify-center gap-8 -mb-px">
+        <nav className=" flex justify-between md:border-b border-border mb-2 md:mb-12">
+          <div className="flex justify-center gap-1 md:gap-8 -mb-px">
             {slides.map((s) => (
               <button
                 key={s.index}
                 onClick={() => goTo(s.index)}
                 className={cn(
-                  "text-xs font-mono tracking-widest uppercase transition-colors relative",
-                  "after:absolute after:bottom-px after:left-0 after:right-0 after:h-[1.5px] after:bg-foreground after:transition-transform after:duration-250",
+                  "px-3 py-1.5 md:py-0 md:px-0.5 border md:border-0 text-nowrap",
+                  "text-[0.6rem] md:text-xs font-mono tracking-widest uppercase transition-colors relative",
+                  "md:after:absolute md:after:bottom-px md:after:left-0 md:after:right-0 md:after:h-[1.5px] md:after:bg-foreground md:after:transition-transform md:after:duration-250",
                   activeSlide === s.index
-                    ? "text-foreground after:scale-x-100"
-                    : "text-muted-foreground after:scale-x-0 hover:text-foreground",
+                    ? "text-background bg-foreground md:bg-transparent md:text-foreground after:scale-x-100"
+                    : " md:text-muted-foreground after:scale-x-0 hover:text-foreground",
                 )}
               >
                 {s.type}
@@ -127,7 +128,7 @@ export function SolutionsSection({ title, slides }: Props) {
                         "text-[0.6rem] font-mono tracking-widest uppercase border px-3 py-1.5 transition-all duration-200",
                         variantIdx === vi
                           ? "border-foreground bg-foreground text-background"
-                          : "border-border text-muted-foreground hover:border-foreground hover:text-foreground",
+                          : "border-border hover:border-foreground text-foreground",
                       )}
                     >
                       {v.tag}

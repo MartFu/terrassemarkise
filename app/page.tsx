@@ -405,13 +405,12 @@ export default function Page() {
     <div className="overflow-x-hidden">
       <HeroSection content={homePageContent.hero} />
       <section>
-        <Container className="grid grid-cols md:grid-cols-2 lg:grid-cols-4 py-12">
+        <Container className="grid grid-cols-2 lg:grid-cols-4 gap-2 py-4 md:py-12">
           {trustBadges.map((item, idx) => (
             <div
               key={item.label}
               className={cn(
-                "border-border p-6 flex items-center justify-center font-medium text-lg",
-                idx < trustBadges.length - 1 ? "border-r" : "",
+                "border-border bg-card p-3 md:p-6 flex items-center justify-center md:font-medium text-base md:text-lg",
               )}
             >
               {item.label}
@@ -442,7 +441,7 @@ export default function Page() {
                 {homePageContent.customization.title}
               </h2>
 
-              <hr className="border-secondary-foreground/20 mb-5" />
+              <hr className="hidden md:block border-secondary-foreground/20 mb-5" />
 
               <p className="text-base font-light leading-relaxed opacity-80 mb-4">
                 {homePageContent.customization.description}
