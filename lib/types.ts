@@ -20,10 +20,7 @@ export interface CookieBannerProps {
 }
 
 export interface AnalyticsProps {
-  ga4Id?: string;
   gtmId?: string;
-  plausibleDomain?: string;
-  plausibleScriptUrl?: string;
   matomoUrl?: string;
   matomoSiteId?: string;
 }

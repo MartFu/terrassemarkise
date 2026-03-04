@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Layout from "@/components/layout";
 import StagingLock from "@/components/soft-staging-lock";
-import CookieBanner from "@/components/cookie-banner";
+import { CookieBanner } from "@/components/cookie-banner";
 import { cookieConfig } from "@/innhold/cookie-config";
 import { Analytics } from "@/components/analytics";
 import { analyticsConfig } from "@/innhold/analytics";
