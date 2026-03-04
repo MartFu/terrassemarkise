@@ -4,14 +4,22 @@ title: "Sånn velger du rett terrassemarkise"
 slug: "saann-velger-du-rett-terrassemarkise"
 description: "Planlegger du ny terrassemarkise? For å sikre trygg montering og optimal funksjon må du vurdere både innfesting, fall og forholdet mellom bredde og utfall. Her finner du våre viktigste råd om mål og plassering."
 excerpt: "Planlegger du ny terrassemarkise? For å sikre trygg montering og optimal funksjon må du vurdere både innfesting, fall og forholdet mellom bredde og utfall. Her finner du våre viktigste råd om mål og plassering."
-author: "Håkon Renskoug"
-publishedAt: "2013-05-04"
-readTime: "2 min lesing"
 category: "Kjøpshjelp"
 thumbnailSrc: "/assets/articles/thumbnails/slik-kjoper-du-terrassemarkise-thumbnail.webp"
-featured: true
+
+# CTA
+ctaHeading: "Trenger du hjelp?"
+ctaDescription: "Riktig planlegging er nøkkelen til et resultat som varer lenger og ser penere ut. Vårt team har lang erfaring med både befaring og montering."
 ctaText: "Se vårt utvalg i nettbutikken"
 ctaLink: "https://www.solskjerming-as.no/nettbutikk/utvendig-solskjerming/markiser"
+ctaSecondaryLink: "/kontaktoss"
+ctaSecondaryText: "Kontakt oss"
+ctaVariant: "banner"
+
+# Disoverability
+featured: true
+author: "Håkon Renskoug"
+date: "04.05.2013"
 keywords:
   - terrassemarkering
   - gjør-det-selv
@@ -20,7 +28,9 @@ keywords:
   - solskjerming
 ---
 
-## Bredde: Planlegging og begrensninger
+## Planlegging og begrensninger
+
+Som alle prosjekter, starter også oppgraderingen av terrassen med planlegging. Vi har delt denne fasen inn i enkle, lettspiste punkter.
 
 ### Tommelfingerregler for brakettplassering
 
@@ -41,7 +51,7 @@ Innfesting har to kritiske aspekter:
 
 Har du en skjør anleggsflate (eksempelvis panel med luft/isolasjon bak) eller begrenset forankring til festematerialet (som enkle lekter), kan det være nødvendig å forsterke konstruksjonen før terrassemarkisen monteres.
 
-[Kontakt oss](/kontakt-oss) ved spørsmål om innfesting. Du kan også lese mer om sikker innfesting og montering av terrassemarkiser i vår utfyllende [guide](veiledning/sikker-montering-av-terrassemarkiser).
+[Kontakt oss](/kontaktoss) ved spørsmål om innfesting. Du kan også lese mer om sikker innfesting og montering av terrassemarkiser i vår utfyllende [guide](veiledning/sikker-montering-av-terrassemarkiser).
 
 ### Produktbegrensninger
 
@@ -84,6 +94,8 @@ Med dette i minnet er det bare å måle opp ønsket bredde.
 ![Pass opp for hindringer rundt monteringsområdet](/terrassemarkise-hindringer.jpg)
 
 Før du har endelig bredde, bør du gjøre en grundig vurdering rundt monteringshøyden.
+
+---
 
 ## Høyde: Optimalisering av plassering
 
@@ -134,6 +146,8 @@ Minste anbefalte vinkel - kun ved spesielle forhold:
 | 5      | 310    | 255             |
 | 5      | 360    | 260             |
 
+---
+
 ## Utfall: Begrensninger og muligheter
 
 ### Hvorfor utfallet har begrensninger
@@ -157,7 +171,9 @@ Når du planlegger utfallet, vurder:
 3. Hva er dine breddemuligheter?
 4. Hvilken modell passer best til dine behov?
 
-## Montering: Profesjonell hjelp
+---
+
+## Profesjonell hjelp
 
 ### Våre monteringstjenester
 
@@ -170,29 +186,17 @@ Vi tilbyr profesjonell montering av alle våre terrassemarkiser. Våre erfarne m
 
 ### Har du spørsmål?
 
-Har du spørsmål vedrørende montering av terrassemarkiser, ikke nøl med å [kontakte](/kontakt) oss. Vårt team av eksperter står klar til å hjelpe deg med:
+Har du spørsmål vedrørende montering av terrassemarkiser, ikke nøl med å [kontakte](/kontaktoss) oss. Vårt team av eksperter står klar til å hjelpe deg med:
 
 - Befaring og rådgivning
 - Vurdering av anleggsflate
 - Beregning av optimal plassering
 - Planlegging av installasjon
+- Mye, mye mer...
 
-## Sjekkliste før montering
+:::callout[info]
 
-Gjør dette før du bestiller montering:
-
-1. Mål opp tilgjengelig bredde med margin
-2. Kontroller at anleggsflaten er plan
-3. Sjekk for hindringer i Z-planet
-4. Vurder ønsket monteringshøyde
-5. Bestem ønsket utfall basert på bredde
-6. Kontroller at festematerialet er solid
-7. Ta bilder av monteringsområdet
-8. Kontakt oss for en befaring
-
-## Vanlige feil å unngå
-
-De mest vanlige monteringsfeilene:
+**Unngå disse vanlige feilene:**
 
 - **For liten margin**: Ikke planlegg helt ut til kanten
 - **For lite fall**: Minimum 5 grader, optimalt 15 grader
@@ -200,8 +204,4 @@ De mest vanlige monteringsfeilene:
 - **Glemme hindringer**: Sjekk både vegg og utfallsområde
 - **Feil brakettavstand**: Følg produsentens anbefalinger
 
-## Kontakt oss for ekspertveiledning
-
-Riktig planlegging er nøkkelen til en vellykket terrassemarkise-installasjon. Vårt team har mange års erfaring og kan hjelpe deg med alle aspekter av monteringen - fra første måling til ferdig resultat.
-
-[**Ta kontakt i dag**](/kontakt) for en uforpliktende befaring og få profesjonell rådgivning tilpasset ditt hjem.
+:::

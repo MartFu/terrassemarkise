@@ -53,13 +53,13 @@ export function MarkdownImage({
     return (
       <span
         className={cn(
-          "bg-muted/30 border border-dashed border-border p-8 flex flex-col items-center gap-2",
+          "mx-auto bg-muted/30 border border-dashed border-border p-8 flex flex-col items-center gap-2",
           !compact && "my-6",
         )}
       >
         <ImageIcon className="h-10 w-10 text-muted-foreground/50" />
         <span className="text-sm font-medium text-muted-foreground">
-          Failed to load image
+          Kunne ikke laste inn bilde
         </span>
         {alt && <span className="text-xs text-muted-foreground/70">{alt}</span>}
       </span>

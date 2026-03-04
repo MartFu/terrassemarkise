@@ -110,7 +110,7 @@ export function SolutionsSection({ title, slides }: Props) {
         </nav>
 
         {/* Main grid: image left, copy right */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 lg:gap-20 items-start">
           {/* LEFT — image + hotspots */}
           <div>
             <div className="relative w-full aspect-square overflow-visible">

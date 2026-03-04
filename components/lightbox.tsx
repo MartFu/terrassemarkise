@@ -56,7 +56,7 @@ export function Lightbox({
       {/* Prev */}
       {hasPrev && (
         <button
-          className="absolute left-4 z-10 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 transition-colors"
+          className="absolute left-4 z-10 rounded-full bg-white/20 backdrop-blur-sm p-3 text-black hover:bg-white/20 transition-colors"
           onClick={(e) => {
             e.stopPropagation();
             onNavigate(currentIndex - 1);
@@ -79,7 +79,7 @@ export function Lightbox({
       {/* Next */}
       {hasNext && (
         <button
-          className="absolute right-4 z-10 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 transition-colors"
+          className="absolute right-4 z-10 rounded-full bg-white/20 backdrop-blur-sm p-3 text-black hover:bg-white/20 transition-colors"
           onClick={(e) => {
             e.stopPropagation();
             onNavigate(currentIndex + 1);

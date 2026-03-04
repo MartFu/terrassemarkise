@@ -76,7 +76,7 @@ export function MarkdownCTA({
     return (
       <div
         className={cn(
-          "relative overflow-hidden rounded-2xl bg-linear-to-br from-primary via-primary/90 to-primary/80",
+          "relative overflow-hidden bg-linear-to-br from-primary via-primary/90 to-primary/80",
           "p-8 md:p-10 my-8",
           "shadow-xl shadow-primary/20",
           className,
@@ -170,9 +170,8 @@ export function MarkdownCTA({
     return (
       <div
         className={cn(
-          "relative my-8 p-6 rounded-xl",
-          "bg-card border border-border/50",
-          "shadow-sm hover:shadow-md transition-shadow duration-300",
+          "relative my-8 p-6",
+          "bg-card border border-border/50 shadow-sm",
           className,
         )}
       >
@@ -304,16 +303,14 @@ export function MarkdownCTA({
   return (
     <div
       className={cn(
-        "my-8 p-6 rounded-lg",
+        "my-8 p-6",
         "bg-linear-to-r from-muted/50 to-muted/30",
         "border border-border/50",
         className,
       )}
     >
       <div className={cn("flex flex-col gap-4", alignClasses[align])}>
-        {description && (
-          <p className="text-muted-foreground max-w-xl">{description}</p>
-        )}
+        {description && <p className="max-w-xl">{description}</p>}
 
         <div className="flex flex-wrap gap-3">
           {text && (

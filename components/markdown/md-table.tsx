@@ -10,14 +10,24 @@ interface MarkdownTableProps {
 
 export function MarkdownTable({ children, className }: MarkdownTableProps) {
   return (
-    <div className="my-6 w-full overflow-x-auto border border-border">
-      <div className="inline-block min-w-full align-middle">
-        <table className={cn("w-full border-collapse", className)}>
-          {children}
-        </table>
-      </div>
+    <div
+      className={cn(
+        "relative max-w-[74ch] mt-4",
+        "overflow-x-auto overflow-y-hidden",
+        "border",
+        "scrollbar-thin scrollbar-thumb-muted-foreground/20 scrollbar-track-transparent",
+        "hover:scrollbar-thumb-muted-foreground/30",
+        className,
+      )}
+    >
+      <table
+        className={cn(
+          "border-collapse min-w-full w-max",
+          "text-sm md:text-base",
+        )}
+      >
+        {children}
+      </table>
     </div>
   );
 }
-
-export default MarkdownTable;

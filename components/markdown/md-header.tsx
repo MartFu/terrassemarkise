@@ -52,44 +52,30 @@ export function MarkdownHeader({
     <Section
       className={"bg-card relative border-b py-8 md:py-12 text-card-foreground"}
     >
-      <Container className="grid grid-cols lg:grid-cols-2 gap-20">
+      <Container className="grid grid-cols lg:grid-cols-2 gap-8 md:gap-20">
         <div className="w-full h-full">
           {breadcrumbs && <Breadcrumbs breadcrumbs={breadcrumbs} />}
 
-          <div className={cn("not-prose mt-8 md:mt-12", className)}>
-            {/* Tags */}
-            {tags && (
-              <div
-                className="mb-5 flex flex-wrap gap-2 max-w-xl"
-                style={{
-                  animation: "fade-up 0.5s cubic-bezier(0.22,1,0.36,1) both",
-                }}
-              >
-                {tags.map((tag: string, index: number) => (
-                  <Badge className="bg-primary/80" key={`${tag}-${index}`}>
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-            )}
-
+          <div className={cn("not-prose mt-8", className)}>
             {/* Title */}
             {frontmatter.title && (
-              <h1
-                className="text-2xl md:text-3xl lg:text-4xl max-w-xl mb-6"
+              <Heading
+                as="h1"
+                level="h2"
+                className="mb-4"
                 style={{
                   animation:
                     "fade-up 0.55s cubic-bezier(0.22,1,0.36,1) 80ms both",
                 }}
               >
                 {frontmatter.title}
-              </h1>
+              </Heading>
             )}
 
             {/* Description */}
             {frontmatter.description && (
               <p
-                className={"text-secondary-foreground/80"}
+                className={"text-card-foreground"}
                 style={{
                   animation:
                     "fade-up 0.55s cubic-bezier(0.22,1,0.36,1) 160ms both",
@@ -102,7 +88,7 @@ export function MarkdownHeader({
             {/* Metadata */}
             {hasMetadata && (
               <div
-                className="mt-4 md:mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground"
+                className="my-4 md:mt-8 flex flex-wrap items-center gap-x-2 gap-y-2 text-sm text-muted-foreground"
                 style={{
                   animation:
                     "fade-up 0.55s cubic-bezier(0.22,1,0.36,1) 240ms both",
@@ -137,6 +123,22 @@ export function MarkdownHeader({
                 )}
               </div>
             )}
+
+            {/* Tags */}
+            {tags && (
+              <div
+                className="mb-5 flex flex-wrap gap-2 max-w-xl"
+                style={{
+                  animation: "fade-up 0.5s cubic-bezier(0.22,1,0.36,1) both",
+                }}
+              >
+                {tags.map((tag: string, index: number) => (
+                  <Badge className="bg-primary/80" key={`${tag}-${index}`}>
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            )}
           </div>
         </div>
         {frontmatter?.thumbnailSrc && (
@@ -145,7 +147,7 @@ export function MarkdownHeader({
             <img
               src={frontmatter?.thumbnailSrc}
               alt={frontmatter?.thumbnailAlt || ""}
-              className="w-full h-full rounded-lg"
+              className="w-full h-full"
               style={{
                 objectFit: frontmatter?.thumbnailObjectFit ?? "cover",
                 objectPosition:

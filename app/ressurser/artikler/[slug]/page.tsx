@@ -131,8 +131,6 @@ async function ResourceContent({ slug }: { slug: string }) {
     siblings = { previous: null, next: null, currentIndex: 0, total: 0 };
   }
 
-  console.log("SIBLINGS: ", siblings);
-
   return (
     <MarkdownRendererWithToc
       breadcrumbs={[

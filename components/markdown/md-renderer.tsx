@@ -30,6 +30,7 @@ import { MarkdownImage } from "./md-image";
 import { MarkdownTable } from "./md-table";
 import { preprocessDirectives } from "./remark-directives";
 import { Lightbox } from "../lightbox";
+import { Heading } from "../ui/typography";
 
 // ============================================================================
 // Callout configuration
@@ -287,12 +288,11 @@ export function MarkdownRenderer({
           return (
             <div
               className={cn(
-                "not-prose my-6 flex gap-3 rounded-r-xl border-l-4 px-5 py-4",
+                "not-prose my-6 flex gap-3 border-l-4 px-5 py-4 max-w-[74ch]",
                 cfg.containerCls,
                 cfg.borderCls,
               )}
             >
-              <Icon className={cn("mt-0.5 h-5 w-5 shrink-0", cfg.iconCls)} />
               <div className="flex-1 min-w-0">
                 <p
                   className={cn(
@@ -307,6 +307,7 @@ export function MarkdownRenderer({
                   {children}
                 </div>
               </div>
+              <Icon className={cn("mt-0.5 h-5 w-5 shrink-0", cfg.iconCls)} />
             </div>
           );
         }
@@ -392,79 +393,91 @@ export function MarkdownRenderer({
       h1({ children, ...props }) {
         const id = generateHeadingId(extractTextFromChildren(children));
         return (
-          <h1
-            {...props}
+          <Heading
+            as="h1"
+            level="h2"
             id={id}
             onClick={(e) => handleHeadingClick(id, e)}
             className="group scroll-m-(--header-height) mt-8 mb-4 text-2xl font-extrabold tracking-tight lg:text-3xl cursor-pointer hover:text-primary/90 transition-colors first:mt-0"
+            {...props}
           >
             {children}
-          </h1>
+          </Heading>
         );
       },
       h2({ children, ...props }) {
         const id = generateHeadingId(extractTextFromChildren(children));
         return (
-          <h2
-            {...props}
+          <Heading
+            as="h2"
+            level="h3"
             id={id}
             onClick={(e) => handleHeadingClick(id, e)}
-            className="group mt-12 mb-4 scroll-m-(--header-height) border-b border-border pb-2 text-xl font-semibold tracking-tight first:mt-0 cursor-pointer hover:text-primary/90 transition-colors"
+            className="group mt-12 mb-4 scroll-m-(--header-height) pb-2 text-xl font-semibold tracking-tight first:mt-0 cursor-pointer hover:text-primary/90 transition-colors"
+            {...props}
           >
             {children}
-          </h2>
+          </Heading>
         );
       },
       h3({ children, ...props }) {
         const id = generateHeadingId(extractTextFromChildren(children));
         return (
-          <h3
-            {...props}
+          <Heading
+            as="h3"
+            level="h4"
             id={id}
             onClick={(e) => handleHeadingClick(id, e)}
             className="group mt-10 mb-3 scroll-m-(--header-height) text-lg font-semibold tracking-tight cursor-pointer hover:text-primary/90 transition-colors"
+            {...props}
           >
             {children}
-          </h3>
+          </Heading>
         );
       },
       h4({ children, ...props }) {
         const id = generateHeadingId(extractTextFromChildren(children));
         return (
-          <h4
-            {...props}
+          <Heading
+            as="h4"
+            level="h5"
             id={id}
             onClick={(e) => handleHeadingClick(id, e)}
             className="group mt-8 mb-3 scroll-m-(--header-height) text-lg font-semibold tracking-tight cursor-pointer hover:text-primary/90 transition-colors"
+            {...props}
           >
             {children}
-          </h4>
+          </Heading>
         );
       },
       h5({ children, ...props }) {
         const id = generateHeadingId(extractTextFromChildren(children));
         return (
-          <h5
-            {...props}
+          <Heading
+            as="h5"
+            level="h6"
             id={id}
             onClick={(e) => handleHeadingClick(id, e)}
             className="group mt-6 mb-2 scroll-m-(--header-height) text-lg font-semibold tracking-tight cursor-pointer hover:text-primary/90 transition-colors"
+            {...props}
           >
             {children}
-          </h5>
+          </Heading>
         );
       },
       h6({ children, ...props }) {
         const id = generateHeadingId(extractTextFromChildren(children));
         return (
-          <h6
-            {...props}
+          <Heading
+            as="h6"
+            level="h6"
             id={id}
             onClick={(e) => handleHeadingClick(id, e)}
             className="group mt-6 mb-2 scroll-m-(--header-height) text-base font-semibold tracking-tight cursor-pointer hover:text-primary/90 transition-colors"
+            {...props}
           >
             {children}
-          </h6>
+          </Heading>
         );
       },
 
@@ -475,11 +488,11 @@ export function MarkdownRenderer({
         return <MarkdownTable>{children}</MarkdownTable>;
       },
       thead({ children }) {
-        return <thead className="bg-muted/50">{children}</thead>;
+        return <thead className="bg-card/80">{children}</thead>;
       },
       th({ children }) {
         return (
-          <th className="px-4 py-3 text-left font-semibold text-sm border-b-2 border-border">
+          <th className="px-4 py-3 whitespace-nowrap text-left font-semibold text-sm border-b-2 border-border">
             {children}
           </th>
         );
@@ -493,7 +506,9 @@ export function MarkdownRenderer({
         );
       },
       td({ children }) {
-        return <td className="px-4 py-3 text-sm">{children}</td>;
+        return (
+          <td className="px-4 py-3 whitespace-normal text-sm">{children}</td>
+        );
       },
 
       // -----------------------------------------------------------------------
@@ -536,7 +551,7 @@ export function MarkdownRenderer({
       },
       p({ children }) {
         return (
-          <p className="leading-7 not-first:mt-6 text-foreground/90">
+          <p className="max-w-[74ch] text-pretty leading-7 not-first:mt-6">
             {children}
           </p>
         );
@@ -579,7 +594,7 @@ export function MarkdownRenderer({
   if (!content || content.trim().length === 0) {
     return (
       <div className="flex items-center justify-center p-12 text-muted-foreground border border-dashed border-border rounded-lg">
-        <p>No content to display</p>
+        <p>Ikke noe innhold å vise</p>
       </div>
     );
   }

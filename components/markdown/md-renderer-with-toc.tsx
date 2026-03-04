@@ -159,27 +159,25 @@ export function MarkdownRendererWithToc({
       )}
 
       {!frontmatter && frontmatterDisplay && (
-        <div className="bg-red-500 p-2 rounded-xl flex items-center justify-center mx-auto">
+        <div className="bg-red-500 text-white p-2 rounded-xl flex items-center justify-center mx-auto">
           Custom frontmatter display not yet available
         </div>
       )}
 
-      <Section>
+      <Section spacing={"sm"}>
         <Container className="h-full">
           <div
-            className={cn(
-              "grid grid-cols-1 lg:grid-cols-[1fr_15rem] gap-6 lg:gap-8",
-            )}
+            className={cn("grid grid-cols-1 lg:grid-cols-[1fr_15rem] gap-6")}
           >
             <div
               className={cn(
-                "min-h-0 flex flex-col px-1 relative",
+                "min-h-0 min-w-0 flex flex-col px-1 relative overflow-x-hidden",
                 contentClassName,
               )}
             >
               <div
                 ref={contentRef}
-                className="mx-auto prose prose-neutral max-w-[64ch] dark:prose-invert"
+                className="mx-auto prose prose-neutral w-full min-w-0 dark:prose-invert"
               >
                 <MarkdownRenderer
                   content={content}

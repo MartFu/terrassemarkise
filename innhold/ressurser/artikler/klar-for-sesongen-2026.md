@@ -19,7 +19,6 @@ keywords:
 thumbnailSrc: "/assets/articles/thumbnails/dette-bor-du-tenke-paa-naar-du-oppgraderer-terrassen-i-aar-thumbnail.webp"
 thumbnailAlt: "Moderne terrasse med utslått markise i sommersol"
 thumbnailObjectPosition: "right"
-readTime: "5 min"
 featured: true
 
 ctaText: "Se vårt utvalg i nettbutikken"

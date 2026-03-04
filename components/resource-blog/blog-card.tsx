@@ -9,33 +9,29 @@ interface BlogCardProps {
 }
 
 export function BlogCard({ data, slug }: BlogCardProps) {
-  console.log(data);
-
   return (
     <Link href={`/ressurser/${slug}`} className="group block">
       <Card className="h-full pt-0 overflow-hidden bg-background hover:bg-card/40 shadow-sm rounded-none">
-        <CardContent className="px-6 pt-6 group">
-          <div className="space-y-4">
-            <div className="min-h-40 relative overflow-hidden">
-              <div
-                className="absolute inset-0 w-full aspect-video"
-                style={{
-                  backgroundImage: `url('${data.thumbnailSrc}')`,
-                  backgroundPosition: data?.thumbnailObjectPosition ?? "center",
-                  backgroundSize: "cover",
-                }}
-              />
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-xl line-clamp-2 group-hover:text-primary transition-colors">
-                {data.title}
-              </h3>
-              {data.excerpt && (
-                <p className="text-muted-foreground line-clamp-3">
-                  {data.excerpt}
-                </p>
-              )}
-            </div>
+        <div className="min-h-40 relative overflow-hidden">
+          <div
+            className="absolute inset-0 w-full"
+            style={{
+              backgroundImage: `url('${data.thumbnailSrc}')`,
+              backgroundPosition: data?.thumbnailObjectPosition ?? "center",
+              backgroundSize: "cover",
+            }}
+          />
+        </div>
+        <CardContent className="group">
+          <div className="space-y-2">
+            <h3 className="text-xl line-clamp-2 group-hover:text-primary transition-colors">
+              {data.title}
+            </h3>
+            {data.excerpt && (
+              <p className="text-muted-foreground line-clamp-3">
+                {data.excerpt}
+              </p>
+            )}
           </div>
         </CardContent>
 

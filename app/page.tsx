@@ -577,10 +577,7 @@ export default function Page() {
         </Container>
       </Section>
 
-      <Section
-        spacing={"md"}
-        className="bg-secondary text-secondary-foreground"
-      >
+      <Section spacing={"md"} className="bg-card text-card-foreground">
         <Container>
           <div className="max-w-3xl mx-auto text-center space-y-4 md:space-y-8">
             <h2 className="text-2xl lg:text-4xl text-balance">
