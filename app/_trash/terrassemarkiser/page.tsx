@@ -1,5 +1,5 @@
-import { ClientPage } from "./client.page";
 import { generateStaticProductComparisonData } from "@/innhold/produkter";
+import { ClientPage } from "./client.page";
 
 export default function Page() {
   const comparisonData = generateStaticProductComparisonData();

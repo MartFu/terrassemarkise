@@ -1,3 +1,4 @@
+// app/ressurser/artikler/[[...slug]]/page.tsx
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { Suspense } from "react";
@@ -9,25 +10,24 @@ import {
 import { ErrorBoundary } from "@/components/error-boundary";
 import { MarkdownRendererWithToc } from "@/components/markdown/md-renderer-with-toc";
 import { SITE_URLS } from "@/lib/constants";
-// import { SITE_URLS } from "@/lib/constants";
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug?: string[] }>;
 }
 
-// Generate all possible paths at build time
 export async function generateStaticParams() {
   try {
     const { items } = await getAllContent("ressurser/artikler");
-    return items.map((item) => ({
-      slug: String(item.slug),
-    }));
+    return [
+      { slug: [] }, // index route
+      ...items.map((item) => ({ slug: [String(item.slug)] })),
+    ];
   } catch (error) {
     console.error(
       "[generateStaticParams] Failed to load resource content:",
       error,
     );
-    return [];
+    return [{ slug: [] }];
   }
 }
 
@@ -37,7 +37,14 @@ export async function generateMetadata({
   try {
     const { slug } = await params;
 
-    const document = await getContentBySlug("ressurser/artikler", slug);
+    if (!slug || slug.length === 0) {
+      return {
+        title: "Ressurser",
+        description: "Ressurser og hjelp",
+      };
+    }
+
+    const document = await getContentBySlug("ressurser/artikler", slug[0]);
 
     if (!document) {
       return {
@@ -73,7 +80,7 @@ export async function generateMetadata({
     };
   }
 }
-// Loading skeleton for Suspense
+
 function ResourcesSkeleton() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-12 animate-pulse">
@@ -88,20 +95,22 @@ function ResourcesSkeleton() {
   );
 }
 
-// Main page component with error boundary
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
 
+  if (!slug || slug.length === 0) {
+    notFound();
+  }
+
   return (
-    <ErrorBoundary context="ressurser" slug={slug}>
+    <ErrorBoundary context="ressurser" slug={slug[0]}>
       <Suspense fallback={<ResourcesSkeleton />}>
-        <ResourceContent slug={slug} />
+        <ResourceContent slug={slug[0]} />
       </Suspense>
     </ErrorBoundary>
   );
 }
 
-// Separate async component for data fetching
 async function ResourceContent({ slug }: { slug: string }) {
   let document;
   let siblings;
@@ -122,7 +131,6 @@ async function ResourceContent({ slug }: { slug: string }) {
       sortBy: "order",
     });
   } catch (error) {
-    // Log but don't crash - navigation is non-critical
     console.warn(
       `[ResourceContent] Could not load siblings for ${slug}:`,
       error,

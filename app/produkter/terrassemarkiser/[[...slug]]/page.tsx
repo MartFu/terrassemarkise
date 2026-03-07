@@ -1,8 +1,12 @@
+import {
+  products,
+  generateStaticProductComparisonData,
+} from "@/innhold/produkter";
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
 import Breadcrumbs from "@/components/breadcrumbs";
 import { ImageGallery } from "@/components/shared/product-gallery";
-import { FAQSection } from "@/components/shared/faq-section";
 import { ProductSpecList } from "@/components/spec-list";
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -15,37 +19,47 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Stack } from "@/components/ui/stack";
 import { Heading } from "@/components/ui/typography";
-import { products } from "@/innhold/produkter";
 import { ExternalLink, Send } from "lucide-react";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { EXTERNAL_URLS, SITE_URLS } from "@/lib/constants";
 import { formatPrice } from "@/lib/utils";
-import { Metadata } from "next";
+import { ClientPage } from "./page.client";
+
+interface PageProps {
+  params: Promise<{ slug?: string[] }>;
+}
 
 export function generateStaticParams() {
   try {
-    return products.map((item) => ({
-      slug: String(item.slug),
-    }));
+    return [
+      { slug: [] }, // index route
+      ...products.map((item) => ({ slug: [String(item.slug)] })),
+    ];
   } catch (error) {
-    console.error("Error generating static params for products:", error);
-    return [];
+    console.error("Error generating static params for markiser:", error);
+    return [{ slug: [] }];
   }
 }
 
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+}: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const product = products.find((p) => p.slug === slug);
+
+  // Index page
+  if (!slug || slug.length === 0) {
+    return {
+      title: "Terrassemarkiser — skreddersydd på dine mål | Solskjerming AS",
+      description:
+        "Vi produserer din markise på bestilling, slik at den passer optimalt til ditt tilfelle.",
+    };
+  }
+
+  // Detail page
+  const product = products.find((p) => p.slug === slug[0]);
 
   if (!product) {
-    return {
-      title: "Produkt ikke funnet",
-    };
+    return { title: "Produkt ikke funnet" };
   }
 
   return {
@@ -62,14 +76,17 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProductDetails({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function Page({ params }: PageProps) {
   const { slug } = await params;
-  const product = products.find((p) => p.slug === slug);
 
+  // Index route
+  if (!slug || slug.length === 0) {
+    const comparisonData = generateStaticProductComparisonData();
+    return <ClientPage comparisonData={comparisonData} />;
+  }
+
+  // Detail route
+  const product = products.find((p) => p.slug === slug[0]);
   if (!product) return notFound();
 
   return (
@@ -78,17 +95,9 @@ export default async function ProductDetails({
         <Container className="pb-0">
           <Breadcrumbs
             breadcrumbs={[
-              {
-                label: "Hjem",
-                href: "/",
-              },
-              {
-                label: "Produkter",
-                href: SITE_URLS.AWNINGS,
-              },
-              {
-                label: product.name,
-              },
+              { label: "Hjem", href: "/" },
+              { label: "Terrassemarkiser", href: SITE_URLS.AWNINGS },
+              { label: product.name },
             ]}
           />
         </Container>
@@ -117,7 +126,7 @@ export default async function ProductDetails({
                 </Stack>
 
                 <div className="md:text-right">
-                  <div className="font-display block space-x-2 font-heading text-lg md:text-xl lg:text-2xl font-semibold ">
+                  <div className="font-display block space-x-2 font-heading text-lg md:text-xl lg:text-2xl font-semibold">
                     <span>Fra</span>
                     <span>{formatPrice(product.priceFrom)}</span>
                   </div>
@@ -141,7 +150,6 @@ export default async function ProductDetails({
                   </p>
 
                   <div className="space-y-10">
-                    {/* Actions */}
                     <div className="flex flex-wrap items-center gap-3">
                       <Button size="lg" asChild>
                         <Link
@@ -194,13 +202,6 @@ export default async function ProductDetails({
           </Stack>
         </Container>
       </Section>
-
-      {/* {product?.faqs && (
-        <FAQSection
-          title={`Kunder som handler ${product.name} lurer ofte på`}
-          faqs={product.faqs}
-        />
-      )} */}
 
       <Section>
         <Container>
