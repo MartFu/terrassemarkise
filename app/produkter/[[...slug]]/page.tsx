@@ -5,10 +5,10 @@ import { SITE_URLS } from "@/lib/constants";
 export function generateStaticParams() {
   try {
     return products.map((item) => ({
-      slug: item.slug,
+      slug: String(item.slug),
     }));
   } catch (error) {
-    console.error("Error generating static params for juridisk:", error);
+    console.error("Error generating static params for products:", error);
     return [];
   }
 }

@@ -8,9 +8,9 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <Section className="h-[calc(100vh-var(--header-height))] relative">
+    <Section className="h-[calc(100vh-var(--header-height))] relative flex items-center justify-center">
       <Container className="text-center md:text-left space-y-6 max-w-2xl relative">
-        <div className="h-48 w-48 bg-amber-400/80 rounded-full absolute -top-48 blur-3xl right-0" />
+        <div className="h-48 w-48 bg-amber-400/80 rounded-full absolute -top-56 blur-3xl right-0" />
         <div
           className="min-h-80 mb-0 md:mb-12 relative dark:backdrop-invert-0"
           style={{
@@ -23,7 +23,7 @@ export default function NotFound() {
           <div className="absolute inset-0 dark:backdrop-invert-70" />
         </div>
         <Heading as="h1" level="h3" className="mx-auto">
-          Oi, nå sitter du midt i solsteken!
+          Oisann, nå sitter du midt i solsteken!
         </Heading>
 
         <p className="text-xl">

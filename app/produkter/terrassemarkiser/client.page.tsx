@@ -39,7 +39,7 @@ export function ClientPage({
         className="min-h-[50vh] text-white"
         title={["Terrassemarkiser —", "skreddersydd på dine mål"]}
         description="Vi produserer din markise på bestilling, slik at den passer optimalt til ditt tilfelle."
-        backgroundImage="/mock/product-folding.png"
+        backgroundImage="/mock/product-folding.webp"
         backgroundImageOptions={{
           opacity: 1,
           objectFit: "cover",

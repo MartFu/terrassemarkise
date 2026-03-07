@@ -13,11 +13,7 @@ import { Switch } from "./ui/switch";
 import Link from "next/link";
 import { SITE_URLS } from "@/lib/constants";
 
-export default function CookieBanner({
-  config,
-}: {
-  config: CookieBannerProps;
-}) {
+export function CookieBanner({ config }: { config: CookieBannerProps }) {
   // Start hidden to prevent flash, then check cookie
   const [visible, setVisible] = useState(false);
   const [mounted, setMounted] = useState(false);

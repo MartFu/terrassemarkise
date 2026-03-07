@@ -16,7 +16,7 @@ export async function generateStaticParams() {
   try {
     const { items } = await getAllContent("juridisk");
     return items.map((item) => ({
-      slug: item.slug,
+      slug: String(item.slug),
     }));
   } catch (error) {
     console.error(

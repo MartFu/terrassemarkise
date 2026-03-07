@@ -1,3 +1,4 @@
+import { EventButton, EventLink } from "@/components/event-button";
 import { Container } from "@/components/ui/container";
 import {
   CardLockup,
@@ -13,6 +14,16 @@ export default function Page() {
 
   return (
     <>
+      <Section>
+        <Container>
+          <EventButton data-event-name="Test">
+            Test GTM Event Button
+          </EventButton>
+          <EventLink href="#" data-event-name="Test">
+            Test GTM Event Button
+          </EventLink>
+        </Container>
+      </Section>
       <Section>
         <Container className="space-y-20 bg-secondary/30 py-12">
           <Heading level="h2">Typography</Heading>

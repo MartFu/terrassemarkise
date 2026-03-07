@@ -19,9 +19,8 @@ interface PageProps {
 export async function generateStaticParams() {
   try {
     const { items } = await getAllContent("ressurser/artikler");
-    console.log("ITEMS: ", items);
     return items.map((item) => ({
-      slug: item.slug,
+      slug: String(item.slug),
     }));
   } catch (error) {
     console.error(
