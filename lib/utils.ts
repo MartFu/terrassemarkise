@@ -99,3 +99,40 @@ export function exclude<T extends string, K extends T>(
     K
   >[];
 }
+
+export function parseNorwegianDate(dateStr: string | undefined): Date {
+  if (!dateStr) return new Date();
+
+  // Try parsing MM.DD.YYYY (as seen in your console log 02.27.2026)
+  // If your files use DD.MM.YYYY, swap parts[0] and parts[1] below
+  const parts = dateStr.split(".");
+  if (parts.length === 3) {
+    const month = parseInt(parts[0], 10) - 1; // JS months are 0-11
+    const day = parseInt(parts[1], 10);
+    const year = parseInt(parts[2], 10);
+    const date = new Date(year, month, day);
+
+    if (!isNaN(date.getTime())) return date;
+  }
+
+  // Fallback to current date if parsing fails so the build doesn't crash
+  console.warn(
+    `Sitemap: Invalid date found "${dateStr}", falling back to now.`,
+  );
+  return new Date();
+}
+
+export function slugify(text: string) {
+  return text
+    .toString()
+    .toLowerCase()
+    .replace(/æ/g, "ae")
+    .replace(/ø/g, "o")
+    .replace(/å/g, "aa")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "")
+    .replace(/--+/g, "-")
+    .trim();
+}

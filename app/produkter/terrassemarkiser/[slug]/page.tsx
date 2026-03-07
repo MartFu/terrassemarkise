@@ -84,7 +84,7 @@ export default async function ProductDetails({
               },
               {
                 label: "Produkter",
-                href: "/produkter",
+                href: SITE_URLS.AWNINGS,
               },
               {
                 label: product.name,

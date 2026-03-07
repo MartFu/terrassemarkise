@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { COMPANY_INFO } from "@/innhold/selskap";
 import { Stack } from "../ui/stack";
 import { Container } from "../ui/container";
+import { EXTERNAL_URLS, SITE_URLS } from "@/lib/constants";
 
 export function CTASection({ className }: { className?: string }) {
   return (
@@ -58,7 +59,9 @@ export function CTASection({ className }: { className?: string }) {
                 className="group gap-2 px-4"
                 asChild
               >
-                <Link href="/befaring">
+                <Link
+                  href={EXTERNAL_URLS.MAIN_DOMAIN_STORE_AWNINGS_TERRACE_AWNINGS}
+                >
                   Besøk nettbutikken
                   <ExternalLink className="h-4 w-4" />
                 </Link>
@@ -70,7 +73,7 @@ export function CTASection({ className }: { className?: string }) {
                 className="text-accent-foreground/80 hover:text-secondary-foreground hover:bg-secondary/80"
                 asChild
               >
-                <Link href="/kontakt">Snakk med en ekspert</Link>
+                <Link href={SITE_URLS.CONTACT}>Snakk med en ekspert</Link>
               </Button>
             </Stack>
 

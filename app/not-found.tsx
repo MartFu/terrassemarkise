@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Heading } from "@/components/ui/typography";
+import { SITE_URLS } from "@/lib/constants";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
@@ -42,7 +43,7 @@ export default function NotFound() {
             </Link>
           </Button>
           <Button className="w-full md:w-auto" size="lg" asChild>
-            <Link href="/produkter">Se våre markiser</Link>
+            <Link href={SITE_URLS.PRODUCTS}>Se våre markiser</Link>
           </Button>
         </div>
       </Container>

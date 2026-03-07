@@ -4,6 +4,7 @@ import { ArrowRight, Calculator, Tag, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { Stack } from "@/components/ui/stack";
+import { SITE_URLS } from "@/lib/constants";
 
 // ============================================================================
 // TYPES
@@ -111,7 +112,7 @@ function ToolCard({ tool }: { tool: Tool }) {
   }
 
   return (
-    <Link key={tool.id} href={`/ressurser/verktoy/${tool.id}`}>
+    <Link key={tool.id} href={`${SITE_URLS.TOOLS}${tool.id}`}>
       {inner}
     </Link>
   );

@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/tooltip";
 import { products } from "@/innhold/produkter";
 import { type CellTooltip, ComparisonRow, Product } from "@/lib/products/types";
+import { SITE_URLS } from "@/lib/constants";
 
 function BoolCell({ value }: { value: boolean }) {
   return (
@@ -246,7 +247,7 @@ export function ProductComparison() {
                       </span>
                       <Link
                         className="flex items-center hover:underline hover:text-primary gap-1 font-normal text-xs text-muted-foreground"
-                        href={`/produkter/${product.slug}`}
+                        href={`${SITE_URLS.AWNINGS}${product.slug}`}
                       >
                         Se produkt <ArrowRight className="shrink-0 w-4 h-4" />
                       </Link>

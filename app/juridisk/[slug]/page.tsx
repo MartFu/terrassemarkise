@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { getContentBySlug, getAllContent } from "@/lib/content-loader.server";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { MarkdownRendererWithToc } from "@/components/markdown/md-renderer-with-toc";
+import { SITE_URLS } from "@/lib/constants";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -112,7 +113,7 @@ async function JuridiskContent({ slug }: { slug: string }) {
     <MarkdownRendererWithToc
       breadcrumbs={[
         { label: "Hjem", href: "/" },
-        { label: "Juridisk", href: "/juridisk" },
+        { label: "Juridisk", href: SITE_URLS.LEGAL },
         { label: document?.frontmatter?.title ?? "Ukjent tittel" },
       ]}
       frontmatter={document.frontmatter}

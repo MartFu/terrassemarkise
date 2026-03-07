@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { BookOpen } from "lucide-react";
 import type { ContentItem } from "@/lib/content-loader.types";
 import { useArticles } from "@/context/resources-provider";
+import { SITE_URLS } from "@/lib/constants";
 
 // ============================================================================
 // HELPERS
@@ -54,7 +55,7 @@ function ArticleCard({
   if (view === "list") {
     return (
       <Link
-        href={`/ressurser/artikler/${slug}`}
+        href={`${SITE_URLS.ARTICLES}${slug}`}
         className="group flex items-start py-4 border-b border-border last:border-0 hover:bg-card/50 -mx-2 px-2 rounded-lg transition-colors"
       >
         <div className="flex-1 min-w-0">
@@ -92,7 +93,7 @@ function ArticleCard({
 
   return (
     <Link
-      href={`/ressurser/artikler/${slug}`}
+      href={`${SITE_URLS.ARTICLES}${slug}`}
       className="group flex flex-col gap-3 rounded-xl border border-border bg-card p-5 hover:bg-card/50 transition-colors"
     >
       <div>

@@ -16,6 +16,7 @@ import {
   Wind,
   Palette,
 } from "lucide-react";
+import { SITE_URLS } from "@/lib/constants";
 
 // ============================================================================
 // TYPES
@@ -490,7 +491,7 @@ function ResultCard({ match, rank }: { match: ProductMatch; rank: number }) {
         {/* Actions */}
         <div className="flex gap-2 pt-1">
           <Link
-            href={`/produkter/${match.slug}`}
+            href={`${SITE_URLS.AWNINGS}/${match.slug}`}
             className={[
               "flex-1 rounded-lg py-2.5 text-center text-sm font-semibold transition-colors",
               isWinner

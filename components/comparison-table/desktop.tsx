@@ -6,6 +6,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { StaticComparisonData } from "@/lib/comparison";
 import React from "react";
 import { useStuck } from "@/hooks/use-stuck";
+import { SITE_URLS } from "@/lib/constants";
 
 type Props = {
   data: StaticComparisonData;
@@ -54,7 +55,7 @@ export function DesktopTable({ data, highlightedColumn, footer }: Props) {
                     {col.name}
                   </span>
                   <Link
-                    href={`/produkter/${col.slug}`}
+                    href={`${SITE_URLS.AWNINGS}${col.slug}`}
                     className="flex items-center hover:underline text-xs font-normal text-primary hover:text-primary/80"
                   >
                     Se produkt <ArrowRight className="w-3.5 h-3.5 ml-1" />

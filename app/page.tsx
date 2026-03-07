@@ -64,7 +64,7 @@ const slides: Slide[] = [
     type: "Åpen markise",
     title: "Vår mest fleksible løsning",
     description:
-      "Den åpne markisen er arkitektur i seg selv. Monteres mot vegg eller tak - også i trange nisjer og under takutspring der en kassett ikke ville passet. Enkel, effektiv og synlig. En markise du legger merke til.",
+      "Den klassiske åpne markisen har et diskret design, og er vårt mest fleksible alternativ. Monteres mot vegg eller tak - også i trange nisjer og under takutspring der kassett ikke er nødvendig.",
     price: "fra kr 8\u202f152,-",
     priceNote: "+ kr 2\u202f972,- med toppdeksel",
     variants: [
@@ -100,19 +100,19 @@ const slides: Slide[] = [
             x: 70,
             y: 12,
             label: "Toppdeksel",
-            body: "Et presist tilpasset aluminiumdeksel beskytter rullemekanismen mot nedbør og fugler - uten å endre markisens rene uttrykk.",
+            body: "Et presist tilpasset aluminiumdeksel beskytter rullen mot nedbør og fugler - uten å endre markisens rene uttrykk.",
           },
           {
             x: 60,
             y: 60,
             label: "Artikulerte armer",
-            body: "Saksearmer med konstant fjærspenning holder duken stram i alle posisjoner.",
+            body: "Saksearmer med kjede i ledd og fjærspenning holder duken stram i alle posisjoner.",
           },
           {
             x: 20,
             y: 84,
             label: "Frontprofil",
-            body: "Nedsenkbar front kan monteres for å blokkere lav kveldssol og gi le mot vind.",
+            body: "Nedsenkbar front kan monteres for å blokkere lav kveldssol og begrense innsyn.",
           },
         ],
       },
@@ -484,15 +484,23 @@ export default function Page() {
             space={{ base: 2, md: 20 }}
             justify={{ md: "between" }}
             preset="row-between-collapse"
+            className="relative"
           >
             <h2 className="text-3xl shrink-0">
               Markisen som tar vare <br /> på seg selv
             </h2>
-            <p className="max-w-prose">
-              Med en integrert vindsensor blir terrassemarkisen selvgående. Den
-              trekker seg inn automatisk dersom det blåser opp, slik at du
-              slipper å bekymre deg når du ikke er hjemme.
-            </p>
+            <div className="relative">
+              <p className="max-w-prose">
+                Med en integrert vindsensor blir terrassemarkisen selvgående.
+                Den trekker seg inn automatisk dersom det blåser opp*, slik at
+                du slipper å bekymre deg for et kraftig vindkast mens du er inne
+                og forbereder middagen.
+              </p>
+
+              <p className="text-xs mt-8 absolute -bottom-8">
+                *Vi fraråder å reise fra markisen i utrullet posisjon.
+              </p>
+            </div>
           </Stack>
           <div
             className={cn("h-120 w-full")}
@@ -516,10 +524,10 @@ export default function Page() {
           <Stack space={6} preset="card" align={"start"}>
             <h2 className="text-3xl">Ta full kontroll over systemet</h2>
             <p className="max-w-prose">
-              Vi tilbyr løsninger fra enkle kablede motorer til fullt trådløse
-              Somfy-systemer - tilpasset alt fra en enkel hjemmeinstallasjon til
-              krevende driftsforhold i restauranter, hoteller og borettslag, der
-              markisen må ta vare på seg selv uansett vær og sesong.
+              Vi tilbyr løsninger fra enkle kablede motorer til Somfy-motorer
+              med trådløs styring - tilpasset alt fra en enkel
+              hjemmeinstallasjon til krevende driftsforhold i restauranter,
+              hoteller og borettslag.
             </p>
 
             <p className="max-w-prose">
@@ -544,8 +552,8 @@ export default function Page() {
             <p className="max-w-prose">
               I ressursbiblioteket vårt finner du installasjonsguider,
               vedlikeholdsveiledninger og videoer for deg som vil forstå hva du
-              kjøper og ta vare på det over tid. Målet vårt er at nesten hvem
-              som helst skal kunne montere våre terrassemarkiser selv – med god
+              kjøper og ta vare på det over tid. Vi tør påstå at nesten hvem som
+              helst skal kunne montere våre terrassemarkiser selv - med god
               veiledning, så klart.
             </p>
 

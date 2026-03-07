@@ -142,7 +142,7 @@ function ArticleCard({
   return (
     <div className="w-60 md:w-80 border-l border-border px-4 transition-colors hover:border-foreground/20">
       <Link
-        href={`/ressurser/${slug}`}
+        href={`${SITE_URLS.RESOURCES}${slug}`}
         className="block hover:no-underline hover:text-foreground/80 text-foreground"
       >
         <div className="mb-0.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">

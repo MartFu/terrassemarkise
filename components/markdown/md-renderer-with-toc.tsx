@@ -229,7 +229,7 @@ export function MarkdownRendererWithToc({
                   frontmatter?.ctaSecondary ?? "Lær mer om være produkter"
                 }
                 secondaryLink={
-                  frontmatter?.ctaSecondaryLink ?? SITE_URLS.ARTICLES
+                  frontmatter?.ctaSecondaryLink ?? SITE_URLS.PRODUCTS
                 }
                 variant={frontmatter?.ctaVariant ?? "banner"}
                 heading={

@@ -12,7 +12,7 @@ ctaHeading: "Trenger du hjelp?"
 ctaDescription: "Riktig planlegging er nøkkelen til et resultat som varer lenger og ser penere ut. Vårt team har lang erfaring med både befaring og montering."
 ctaText: "Se vårt utvalg i nettbutikken"
 ctaLink: "https://www.solskjerming-as.no/nettbutikk/utvendig-solskjerming/markiser"
-ctaSecondaryLink: "/kontaktoss"
+ctaSecondaryLink: "/kontakt"
 ctaSecondaryText: "Kontakt oss"
 ctaVariant: "banner"
 
@@ -51,7 +51,7 @@ Innfesting har to kritiske aspekter:
 
 Har du en skjør anleggsflate (eksempelvis panel med luft/isolasjon bak) eller begrenset forankring til festematerialet (som enkle lekter), kan det være nødvendig å forsterke konstruksjonen før terrassemarkisen monteres.
 
-[Kontakt oss](/kontaktoss) ved spørsmål om innfesting. Du kan også lese mer om sikker innfesting og montering av terrassemarkiser i vår utfyllende [guide](veiledning/sikker-montering-av-terrassemarkiser).
+[Kontakt oss](/kontakt) ved spørsmål om innfesting. Du kan også lese mer om sikker innfesting og montering av terrassemarkiser i vår utfyllende [guide](veiledning/sikker-montering-av-terrassemarkiser).
 
 ### Produktbegrensninger
 
@@ -186,7 +186,7 @@ Vi tilbyr profesjonell montering av alle våre terrassemarkiser. Våre erfarne m
 
 ### Har du spørsmål?
 
-Har du spørsmål vedrørende montering av terrassemarkiser, ikke nøl med å [kontakte](/kontaktoss) oss. Vårt team av eksperter står klar til å hjelpe deg med:
+Har du spørsmål vedrørende montering av terrassemarkiser, ikke nøl med å [kontakte](/kontakt) oss. Vårt team av eksperter står klar til å hjelpe deg med:
 
 - Befaring og rådgivning
 - Vurdering av anleggsflate

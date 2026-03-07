@@ -14,6 +14,7 @@ import {
   TOOLS,
   VideoPreviewList,
 } from "@/components/pages/resources/views/overview";
+import { SITE_URLS } from "@/lib/constants";
 
 // ============================================================================
 // DATA FETCHING
@@ -84,7 +85,7 @@ export async function DashboardPage() {
       <ErrorBoundary context="ressurser">
         <div className="flex flex-col">
           <SectionRow
-            href="/ressurser/artikler"
+            href={SITE_URLS.ARTICLES}
             label="Artikler"
             title="Guider og tips"
             description="Fra planlegging til vedlikehold — finn svar på det du lurer på."
@@ -94,7 +95,7 @@ export async function DashboardPage() {
             {mockItems.map((item, idx) => (
               <Link
                 key={`article-items-${item.slug}-${idx}`}
-                href={`/ressurser/artikler/${item.slug}`}
+                href={`${SITE_URLS.ARTICLES}${item.slug}`}
               >
                 <div
                   key={item.slug}
