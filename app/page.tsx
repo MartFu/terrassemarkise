@@ -354,6 +354,7 @@ export const homePageContent = {
     imageSize: "cover",
     imagePosition: "center",
     imageRepeat: "no-repeat",
+    trustBadges,
   },
   trustBadges,
   solutions: {
@@ -404,20 +405,6 @@ export default function Page() {
   return (
     <div className="overflow-x-hidden">
       <HeroSection content={homePageContent.hero} />
-      <section>
-        <Container className="grid grid-cols-2 lg:grid-cols-4 gap-2 py-4 md:py-12">
-          {trustBadges.map((item, idx) => (
-            <div
-              key={item.label}
-              className={cn(
-                "border-border bg-card p-3 md:p-6 flex items-center justify-center md:font-medium text-base md:text-lg",
-              )}
-            >
-              {item.label}
-            </div>
-          ))}
-        </Container>
-      </section>
 
       {/* <SolutionsSection /> */}
 

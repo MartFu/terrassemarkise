@@ -324,11 +324,11 @@ export function TeamSection() {
 
                 {/* Social Links */}
                 {member.social && (
-                  <div className="flex items-center gap-2 pt-2 border-t border-border">
+                  <div className="flex items-center gap-1 pt-2 border-t border-border">
                     {member.social.email && (
                       <Link
                         href={`mailto:${member.social.email}`}
-                        className="p-2 rounded-full hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors"
+                        className="p-2 hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors"
                         aria-label={`Send e-post til ${member.name}`}
                       >
                         <Mail className="w-4 h-4" />
@@ -339,7 +339,7 @@ export function TeamSection() {
                         href={member.social.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 rounded-full hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors"
+                        className="p-2 hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors"
                         aria-label={`${member.name} på LinkedIn`}
                       >
                         <Linkedin className="w-4 h-4" />
@@ -350,7 +350,7 @@ export function TeamSection() {
                         href={member.social.facebook}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 rounded-full hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors"
+                        className="p-2 hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors"
                         aria-label={`${member.name} på Facebook`}
                       >
                         <Facebook className="w-4 h-4" />

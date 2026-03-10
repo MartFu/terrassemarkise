@@ -36,7 +36,7 @@ export function SolutionsSection({ title, slides }: Props) {
   }
 
   return (
-    <Section spacing="md">
+    <Section spacing="lg">
       <Container className="relative">
         {/* Section heading */}
 
